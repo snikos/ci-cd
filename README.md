@@ -27,3 +27,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ```
 Vue 3, SCSS
 ```
+
+### Deploy
+<a href="https://fascinating-unicorn-703996.netlify.app/admin" target="_blank">
+Go to site
+</a>
+
+
