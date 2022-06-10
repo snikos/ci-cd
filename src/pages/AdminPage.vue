@@ -2,7 +2,7 @@
     <h1>
         {{ alphabetUpperCase[count] }}<span v-html="newStr" @click="setWave('goon')" class="waves" ref="wave"></span>
     </h1>
-    <p>
+    <p style="color: dodgerblue;">
         <button @click="counterPrev">-</button>
         {{ count }}
         <button @click="counterNext">+</button>
