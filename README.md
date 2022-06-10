@@ -29,8 +29,6 @@ Vue 3, SCSS
 ```
 
 ### Deploy
-<a href="https://fascinating-unicorn-703996.netlify.app/admin" target="_blank">
-Go to site
-</a>
+<a href="https://fascinating-unicorn-703996.netlify.app" target="_blank">Go to site</a>
 
 
