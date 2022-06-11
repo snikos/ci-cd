@@ -5,8 +5,14 @@
             <li v-for="item in $options.localJson.apis" :key="item.id">
                 <p>Api: {{item.id}}. Name: {{ item.name }}.</p>
                 <p>
-                    <img src="../assets/ui.png" :alt="item.id" class="icon_thick">
-                    <a :href="item.endpoint" :title="item.endpoint">{{ item.name }}</a>
+                    <img
+                            src="../assets/ui.png"
+                            :alt="item.id"
+                            class="icon_thick">
+                    <a
+                            :href="item.endpoint"
+                            :title="item.endpoint"
+                            class="link_name">{{ item.name }}</a>
                 </p>
                 <p>{{ item.description }}</p>
                 <p>
@@ -35,6 +41,12 @@
         padding: 1em;
     }
     .icon_thick {
-        max-width: 22px;
+        max-width: 16px;
+        border-radius: 8px;
+    }
+    .link_name {
+        color: rgb(184, 25, 0);
+        padding: 0 6px;
+        font-weight: 600;
     }
 </style>

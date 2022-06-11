@@ -3,7 +3,7 @@
   "apis" : [
     {
       "id" : "vine-api",
-      "icon" : "/img/ui.png",
+      "icon" : "vine",
       "endpoint" : "https://api.vineapp.com/",
       "endpointType" : "rest",
       "name" : "Vine API",
