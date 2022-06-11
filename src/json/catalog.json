@@ -3,7 +3,7 @@
   "apis" : [
     {
       "id" : "vine-api",
-      "icon" : "vine",
+      "icon" : "home",
       "endpoint" : "https://api.vineapp.com/",
       "endpointType" : "rest",
       "name" : "Vine API",
@@ -14,7 +14,7 @@
     },
     {
       "id" : "tumblr-api",
-      "icon" : "tumblr",
+      "icon" : "user",
       "endpoint" : "http://www.tumblr.com/api/",
       "endpointType" : "rest",
       "name" : "Tumblr API",
@@ -25,7 +25,7 @@
     },
     {
       "id" : "vimeo-api",
-      "icon" : "http://www.sublitex.com/wp-content/themes/sublitex/img/grafica/vimeo.png",
+      "icon" : "user-plus",
       "endpoint" : "https://api.vimeo.com/",
       "endpointType" : "rest",
       "name" : "Vimeo API",
@@ -36,7 +36,7 @@
     },
     {
       "id" : "yelp-api",
-      "icon" : "yelp",
+      "icon" : "sign-in-alt",
       "endpoint" : "http://api.yelp.com/",
       "endpointType" : "rest",
       "name" : "Yelp API",
@@ -47,7 +47,7 @@
     },
     {
       "id" : "linkedin-api",
-      "icon" : "linkedin",
+      "icon" : "sign-out-alt",
       "endpoint" : "http://api.linkedin.com/v1/",
       "endpointType" : "rest",
       "name" : "LinkedIn API",
@@ -58,7 +58,7 @@
     },
     {
       "id" : "lastfm-api",
-      "icon" : "lastfm",
+      "icon" : "home",
       "endpoint" : "http://ws.audioscrobbler.com/2.0/",
       "endpointType" : "rest",
       "name" : "Last.fm API",
@@ -69,7 +69,7 @@
     },
     {
       "id" : "instagram-api",
-      "icon" : "instagram",
+      "icon" : "user",
       "endpoint" : "https://api.instagram.com/v1",
       "endpointType" : "rest",
       "name" : "Instagram API",
@@ -80,7 +80,7 @@
     },
     {
       "id" : "google-maps-api",
-      "icon" : "globe",
+      "icon" : "user-plus",
       "endpoint" : "https://maps.googleapis.com/maps/api/js",
       "endpointType" : "rest",
       "name" : "Google Maps API",
@@ -91,7 +91,7 @@
     },
     {
       "id" : "twitter-api",
-      "icon" : "twitter",
+      "icon" : "sign-in-alt",
       "endpoint" : "http://twitter.com/statuses/",
       "endpointType" : "rest",
       "name" : "Twitter API",
@@ -102,7 +102,7 @@
     },
     {
       "id" : "youtube-api",
-      "icon" : "youtube",
+      "icon" : "sign-out-alt",
       "endpoint" : "http://gdata.youtube.com/feeds/",
       "endpointType" : "rest",
       "name" : "YouTube API",
@@ -113,7 +113,7 @@
     },
     {
       "id" : "flickr-api",
-      "icon" : "flickr",
+      "icon" : "home",
       "endpoint" : "http://api.flickr.com/services/rest/",
       "endpointType" : "rest",
       "name" : "Flickr API",
@@ -124,7 +124,7 @@
     },
     {
       "id" : "facebook-api",
-      "icon" : "facebook-official",
+      "icon" : "user",
       "endpoint" : "http://api.facebook.com/restserver.php",
       "endpointType" : "rest",
       "name" : "Facebook API",
@@ -135,7 +135,7 @@
     },
     {
       "id" : "amazon-s3-api",
-      "icon" : "http://www.rmws.nl/wp-content/uploads/2015/01/RM-Web-Services-Amazon-S3.png",
+      "icon" : "user-plus",
       "endpoint" : "http://s3.amazonaws.com/",
       "endpointType" : "rest",
       "name" : "Amazon S3 API",
