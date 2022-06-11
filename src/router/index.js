@@ -32,6 +32,11 @@ const routes = [
     component: () => import('@/pages/LocalJson')
   },
   {
+    path: '/git-bash',
+    name: 'GitBash',
+    component: () => import('@/pages/GitBash')
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'PageNotFound',
     component: () => import('@/pages/PageNotFound')

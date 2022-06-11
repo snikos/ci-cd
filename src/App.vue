@@ -4,7 +4,8 @@
     <router-link to="/about">About</router-link> |
     <router-link to="/start">CI/CD</router-link> |
     <router-link to="/admin">Admin</router-link> |
-    <router-link to="/local-json">Json</router-link>
+    <router-link to="/local-json">Json</router-link> |
+    <router-link to="/git-bash">Bash</router-link>
   </nav>
   <router-view/>
 </template>
