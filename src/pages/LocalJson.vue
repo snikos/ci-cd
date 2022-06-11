@@ -3,9 +3,10 @@
         <h3>{{ $options.localJson.name }}</h3>
         <ul class="list_catalog">
             <li v-for="item in $options.localJson.apis" :key="item.id">
-                <p>Api: {{item.id}}. Name: {{ item.name }}. Link: {{item.endpoint}}</p>
+                <p>Api: {{item.id}}. Name: {{ item.name }}.</p>
                 <p>
-                    <a :href="item.endpoint">{{ item.name }}</a>
+                    <img src="../assets/ui.png" :alt="item.id" class="icon_thick">
+                    <a :href="item.endpoint" :title="item.endpoint">{{ item.name }}</a>
                 </p>
                 <p>{{ item.description }}</p>
                 <p>
@@ -32,5 +33,8 @@
     }
     .list_catalog li {
         padding: 1em;
+    }
+    .icon_thick {
+        max-width: 22px;
     }
 </style>
