@@ -4,7 +4,7 @@ import HomeView from '../views/HomeView.vue'
 const routes = [
   {
     path: '/',
-    beforeEnter: (to, from, next) => { next('/PageNotFound') },
+    //beforeEnter: (to, from, next) => { next('/PageNotFound') },
     name: 'home',
     component: HomeView
   },
@@ -25,6 +25,11 @@ const routes = [
     path: '/admin',
     name: 'Admin',
     component: () => import('@/pages/AdminPage')
+  },
+  {
+    path: '/local-json',
+    name: 'LocalJson',
+    component: () => import('@/pages/LocalJson')
   },
   {
     path: '/:pathMatch(.*)*',
