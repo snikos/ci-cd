@@ -1,10 +1,15 @@
 <template>
-    <div class="bash_box">
+    <div class="col-md-12 bash_box">
         <h2>{{ $options.myJson.title }}</h2>
         <ul class="bash_list">
-            <li
-                    v-for="item in $options.myJson.commands" :key="item.id">
-                <p><img :src="item.icon" alt="alt"> {{item.title}}</p>
+            <li v-for="item in $options.myJson.commands"
+                :key="item.id">
+                <p>
+                    <img :src="item.icon"
+                         class="git-scm"
+                         alt="alt">
+                    {{item.title}}
+                </p>
             </li>
         </ul>
     </div>
@@ -30,5 +35,9 @@
     }
     .bash_list li {
         padding: 1em 0 0;
+    }
+    .bash_box .git-scm {
+        max-width: 64px;
+        padding: 0 0.5em 0.5em 0;
     }
 </style>
