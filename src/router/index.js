@@ -37,6 +37,11 @@ const routes = [
     component: () => import('@/pages/GitBash')
   },
   {
+    path: '/mongolia',
+    name: 'MongoliaJson',
+    component: () => import('@/pages/MongoliaJson')
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'PageNotFound',
     component: () => import('@/pages/PageNotFound')
