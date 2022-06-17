@@ -17,7 +17,7 @@
                         <button
                                 type="button"
                                 class="btn btn-outline-secondary"
-                                @click="searchHashInput"
+                                @click="searchHashButton($event)"
                         >
                             Go!
                         </button>
@@ -57,31 +57,37 @@
             </div>
         </div>
         <div class="col-12 col-md-2">
-            <div class="btn-toolbar pb-2">
-                <div class="btn-group-vertical btn-group-sm">
-                    <button
-                            @click="searchHashButton($event)"
-                            type="button"
-                            class="btn btn-warning"
-                            value="ольга"
-                    >ольга</button>
-                    <button
-                            @click="searchHashButton($event)"
-                            type="button"
-                            class="btn btn-warning"
-                            value="таджик"
-                    >таджик</button>
-                </div>
-            </div>
+            <HashTagBlock @searchHash="searchHashButton" :arrHash="testHash" />
+<!--            <div class="btn-toolbar pb-2">-->
+<!--                <div class="btn-group-vertical btn-group-sm">-->
+<!--                    <button-->
+<!--                            @click="searchHashButton($event)"-->
+<!--                            type="button"-->
+<!--                            class="btn btn-warning"-->
+<!--                            value="охран"-->
+<!--                    >охран</button>-->
+<!--                    <button-->
+<!--                            @click="searchHashButton($event)"-->
+<!--                            type="button"-->
+<!--                            class="btn btn-warning"-->
+<!--                            value="таджик"-->
+<!--                    >таджик</button>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </div>
 </template>
 
 <script>
     import mongoliaJson from "@/json/comments-all-complete.json";
+    import HashTagBlock from "@/components/HashTagBlock";
     export default {
         name: "MongoliaJson",
         mongol:  mongoliaJson,
+        components: {
+            //HashTagBlock: () => import ('@/components/HashTagBlock'),
+            HashTagBlock,
+        },
         data() {
             return {
                 loadComments: [],
@@ -92,6 +98,7 @@
                 nextCount: 0,
                 comCount: 100,
                 searchQuery: '',
+                testHash: ['таджик','ольга','охран'],
             }
         },
         mounted() {
@@ -126,24 +133,26 @@
                     }
                 }, 1000);
             },
-            searchHashInput() {
+            /*searchHashInput() {
                 let search = this.searchComments;
                 this.loading = true;
                 setTimeout( async () => {
                     this.comments = search;
                     this.loading = false;
                 }, 500);
-                console.log('search with input', search);
-            },
+                //console.log('search with input', search);
+            },*/
             searchHashButton(event) {
-                this.searchQuery = event.target.value;
+                if (event.target.value) {
+                    this.searchQuery = event.target.value;
+                }
                 let search = this.searchComments;
                 this.loading = true;
                 setTimeout( async () => {
                     this.comments = search;
                     this.loading = false;
                 }, 500);
-                console.log('search with button: ', search);
+                //console.log('search with button: ', search);
             },
         },
         computed: {
