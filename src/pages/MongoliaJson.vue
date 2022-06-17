@@ -2,78 +2,27 @@
     <div class="row mongolia">
         <h1>Mongolia</h1>
         <div class="col-12">
-            <div class="btn-toolbar pb-2">
-                <div class="input-group input-group-sm">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text" id="btnGroupAddon">#</div>
-                    </div>
-                    <input
-                            v-model="searchQuery"
-                            type="text"
-                            placeholder="Enter word..."
-                            aria-label="Input group example"
-                            aria-describedby="btnGroupAddon">
-                    <div class="input-group-append">
-                        <button
-                                type="button"
-                                class="btn btn-outline-secondary"
-                                @click="searchHashButton($event)"
-                        >
-                            Go!
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <HashInputBlock
+                    v-model.trim="searchQuery"
+                    @searchInputQuery="searchHashButton($event)"
+                    :stringRepeat="stringRepeat = comments.length"
+            />
         </div>
         <div class="col-12 col-md-10">
-            <ul class="list-group">
-                <li
-                        class="list-group-item"
-                        v-for="({commentText, commentName, commentDate}, idx) in comments"
-                        :key="idx"
-                >
-                    <div>
-                        <strong>{{ idx }}</strong> - {{ commentName }} ({{ commentDate }})
-                        <p>{{ commentText }}</p>
-                    </div>
-                </li>
-                <li v-show="loading" class="loading">Loading...</li>
-            </ul>
-            <div class="btn-toolbar justify-content-sm-center mb-3">
-                <div class="btn-group btn-group-sm mt-3">
-                    <button
-                            @click="loadNextComments"
-                            type="button"
-                            class="btn btn-secondary"
-                            :disabled="showCommentsAreDone == 1"
-                    >Load {{ comCount }} comments</button>
-                    <button
-                            @click="loadAllComments"
-                            type="button"
-                            class="btn btn-secondary ml-3"
-                            :disabled="showCommentsAreDone == 1"
-                    >Load All comments</button>
-                </div>
-            </div>
+            <ListComments
+                    :comments="comments"
+                    :loading="loading"/>
+            <ListCommentsButton
+                    @loadNextComments="loadNextComments"
+                    @loadAllComments="loadAllComments"
+                    :isCheckButton="showCommentsAreDone"
+                    :comCount="comCount"
+            />
         </div>
         <div class="col-12 col-md-2">
-            <HashTagBlock @searchHash="searchHashButton" :arrHash="testHash" />
-<!--            <div class="btn-toolbar pb-2">-->
-<!--                <div class="btn-group-vertical btn-group-sm">-->
-<!--                    <button-->
-<!--                            @click="searchHashButton($event)"-->
-<!--                            type="button"-->
-<!--                            class="btn btn-warning"-->
-<!--                            value="охран"-->
-<!--                    >охран</button>-->
-<!--                    <button-->
-<!--                            @click="searchHashButton($event)"-->
-<!--                            type="button"-->
-<!--                            class="btn btn-warning"-->
-<!--                            value="таджик"-->
-<!--                    >таджик</button>-->
-<!--                </div>-->
-<!--            </div>-->
+            <HashTagBlock
+                    @searchHash="searchHashButton"
+                    :arrHash="arrayHashStrings" />
         </div>
     </div>
 </template>
@@ -81,12 +30,17 @@
 <script>
     import mongoliaJson from "@/json/comments-all-complete.json";
     import HashTagBlock from "@/components/HashTagBlock";
+    import HashInputBlock from "@/components/HashInputBlock";
+    import ListCommentsButton from "@/components/ListCommentsButton";
+    import ListComments from "@/components/ListComments";
     export default {
         name: "MongoliaJson",
         mongol:  mongoliaJson,
         components: {
-            //HashTagBlock: () => import ('@/components/HashTagBlock'),
             HashTagBlock,
+            HashInputBlock,
+            ListCommentsButton,
+            ListComments,
         },
         data() {
             return {
@@ -98,7 +52,21 @@
                 nextCount: 0,
                 comCount: 100,
                 searchQuery: '',
-                testHash: ['таджик','ольга','охран'],
+                arrayHashStrings: [
+                    'бурят',
+                    'стаж',
+                    'врач',
+                    'работ',
+                    'монгол',
+                    'таджик',
+                    'учител',
+                    'англ',
+                    'охран',
+                    'вайбер',
+                    ['ватсап', 'watsapp'],
+                    'viber'
+                ],
+                stringRepeat: 0,
             }
         },
         mounted() {
@@ -133,20 +101,12 @@
                     }
                 }, 1000);
             },
-            /*searchHashInput() {
-                let search = this.searchComments;
-                this.loading = true;
-                setTimeout( async () => {
-                    this.comments = search;
-                    this.loading = false;
-                }, 500);
-                //console.log('search with input', search);
-            },*/
             searchHashButton(event) {
                 if (event.target.value) {
                     this.searchQuery = event.target.value;
                 }
                 let search = this.searchComments;
+                console.log('search: ', search)
                 this.loading = true;
                 setTimeout( async () => {
                     this.comments = search;
@@ -163,7 +123,12 @@
             },
             searchComments() {
                 return this.loadComments.filter( ({ commentText }) => {
-                    return commentText.toLowerCase().includes(this.searchQuery.toLowerCase());
+                    let x = this.searchQuery;
+                    let word = (x.includes(',')) ? x.split(',') : x;
+                        return x.includes(',') ? word.find( (txt) => {
+                            return commentText.toLowerCase().includes(txt.toLowerCase())
+                        }) : commentText.toLowerCase().includes(word.toLowerCase());
+                    // return commentText.toLowerCase().includes(word.toLowerCase());
                 });
             }
         },
