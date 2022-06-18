@@ -1,29 +1,31 @@
 <template>
     <div class="btn-toolbar pb-2">
         <div class="btn-group-vertical btn-group-sm">
-<!--            <button v-for="(hash, index) in arrHash"-->
-<!--                    @click="$emit('searchHash', $event)"-->
-<!--                    :key="hash + index"-->
-<!--                    type="button"-->
-<!--                    class="btn btn-success btn__left"-->
-<!--                    :value="hash"-->
-<!--            >{{hash}}</button>-->
             <button v-for="(hash, index) in arrHash"
                     @click="$emit('searchHash', $event)"
                     :key="hash + index"
                     type="button"
                     class="btn btn-success btn__left"
                     :value="hash"
-            >{{hash}}</button>
+            >
+                {{ $filters.isObject(hash) ? Object.values(hash)[0] : hash }}
+                <span class="badge badge-light">{{ allCounter[index] }}</span>
+                <span class="sr-only">sr</span>
+            </button>
         </div>
     </div>
 </template>
 
 <script>
+
     export default {
         name: "HashTagBlock",
         props: {
             arrHash: {
+                type: Array,
+                required: true,
+            },
+            allCounter: {
                 type: Array,
                 required: true,
             }

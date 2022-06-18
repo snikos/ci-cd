@@ -1,6 +1,6 @@
 <template>
     <div class="row mongolia">
-        <h1>Mongolia</h1>
+        <h3 class="mongolia__title">Comment analytics</h3>
         <div class="col-12">
             <HashInputBlock
                     v-model.trim="searchQuery"
@@ -22,7 +22,9 @@
         <div class="col-12 col-md-2">
             <HashTagBlock
                     @searchHash="searchHashButton"
-                    :arrHash="arrayHashStrings" />
+                    :arrHash="arrayHashStrings"
+                    :allCounter="allCounter"
+            />
         </div>
     </div>
 </template>
@@ -67,10 +69,12 @@
                     'viber'
                 ],
                 stringRepeat: 0,
+                allCounter: [],
             }
         },
         mounted() {
             this.fetchComments();
+            this.searchHashLength();
         },
         methods: {
             async fetchComments() {
@@ -105,14 +109,26 @@
                 if (event.target.value) {
                     this.searchQuery = event.target.value;
                 }
+                if (this.searchQuery.length <= 1) {
+                    console.log('Add text!');
+                    return;
+                }
                 let search = this.searchComments;
-                console.log('search: ', search)
                 this.loading = true;
                 setTimeout( async () => {
                     this.comments = search;
                     this.loading = false;
                 }, 500);
                 //console.log('search with button: ', search);
+            },
+            searchHashLength() {
+                setTimeout( () => {
+                    this.arrayHashStrings.forEach( (word) => {
+                        this.searchQuery = (typeof word === 'object') ? Object.values(word)[0] : word;
+                        let res = this.searchComments;
+                        this.allCounter.push(res.length);
+                    });
+                }, 3000);
             },
         },
         computed: {
@@ -125,10 +141,9 @@
                 return this.loadComments.filter( ({ commentText }) => {
                     let x = this.searchQuery;
                     let word = (x.includes(',')) ? x.split(',') : x;
-                        return x.includes(',') ? word.find( (txt) => {
-                            return commentText.toLowerCase().includes(txt.toLowerCase())
-                        }) : commentText.toLowerCase().includes(word.toLowerCase());
-                    // return commentText.toLowerCase().includes(word.toLowerCase());
+                    return x.includes(',') ? word.find( (txt) => {
+                        return commentText.toLowerCase().includes(txt.toLowerCase())
+                    }) : commentText.toLowerCase().includes(word.toLowerCase());
                 });
             }
         },
@@ -138,6 +153,11 @@
 <style scoped>
     .mongolia {
         text-align: left;
+    }
+    .mongolia__title {
+        text-align: center;
+        padding: 0 0 1em 0;
+        margin: 0 auto;
     }
     .loading {
         padding: 1em;
