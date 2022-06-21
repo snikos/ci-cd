@@ -1,15 +1,27 @@
 <template>
-    <h1>
-        {{ alphabetUpperCase[count] }}<span v-html="newStr" @click="setWave('goon')" class="waves" ref="wave"></span>
-    </h1>
-    <p style="color: dodgerblue;">
-        <button @click="counterPrev">-</button>
-        {{ count }}
-        <button @click="counterNext">+</button>
-    </p>
+    <div>
+        <h1>
+            {{ alphabetUpperCase[count] }}<span v-html="newStr" @click="setWave('goon')" class="waves" ref="wave"></span>
+        </h1>
+        <p style="color: dodgerblue;">
+            <button @click="counterPrev">-</button>
+            {{ count }}
+            <button @click="counterNext">+</button>
+        </p>
+        <div style="text-align: left;padding: 1em 2em;">
+            <h3>Wrapping up! (Composition API)</h3>
+            <p style="color: tomato;">The mixin pattern looks pretty safe on the surface. However, sharing code by merging objects becomes an anti-pattern due to the fragility it adds to code and the way it obscures the ability to reason about the functionality</p>
+            <p><b>testRef:</b> {{ testRef }}</p>
+            <p><b>doubleTestRef:</b> {{ doubleTestRef }}</p>
+            <button @click.once="incrementTestRef('\n The End')">testRef + end</button>
+        </div>
+    </div>
 </template>
 
 <script>
+    import { ref } from "vue";
+    import { useTestRef } from "@/hooks/testRef";
+
     export default {
         name: "AdminPage",
         data() {
@@ -79,8 +91,18 @@
                 return word.map( (el) => {
                     return el.replace(el, `<b>${el}</b>`)
                 }).join('');
-            }
+            },
         },
+        setup() {
+            const myLocalVal = ref('The most clever part of the Composition API is that it allows Vue to lean on the safeguards built into native JavaScript in order to share code, like passing variables to functions, and the module system.');
+            const { testRef, doubleTestRef, incrementTestRef } = useTestRef(myLocalVal);
+
+            return {
+                testRef,
+                doubleTestRef,
+                incrementTestRef,
+            }
+        }
     }
 </script>
 

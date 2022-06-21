@@ -1,6 +1,6 @@
 <template>
     <div class="btn-toolbar pb-2">
-        <div class="btn-group-vertical btn-group-sm">
+        <div :class="`${windowWidth <= 770 ? '' : 'btn-group-vertical'} btn-group-sm`">
             <button v-for="(hash, index) in arrHash"
                     @click="$emit('searchHash', $event)"
                     :key="hash + index"
@@ -20,6 +20,11 @@
 
     export default {
         name: "HashTagBlock",
+        data() {
+            return {
+                windowWidth: window.innerWidth,
+            }
+        },
         props: {
             arrHash: {
                 type: Array,
@@ -30,6 +35,11 @@
                 required: true,
             }
         },
+        mounted() {
+            window.onresize = () => {
+                this.windowWidth = window.innerWidth
+            }
+        }
     }
 </script>
 

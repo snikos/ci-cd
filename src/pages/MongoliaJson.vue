@@ -8,7 +8,14 @@
                     :stringRepeat="stringRepeat = comments.length"
             />
         </div>
-        <div class="col-12 col-md-10">
+        <div class="col-12 col-md-3">
+            <HashTagBlock
+                    @searchHash="searchHashButton"
+                    :arrHash="arrayHashStrings"
+                    :allCounter="allCounter"
+            />
+        </div>
+        <div class="col-12 col-md-9">
             <ListComments
                     :comments="comments"
                     :loading="loading"/>
@@ -17,13 +24,6 @@
                     @loadAllComments="loadAllComments"
                     :isCheckButton="showCommentsAreDone"
                     :comCount="comCount"
-            />
-        </div>
-        <div class="col-12 col-md-2">
-            <HashTagBlock
-                    @searchHash="searchHashButton"
-                    :arrHash="arrayHashStrings"
-                    :allCounter="allCounter"
             />
         </div>
     </div>
