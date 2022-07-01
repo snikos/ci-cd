@@ -1,4 +1,4 @@
-import {ref, computed, onMounted} from "vue";
+import {ref, computed, onMounted, onUpdated, onUnmounted} from "vue";
 
 export function useTestRef(x) {
     const testRef = ref(x);
@@ -6,11 +6,19 @@ export function useTestRef(x) {
     function incrementTestRef(value) {
         testRef.value += value;
     }
-    function starter() {
-        console.log('composition API - test ref()');
+    function mount() {
+        console.log('composition API - mount');
+    }
+    function update() {
+        console.log('composition API - update');
+    }
+    function unmount() {
+        console.log('composition API - unmount');
     }
 
-    onMounted(starter);
+    onMounted(mount);
+    onUpdated(update);
+    onUnmounted(unmount);
 
     return {
         testRef,

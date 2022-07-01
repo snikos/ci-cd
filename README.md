@@ -28,7 +28,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 Vue 3, SCSS
 ```
 
-### Deploy
+### Netlify deploy
+$ git push
+
+### Deploy demo
 <a href="https://fascinating-unicorn-703996.netlify.app" target="_blank">Go to site</a>
 
 
