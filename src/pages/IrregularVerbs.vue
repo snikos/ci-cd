@@ -12,7 +12,7 @@
     import ListIrregularVerbs from "@/components/ListIrregularVerbs";
     export default {
         name: "IrregularVerbs",
-        verbs: verbsJson,
+        //verbs: verbsJson,
         components: {
             ListIrregularVerbs,
         },

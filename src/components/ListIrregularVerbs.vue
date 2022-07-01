@@ -1,23 +1,23 @@
 <template>
-    <table class="table">
+    <table class="table table-sm table-striped table-bordered">
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Base</th>
-                <th scope="col">Simple</th>
-                <th scope="col">Participle</th>
-                <th scope="col">Trans</th>
+                <th scope="col">Infinitive</th>
+                <th scope="col">Past Indefinite</th>
+                <th scope="col">Past Participle</th>
+                <th scope="col">Translate</th>
             </tr>
         </thead>
         <tbody>
         <tr v-for="(item, idx) in verbs"
-            :key="item.Base + '_' + idx"
+            :key="item['Infinitive'] + '_' + idx"
         >
             <th scope="row">{{ idx+1 }}</th>
-            <td>{{ item["Base"] }}</td>
-            <td>{{ item["Past-simple"] }}</td>
+            <td>{{ item["Infinitive"] }}</td>
+            <td>{{ item["Past-Indefinite"] }}</td>
             <td>{{ item["Past-Participle"] }}</td>
-            <td>trans</td>
+            <td>{{ item["translate"] }}</td>
         </tr>
         </tbody>
     </table>
