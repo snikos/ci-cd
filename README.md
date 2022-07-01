@@ -29,7 +29,7 @@ Vue 3, SCSS
 ```
 
 ### Netlify deploy
-$ git push
+$ git push origin main
 
 ### Deploy demo
 <a href="https://fascinating-unicorn-703996.netlify.app" target="_blank">Go to site</a>

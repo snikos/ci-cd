@@ -42,6 +42,11 @@ const routes = [
     component: () => import('@/pages/MongoliaJson')
   },
   {
+    path: '/irr-verbs',
+    name: 'IrregularVerbs',
+    component: () => import('@/pages/IrregularVerbs')
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'PageNotFound',
     component: () => import('@/pages/PageNotFound')

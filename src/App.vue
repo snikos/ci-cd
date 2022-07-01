@@ -7,7 +7,8 @@
       <router-link to="/admin">Admin</router-link> |
       <router-link to="/local-json">Json</router-link> |
       <router-link to="/git-bash">Bash</router-link> |
-      <router-link to="/mongolia">Mongolia</router-link>
+      <router-link to="/mongolia">Mongolia</router-link> |
+      <router-link to="/irr-verbs">Irregular verbs</router-link>
     </nav>
     <router-view/>
   </div>
