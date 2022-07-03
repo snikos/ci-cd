@@ -1,15 +1,20 @@
 <template>
-    <select :model-value="modelValue"
-            @change="changeOption"
-    >
-        <option disaled value="">Select one</option>
-        <option v-for="option in options"
-                :key="option.value"
-                :value="option.value"
-        >
-            {{ option.name }}
-        </option>
-    </select>
+    <form>
+        <div class="form-group">
+            <select :model-value="modelValue"
+                    @change="changeOption"
+                    class="form-control"
+            >
+                <option disaled value="">Select one</option>
+                <option v-for="option in options"
+                        :key="option.value"
+                        :value="option.value"
+                >
+                    {{ option.name }}
+                </option>
+            </select>
+        </div>
+    </form>
 </template>
 
 <script>

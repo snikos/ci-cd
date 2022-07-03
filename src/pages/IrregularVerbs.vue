@@ -1,17 +1,14 @@
 <template>
     <div class="row">
         <div class="col-12 col-md-6">
-            <h4>English irregular verbs</h4>
+            <h3 class="pb-4">English irregular verbs</h3>
         </div>
         <div class="col-12 col-md-6">
             <MySelect v-model="selectedSort"
                       :options="sortOptions"
             />
         </div>
-        <div class="col-10">
-            <ListIrregularVerbs :verbs="checkVerbs"/>
-        </div>
-        <div class="col-2">
+        <div class="col-12 col-sm-12 col-md-3">
             <div class="list-group">
                 <button v-for="button in checkButtons"
                         :key="button.name"
@@ -22,6 +19,9 @@
                     {{button.name}}
                 </button>
             </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-9">
+            <ListIrregularVerbs :verbs="checkVerbs"/>
         </div>
     </div>
 </template>

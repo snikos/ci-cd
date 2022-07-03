@@ -28,6 +28,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 Vue 3, SCSS
 ```
 
+// List of irregular verbs
+https://en.wikipedia.org/wiki/List_of_English_irregular_verbs
+
 ### Netlify deploy
 $ git push origin main
 
