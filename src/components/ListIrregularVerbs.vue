@@ -3,16 +3,17 @@
         <table class="table table-sm table-striped table-bordered">
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Infinitive</th>
-                <th scope="col">Past Indefinite</th>
-                <th scope="col">Past Participle</th>
-                <th scope="col">Translate</th>
+                <th scope="col" :class="`table-${classes[7]}`">#</th>
+                <th scope="col" :class="`table-${classes[7]}`">Infinitive</th>
+                <th scope="col" :class="`table-${classes[7]}`">Past Indefinite</th>
+                <th scope="col" :class="`table-${classes[7]}`">Past Participle</th>
+                <th scope="col" :class="`table-${classes[7]}`">Translate</th>
             </tr>
             </thead>
             <tbody>
             <tr v-for="(item, idx) in verbs"
                 :key="item['Infinitive'] + '_' + idx"
+                :class="`table-${classes[4]}`"
             >
                 <th scope="row">{{ idx+1 }}</th>
                 <td>{{ item["Infinitive"] }}</td>
@@ -33,6 +34,9 @@
                 type: Array,
                 required: true,
             },
+            classes: {
+                type: Array,
+            }
         }
     }
 </script>
