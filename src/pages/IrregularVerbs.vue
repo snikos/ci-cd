@@ -57,7 +57,8 @@
                     { name: 'Indefinite=Participle', comp: 'sortIndefiniteParticiple' },
                     { name: 'sort Twin', comp: 'sortTwin' },
                     { name: 'Participle ends with En', comp: 'sortEndsWithEn' },
-                    { name: 'Participle ends with N', comp: 'sortEndsWithN' }
+                    { name: 'Participle ends with N', comp: 'sortEndsWithN' },
+                    { name: 'Multiple variables', comp: 'sortMultiVariables' }
                 ],
                 classes: ['primary','secondary','success','danger','warning','info','light','dark','active'],
                 ups: 'list-group-item list-group-item-action',
@@ -123,7 +124,14 @@
                         return /[^eiou]n$/.test(String(el['Past-Participle']));
                     }
                 });
-            }
+            },
+            sortMultiVariables() {
+                return this.sortedVerbs.filter( (el) => {
+                    if ( String(el['Past-Indefinite']).includes('/') || String(el['Past-Participle']).includes('/') ){
+                        return true;
+                    }
+                });
+            },
         },
     }
 </script>
