@@ -52,6 +52,7 @@
                 ],
                 checkButtons: [
                     { name: 'All verbs', comp: 'sortedVerbs' },
+                    { name: 'go,do', comp: 'sortClickZero' },
                     { name: 'firstClick', comp: 'sortClickFirst' },
                     { name: 'secondClick', comp: 'sortClickSecond' },
                     { name: 'thirdClick', comp: 'sortClickThird' },
@@ -87,6 +88,13 @@
                     return String(v1[this.selectedSort])?.localeCompare(String(v2[this.selectedSort]))
                 })
             },
+            sortClickZero() {
+                return this.sortedVerbs.filter( (el) => {
+                    if ( /\b(go|do)\b/im.test( String(el['Infinitive']) ) ) {
+                        return /\b(go|do)\b/im.test( String(el['Infinitive']) )
+                    }
+                });
+            },
             sortClickFirst() {
                 return this.sortedVerbs.filter( (el) => {
                     return String(el['Infinitive']) === String(el['Past-Indefinite']);
@@ -108,15 +116,11 @@
                 })
             },
             sortClickFifth() {
-                const test = [];
-                const result = this.sortedVerbs.filter( (el) => {
+                return this.sortedVerbs.filter( (el) => {
                     if ( /[^eiou]n$/.test(String(el['Past-Participle'])) ){
-                        test.push( String(el['Past-Participle']) );
+                        return /[^eiou]n$/.test(String(el['Past-Participle']));
                     }
-                    return /[^eiou]n$/.test(String(el['Past-Participle']));
                 });
-                //console.log(test);
-                return result;
             }
         },
     }
