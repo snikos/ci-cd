@@ -90,8 +90,8 @@
             },
             sortShorts() {
                 return this.sortedVerbs.filter( (el) => {
-                    if ( /\b(do|go|lie)\b/im.test( String(el['Infinitive']) ) ) {
-                        return /\b(do|go|lie)\b/im.test( String(el['Infinitive']) )
+                    if ( /\b(be|can|do|go|lie|may|must|shall|will)\b/im.test( String(el['Infinitive']) ) ) {
+                        return /\b(be|can|do|go|lie|may|must|shall|will)\b/im.test( String(el['Infinitive']) )
                     }
                 });
             },
