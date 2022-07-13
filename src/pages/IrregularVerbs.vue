@@ -52,12 +52,12 @@
                 ],
                 checkButtons: [
                     { name: 'All verbs', comp: 'sortedVerbs' },
-                    { name: 'go,do', comp: 'sortClickZero' },
-                    { name: 'firstClick', comp: 'sortClickFirst' },
-                    { name: 'secondClick', comp: 'sortClickSecond' },
-                    { name: 'thirdClick', comp: 'sortClickThird' },
-                    { name: 'fourthClick', comp: 'sortClickFourth' },
-                    { name: 'fifthClick', comp: 'sortClickFifth' }
+                    { name: 'do,go,lie', comp: 'sortShorts' },
+                    { name: 'Infinitive=Indefinite', comp: 'sortInfinitiveIndefinite' },
+                    { name: 'Indefinite=Participle', comp: 'sortIndefiniteParticiple' },
+                    { name: 'sort Twin', comp: 'sortTwin' },
+                    { name: 'Participle ends with En', comp: 'sortEndsWithEn' },
+                    { name: 'Participle ends with N', comp: 'sortEndsWithN' }
                 ],
                 classes: ['primary','secondary','success','danger','warning','info','light','dark','active'],
                 ups: 'list-group-item list-group-item-action',
@@ -88,34 +88,36 @@
                     return String(v1[this.selectedSort])?.localeCompare(String(v2[this.selectedSort]))
                 })
             },
-            sortClickZero() {
+            sortShorts() {
                 return this.sortedVerbs.filter( (el) => {
-                    if ( /\b(go|do)\b/im.test( String(el['Infinitive']) ) ) {
-                        return /\b(go|do)\b/im.test( String(el['Infinitive']) )
+                    if ( /\b(do|go|lie)\b/im.test( String(el['Infinitive']) ) ) {
+                        return /\b(do|go|lie)\b/im.test( String(el['Infinitive']) )
                     }
                 });
             },
-            sortClickFirst() {
+            sortInfinitiveIndefinite() {
                 return this.sortedVerbs.filter( (el) => {
                     return String(el['Infinitive']) === String(el['Past-Indefinite']);
                 })
             },
-            sortClickSecond() {
+            sortIndefiniteParticiple() {
                 return this.sortedVerbs.filter( (el) => {
-                    return String(el['Past-Indefinite']) === String(el['Past-Participle']) && String(el['Infinitive']) !== String(el['Past-Participle']);
+                    return String(el['Past-Indefinite']) === String(el['Past-Participle'])
+                        && String(el['Infinitive']) !== String(el['Past-Participle']);
                 })
             },
-            sortClickThird() {
+            sortTwin() {
                 return this.sortedVerbs.filter( (el) => {
-                    return String(el['Past-Indefinite']) === String(el['Past-Participle']);
+                    return String(el['Infinitive']) === String(el['Past-Participle'])
+                        && String(el['Infinitive']).includes(String(el['Past-Indefinite']));
                 })
             },
-            sortClickFourth() {
+            sortEndsWithEn() {
                 return this.sortedVerbs.filter( (el) => {
                     return String(el['Past-Participle']).endsWith('en');
                 })
             },
-            sortClickFifth() {
+            sortEndsWithN() {
                 return this.sortedVerbs.filter( (el) => {
                     if ( /[^eiou]n$/.test(String(el['Past-Participle'])) ){
                         return /[^eiou]n$/.test(String(el['Past-Participle']));
