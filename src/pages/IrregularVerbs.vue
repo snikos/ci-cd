@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="col-12 col-sm-12 col-md-9">
-            <ListIrregularVerbs :verbs="checkVerbs" :classes="classes"/>
+            <ListIrregularVerbs :verbs="checkVerbs" :classes="classes" :curClass="currentClass"/>
         </div>
     </div>
 </template>
@@ -61,6 +61,7 @@
                     { name: 'Multiple variables', comp: 'sortMultiVariables' }
                 ],
                 classes: ['primary','secondary','success','danger','warning','info','light','dark','active'],
+                currentClass: 'active',
                 ups: 'list-group-item list-group-item-action',
                 isActive: 0,
             }
@@ -81,6 +82,7 @@
             getMtdClick(comp, idx) {
                 this.isActive = idx;
                 this.checkVerbs = this[comp];
+                this.currentClass = this.classes[idx];
             },
         },
         computed: {
@@ -99,13 +101,13 @@
             sortInfinitiveIndefinite() {
                 return this.sortedVerbs.filter( (el) => {
                     return String(el['Infinitive']) === String(el['Past-Indefinite']);
-                })
+                });
             },
             sortIndefiniteParticiple() {
                 return this.sortedVerbs.filter( (el) => {
                     return String(el['Past-Indefinite']) === String(el['Past-Participle'])
                         && String(el['Infinitive']) !== String(el['Past-Participle']);
-                })
+                });
             },
             sortTwin() {
                 return this.sortedVerbs.filter( (el) => {
@@ -116,7 +118,7 @@
             sortEndsWithEn() {
                 return this.sortedVerbs.filter( (el) => {
                     return String(el['Past-Participle']).endsWith('en');
-                })
+                });
             },
             sortEndsWithN() {
                 return this.sortedVerbs.filter( (el) => {

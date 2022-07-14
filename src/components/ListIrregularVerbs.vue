@@ -13,7 +13,7 @@
             <tbody>
             <tr v-for="(item, idx) in verbs"
                 :key="item['Infinitive'] + '_' + idx"
-                :class="`table-${classes[4]}`"
+                :class="`table-${curClass}`"
             >
                 <th scope="row">{{ idx+1 }}</th>
                 <td>{{ item["Infinitive"] }}</td>
@@ -33,6 +33,9 @@
             verbs: {
                 type: Array,
                 required: true,
+            },
+            curClass: {
+                type: String,
             },
             classes: {
                 type: Array,
