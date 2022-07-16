@@ -1,5 +1,5 @@
 <template>
-    <div class="table-responsive-sm">
+    <div class="table-responsive">
         <table class="table table-sm table-striped table-bordered">
             <thead>
             <tr>
@@ -13,7 +13,7 @@
             <tbody>
             <tr v-for="(item, idx) in verbs"
                 :key="item['Infinitive'] + '_' + idx"
-                :class="`table-${curClass}`"
+                :class="`tabloid-${curClass}`"
             >
                 <th scope="row">{{ idx+1 }}</th>
                 <td>{{ item["Infinitive"] }}</td>

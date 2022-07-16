@@ -8,7 +8,7 @@
                       :options="sortOptions"
             />
         </div>
-        <div class="col-12 col-sm-12 col-md-3">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4">
             <div class="list-group">
                 <button v-for="(button, index) in checkButtons"
                         :key="button.name"
@@ -20,7 +20,7 @@
                 </button>
             </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-9">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-8">
             <ListIrregularVerbs :verbs="checkVerbs" :classes="classes" :curClass="currentClass"/>
         </div>
     </div>
@@ -82,7 +82,7 @@
             getMtdClick(comp, idx) {
                 this.isActive = idx;
                 this.checkVerbs = this[comp];
-                this.currentClass = this.classes[idx];
+                this.currentClass = idx < 7 ? this.classes[idx] : this.classes[2];
             },
         },
         computed: {

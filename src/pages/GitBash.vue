@@ -6,12 +6,12 @@
                 :key="item.id"
                 class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4"
             >
-                <div @click.prevent.stop="currentTab = item.id"
+                <div
                    style="cursor: pointer;"
                 >
-                    <h5>
+                    <h5 @click.stop.prevent="currentTab = item.id">
                         <img
-                                :src="item.icon"
+                                :src="String(item.icon)"
                                 class="git-scm"
                                 :alt="item.title"
                                 :title="item.title"
@@ -63,16 +63,7 @@
         max-width: 58px;
         padding: 0 0.5em 0.5em 0;
     }
-    .tab_box {
-        list-style-type: square;
-    }
     .tab_box li::marker {
         color: red;
-    }
-    .bash_box .tab_box {
-        display: none;
-    }
-    .bash_box .active {
-        display: block;
     }
 </style>
