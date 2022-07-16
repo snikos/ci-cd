@@ -30,14 +30,12 @@
     import verbsJson from "@/json/irregular-verbs.json";
     import ListIrregularVerbs from "@/components/ListIrregularVerbs";
     import MySelect from "@/components/UI/MySelect";
-    //import MySort from "@/components/UI/MySort";
     export default {
         name: "IrregularVerbs",
         //verbs: verbsJson,
         components: {
-            //MySort,
-            MySelect,
             ListIrregularVerbs,
+            MySelect,
         },
         data() {
             return {

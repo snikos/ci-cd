@@ -12,6 +12,7 @@
     </nav>
     <router-view/>
   </div>
+  <div id="modals"></div>
 </template>
 
 <style lang="scss">
