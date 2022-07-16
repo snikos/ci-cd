@@ -18,7 +18,7 @@
                         {{item.title}}
                     </h5>
                 </div>
-                <ul :class="['tab_box', {activist: currentTab === item.id}]">
+                <ul :class="['tab_box', {activisto: currentTab === item.id}]">
                     <li v-for="(desc, index) in item.description"
                         :key="item.id + index"
                     >
@@ -29,12 +29,12 @@
         </ul>
     </div>
     <my-modal v-model:showModal="modalVisible">
-        <h5>{{ getTitle }}</h5>
-        <div v-for="(list, index) in getDescription"
+        <h5>{{ getMtd('Title') }}</h5>
+        <div v-for="(list, index) in getMtd('Description')"
             :key="list.substr(0,6) + index"
         >
             <p>{{ list }}</p>
-            <kbd>{{ getConsole[index] }}</kbd>
+            <kbd>{{ getMtd('Console')[index] }}</kbd>
         </div>
     </my-modal>
 </template>
@@ -50,7 +50,7 @@
         },
         data() {
             return {
-                currentTab: 'sign',
+                currentTab: '',
                 modalVisible: false,
                 curId: '',
             }
@@ -68,15 +68,18 @@
                     .filter( ({id}) => id === this.curId )
                     .find( (el, idx) => idx === 0);
             },
-            getTitle() {
-                return this.getObj['title'];
-            },
-            getDescription() {
-                return this.getObj['description'];
-            },
-            getConsole() {
-                return this.getObj['console'];
-            },
+            getMtd() {
+                return (name) => {
+                    return this.getObj[name.toLowerCase()];
+                }
+            }
+        },
+        watch: {
+            modalVisible() {
+                if (!this.modalVisible) {
+                    this.currentTab = !this.currentTab;
+                }
+            }
         },
     }
 </script>

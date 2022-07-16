@@ -7,6 +7,9 @@
             <div @click.stop
                  class="mymodal-content"
             >
+                <b
+                        @click.prevent="toggleModal"
+                        class="mymodal-close">x</b>
                 <slot></slot>
             </div>
         </div>
@@ -48,5 +51,16 @@
         min-width: 300px;
         width: 420px;
         padding: 20px;
+        position: relative;
+    }
+    .mymodal-close{
+        cursor: pointer;
+        padding: 6px 12px;
+        background-color: rgb(66, 185, 131);
+        color: #fff;
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        border-radius: 0 9px 0 9px;
     }
 </style>
