@@ -7,6 +7,7 @@
                     @searchInputQuery="searchHashButton($event)"
                     :stringRepeat="stringRepeat = comments.length"
             />
+            <MySelect v-model="selectedSort" :options="sortOptions" @change="testSelect" />
         </div>
         <div class="col-12 col-md-3">
             <HashTagBlock
@@ -31,20 +32,20 @@
 
 <script>
     import Axios from "axios";
-    import migrationJobJson from "@/json/comments-all-mongolia.json";
+    import MySelect from "@/components/UI/MySelect";
     import HashTagBlock from "@/components/HashTagBlock";
     import HashInputBlock from "@/components/HashInputBlock";
     import ListCommentsButton from "@/components/ListCommentsButton";
     import ListComments from "@/components/ListComments";
     export default {
         name: "MigrationJobJson",
-        //testJsonLoad: () => import("@/json/comments-all-mongolia.json"),
         props: ["jsonLocation"],
         components: {
             HashTagBlock,
             HashInputBlock,
             ListCommentsButton,
             ListComments,
+            MySelect,
         },
         data() {
             return {
@@ -54,10 +55,13 @@
                 loading: false,
                 showCommentsAreDone: 0,
                 nextCount: 0,
-                comCount: 100,
+                comCount: 10,//100
                 searchQuery: '',
                 arrayHashStrings: [
-                    'бурят',
+                    'хочу',
+                    'украин',
+                    'тел',
+                    'бур',
                     'стаж',
                     'врач',
                     'работ',
@@ -68,28 +72,41 @@
                     'охран',
                     'вайбер',
                     ['ватсап', 'watsapp'],
-                    'viber'
+                    'viber',
+                    ['@', 'mail', 'email']
                 ],
                 stringRepeat: 0,
                 allCounter: [],
+                selectedSort: "comments-all-norway",
+                sortOptions: [
+                    {name: "Mongolia", value: "comments-all-mongolia"},
+                    {name: "Norway", value: "comments-all-norway"}
+                ]
             }
         },
         mounted() {
-            this.fetchComments();
+            this.fetchComments(this.selectedSort);
             this.searchHashLength();
         },
         methods: {
-            async fetchComments() {
+            testSelect() {
+                this.fetchComments(this.selectedSort);
+                this.searchHashLength();
+            },
+            async fetchComments( url ) {
                 try {
                     setTimeout( async () => {
-                        const res = await migrationJobJson;
-                        this.loadComments = [...res];
-                        this.loadNextComments();
-
-                        await Axios.get("../json/comments-all-norway.json")
-                        .then( res => {
-                            console.log(res.data);
+                        await Axios.get(`../json/${url}.json`)
+                        .then( result => {
+                            let res = result.data;
+                            //console.log(this.nextCount);
+                            this.comments = [];
+                            this.cur = [];
+                            this.nextCount = 0;
+                            this.showCommentsAreDone = 0;
+                            this.loadComments = [...res];
                         } );
+                        this.loadNextComments();
                     }, 500);
                 }
                 catch (e) {
@@ -107,7 +124,7 @@
                     this.nextCount += this.comCount;
                     this.comments = [...this.comments, ...this.cur];
                     this.loading = false;
-                    if ( this.comments.length >= 800) {
+                    if ( this.comments.length >= this.loadComments.length ) {
                         this.showCommentsAreDone = 1;
                     }
                 }, 1000);
@@ -129,13 +146,14 @@
                 //console.log('search with button: ', search);
             },
             searchHashLength() {
+                this.allCounter = [];
                 setTimeout( () => {
                     this.arrayHashStrings.forEach( (word) => {
                         this.searchQuery = (typeof word === 'object') ? Object.values(word)[0] : word;
                         let res = this.searchComments;
                         this.allCounter.push(res.length);
                     });
-                }, 3000);
+                }, 1000);
             },
         },
         computed: {
@@ -154,6 +172,11 @@
                 });
             }
         },
+        watch: {
+            stringRepeat() {
+                //console.log( this.stringRepeat, '; ', this.comments.length, '; ', this.loadComments.length, '; ', this.allCounter );
+            }
+        }
     }
 </script>
 

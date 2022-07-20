@@ -9,6 +9,7 @@
                 <option v-for="option in options"
                         :key="option.value"
                         :value="option.value"
+                        :selected="modelValue === option.value"
                 >
                     {{ option.name }}
                 </option>
@@ -44,7 +45,7 @@
                     this.$emit('update:modelValue', newValue)
                 },
             },
-        },
+        }
     }
 </script>
 

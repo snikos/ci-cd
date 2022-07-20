@@ -22,7 +22,7 @@
             </div>
             <div class="input-group-append">
                 <div class="input-group-text">
-                    String repeats: {{stringRepeat}}
+                    String repeat: {{stringRepeat}}
                 </div>
             </div>
         </div>
