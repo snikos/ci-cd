@@ -3,7 +3,7 @@
         <li
                 class="list-group-item"
                 v-for="({commentText, commentName, commentDate, id}) in comments"
-                :key="commentDate + id"
+                :key="commentDate + '_' + id"
         >
             <div>
                 <strong>{{ id }}</strong> - {{ commentName }} ({{ commentDate }})

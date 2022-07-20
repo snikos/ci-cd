@@ -1,6 +1,6 @@
 <template>
-    <div class="row mongolia">
-        <h3 class="mongolia__title">Comment analytics</h3>
+    <div class="row jobMigration">
+        <h3 class="jobMigration__title">Comment analytics</h3>
         <div class="col-12">
             <HashInputBlock
                     v-model.trim="searchQuery"
@@ -30,14 +30,16 @@
 </template>
 
 <script>
-    import mongoliaJson from "@/json/comments-all-complete.json";
+    import Axios from "axios";
+    import migrationJobJson from "@/json/comments-all-mongolia.json";
     import HashTagBlock from "@/components/HashTagBlock";
     import HashInputBlock from "@/components/HashInputBlock";
     import ListCommentsButton from "@/components/ListCommentsButton";
     import ListComments from "@/components/ListComments";
     export default {
-        name: "MongoliaJson",
-        mongol:  mongoliaJson,
+        name: "MigrationJobJson",
+        //testJsonLoad: () => import("@/json/comments-all-mongolia.json"),
+        props: ["jsonLocation"],
         components: {
             HashTagBlock,
             HashInputBlock,
@@ -80,9 +82,14 @@
             async fetchComments() {
                 try {
                     setTimeout( async () => {
-                        const res = await mongoliaJson;
+                        const res = await migrationJobJson;
                         this.loadComments = [...res];
                         this.loadNextComments();
+
+                        await Axios.get("../json/comments-all-norway.json")
+                        .then( res => {
+                            console.log(res.data);
+                        } );
                     }, 500);
                 }
                 catch (e) {
@@ -151,10 +158,10 @@
 </script>
 
 <style scoped>
-    .mongolia {
+    .jobMigration {
         text-align: left;
     }
-    .mongolia__title {
+    .jobMigration__title {
         text-align: center;
         padding: 0 0 1em 0;
         margin: 0 auto;

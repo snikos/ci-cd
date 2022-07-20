@@ -29,7 +29,10 @@ const routes = [
   {
     path: '/local-json',
     name: 'LocalJson',
-    component: () => import('@/pages/LocalJson')
+    component: () => import('@/pages/LocalJson'),
+    props: {
+      jsonLocation: '@/json/'
+    }
   },
   {
     path: '/git-bash',
@@ -37,9 +40,9 @@ const routes = [
     component: () => import('@/pages/GitBash')
   },
   {
-    path: '/mongolia',
-    name: 'MongoliaJson',
-    component: () => import('@/pages/MongoliaJson')
+    path: '/migration-job',
+    name: 'MigrationJobJson',
+    component: () => import('@/pages/MigrationJobJson')
   },
   {
     path: '/irr-verbs',
