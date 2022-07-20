@@ -7,7 +7,7 @@
                     @searchInputQuery="searchHashButton($event)"
                     :stringRepeat="stringRepeat = comments.length"
             />
-            <MySelect v-model="selectedSort" :options="sortOptions" @change="testSelect" />
+            <MySelect v-model="selectedSort" :options="sortOptions" @change="countrySelect" />
         </div>
         <div class="col-12 col-md-3">
             <HashTagBlock
@@ -86,12 +86,12 @@
         },
         mounted() {
             this.fetchComments(this.selectedSort);
-            this.searchHashLength();
+            //this.searchHashLength();
         },
         methods: {
-            testSelect() {
+            countrySelect() {
                 this.fetchComments(this.selectedSort);
-                this.searchHashLength();
+                //this.searchHashLength();
             },
             async fetchComments( url ) {
                 try {
@@ -111,6 +111,9 @@
                 }
                 catch (e) {
                     console.log('Error load: ' + e)
+                }
+                finally {
+                    this.searchHashLength();
                 }
             },
             loadAllComments() {
