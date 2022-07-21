@@ -1,5 +1,7 @@
 <template>
-    <ul class="list-group">
+    <ul
+            class="list-group"
+            v-if="comments.length > 0">
         <li
                 class="list-group-item"
                 v-for="({commentText, commentName, commentDate, id}) in comments"
@@ -12,6 +14,9 @@
         </li>
         <li v-show="loading" class="loading">Loading...</li>
     </ul>
+    <div v-else class="commentNotFound">
+        Comments not found
+    </div>
 </template>
 
 <script>
@@ -30,5 +35,9 @@
 </script>
 
 <style scoped>
-
+    .commentNotFound {
+        padding: 1em 0;
+        margin: 0 auto;
+        text-align: center;
+    }
 </style>

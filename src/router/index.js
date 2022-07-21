@@ -29,10 +29,7 @@ const routes = [
   {
     path: '/local-json',
     name: 'LocalJson',
-    component: () => import('@/pages/LocalJson'),
-    props: {
-      jsonLocation: '@/json/'
-    }
+    component: () => import('@/pages/LocalJson')
   },
   {
     path: '/git-bash',

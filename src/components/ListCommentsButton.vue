@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="isCheckButton !== 1">
         <div class="btn-toolbar justify-content-sm-center mb-3">
             <div class="btn-group btn-group-sm mt-3">
                 <button

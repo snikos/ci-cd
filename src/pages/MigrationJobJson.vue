@@ -1,6 +1,6 @@
 <template>
     <div class="row jobMigration">
-        <h3 class="jobMigration__title">Comment analytics</h3>
+        <h3 class="jobMigration__title">Comment analytics: {{ currentCountry }}</h3>
         <div class="col-12">
             <HashInputBlock
                     v-model.trim="searchQuery"
@@ -13,6 +13,7 @@
             <HashTagBlock
                     @searchHash="searchHashButton"
                     :arrHash="arrayHashStrings"
+                    :activeValue="searchQuery"
                     :allCounter="allCounter"
             />
         </div>
@@ -93,10 +94,10 @@
                 this.fetchComments(this.selectedSort);
                 //this.searchHashLength();
             },
-            async fetchComments( url ) {
+            async fetchComments( countryName ) {
                 try {
                     setTimeout( async () => {
-                        await Axios.get(`../json/${url}.json`)
+                        await Axios.get(`../json/${countryName}.json`)
                         .then( result => {
                             let res = result.data;
                             //console.log(this.nextCount);
@@ -149,8 +150,8 @@
                 //console.log('search with button: ', search);
             },
             searchHashLength() {
-                this.allCounter = [];
                 setTimeout( () => {
+                    this.allCounter = [];
                     this.arrayHashStrings.forEach( (word) => {
                         this.searchQuery = (typeof word === 'object') ? Object.values(word)[0] : word;
                         let res = this.searchComments;
@@ -173,11 +174,15 @@
                         return commentText.toLowerCase().includes(txt.toLowerCase())
                     }) : commentText.toLowerCase().includes(word.toLowerCase());
                 });
-            }
+            },
+            currentCountry() {
+                return (this.selectedSort.split('-')[2]).toUpperCase();
+            },
         },
         watch: {
             stringRepeat() {
                 //console.log( this.stringRepeat, '; ', this.comments.length, '; ', this.loadComments.length, '; ', this.allCounter );
+                console.log('allCounter: ', this.allCounter);
             }
         }
     }

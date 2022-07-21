@@ -5,7 +5,7 @@
                     @click="$emit('searchHash', $event)"
                     :key="hash + index"
                     type="button"
-                    class="btn btn-success btn__left"
+                    :class="'btn btn__left ' + (hash === activeValue ? 'btn-active' : 'btn-success')"
                     :value="hash"
             >
                 {{ $filters.isObject(hash) ? Object.values(hash)[0] : hash }}
@@ -23,11 +23,16 @@
         data() {
             return {
                 windowWidth: window.innerWidth,
+                activeBtn: '',
             }
         },
         props: {
             arrHash: {
                 type: Array,
+                required: true,
+            },
+            activeValue: {
+                type: [String, Number],
                 required: true,
             },
             allCounter: {
