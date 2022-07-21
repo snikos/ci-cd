@@ -22,7 +22,7 @@
             </div>
             <div class="input-group-append">
                 <div class="input-group-text">
-                    String repeat: {{stringRepeat}}
+                    Overlap: {{stringRepeat}}
                 </div>
             </div>
         </div>

@@ -1,15 +1,15 @@
 <template>
     <div class="btn-toolbar pb-2">
         <div :class="`${windowWidth <= 770 ? '' : 'btn-group-vertical'} btn-group-sm`">
-            <button v-for="(hash, index) in arrHash"
+            <button v-for="(hash, key) in arrHash"
                     @click="$emit('searchHash', $event)"
-                    :key="hash + index"
+                    :key="hash + key"
                     type="button"
                     :class="'btn btn__left ' + (hash === activeValue ? 'btn-active' : 'btn-success')"
                     :value="hash"
             >
                 {{ $filters.isObject(hash) ? Object.values(hash)[0] : hash }}
-                <span class="badge badge-light">{{ allCounter[index] }}</span>
+                <span class="badge badge-light">{{ allCounter[key] }}</span>
                 <span class="sr-only">sr</span>
             </button>
         </div>
@@ -23,7 +23,6 @@
         data() {
             return {
                 windowWidth: window.innerWidth,
-                activeBtn: '',
             }
         },
         props: {
@@ -36,7 +35,7 @@
                 required: true,
             },
             allCounter: {
-                type: Array,
+                type: Object,
                 required: true,
             }
         },

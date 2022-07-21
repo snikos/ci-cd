@@ -2,12 +2,21 @@
     <div class="row jobMigration">
         <h3 class="jobMigration__title">Comment analytics: {{ currentCountry }}</h3>
         <div class="col-12">
-            <HashInputBlock
-                    v-model.trim="searchQuery"
-                    @searchInputQuery="searchHashButton($event)"
-                    :stringRepeat="stringRepeat = comments.length"
-            />
-            <MySelect v-model="selectedSort" :options="sortOptions" @change="countrySelect" />
+            <div class="row">
+                <div class="col-12 col-sm-8">
+                    <HashInputBlock
+                            v-model.trim="searchQuery"
+                            @searchInputQuery="searchHashButton($event)"
+                            :stringRepeat="stringRepeat = comments.length"
+                    />
+                </div>
+                <div class="col-12 col-sm-4">
+                    <MySelect
+                            v-model="selectedSort"
+                            :options="sortOptions"
+                            @change="countrySelect" />
+                </div>
+            </div>
         </div>
         <div class="col-12 col-md-3">
             <HashTagBlock
@@ -57,7 +66,6 @@
                 showCommentsAreDone: 0,
                 nextCount: 0,
                 comCount: 10,//100
-                searchQuery: '',
                 arrayHashStrings: [
                     'хочу',
                     'украин',
@@ -76,8 +84,9 @@
                     'viber',
                     ['@', 'mail', 'email']
                 ],
+                searchQuery: '',
                 stringRepeat: 0,
-                allCounter: [],
+                allCounter: {},
                 selectedSort: "comments-all-norway",
                 sortOptions: [
                     {name: "Mongolia", value: "comments-all-mongolia"},
@@ -87,25 +96,23 @@
         },
         mounted() {
             this.fetchComments(this.selectedSort);
-            //this.searchHashLength();
         },
         methods: {
             countrySelect() {
                 this.fetchComments(this.selectedSort);
-                //this.searchHashLength();
             },
             async fetchComments( countryName ) {
                 try {
                     setTimeout( async () => {
                         await Axios.get(`../json/${countryName}.json`)
                         .then( result => {
-                            let res = result.data;
+                            //let res = result.data;
                             //console.log(this.nextCount);
                             this.comments = [];
                             this.cur = [];
                             this.nextCount = 0;
                             this.showCommentsAreDone = 0;
-                            this.loadComments = [...res];
+                            this.loadComments = [...result.data];
                         } );
                         this.loadNextComments();
                     }, 500);
@@ -136,6 +143,7 @@
             searchHashButton(event) {
                 if (event.target.value) {
                     this.searchQuery = event.target.value;
+                    //console.log(event.target.value);
                 }
                 if (this.searchQuery.length <= 1) {
                     console.log('Add text!');
@@ -151,11 +159,10 @@
             },
             searchHashLength() {
                 setTimeout( () => {
-                    this.allCounter = [];
-                    this.arrayHashStrings.forEach( (word) => {
+                    this.arrayHashStrings.forEach( (word, index) => {
                         this.searchQuery = (typeof word === 'object') ? Object.values(word)[0] : word;
                         let res = this.searchComments;
-                        this.allCounter.push(res.length);
+                        this.allCounter[index] = res.length;
                     });
                 }, 1000);
             },
@@ -181,7 +188,7 @@
         },
         watch: {
             stringRepeat() {
-                //console.log( this.stringRepeat, '; ', this.comments.length, '; ', this.loadComments.length, '; ', this.allCounter );
+                //console.log( this.stringRepeat, '; ', this.comments.length, '; ', this.loadComments.length );
                 console.log('allCounter: ', this.allCounter);
             }
         }
