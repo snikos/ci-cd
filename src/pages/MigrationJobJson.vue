@@ -90,7 +90,9 @@
                 selectedSort: "comments-all-norway",
                 sortOptions: [
                     {name: "Mongolia", value: "comments-all-mongolia"},
-                    {name: "Norway", value: "comments-all-norway"}
+                    {name: "Norway", value: "comments-all-norway"},
+                    {name: "Praga", value: "comments-all-praga"},
+                    {name: "NewZeland", value: "comments-all-newzeland"}
                 ]
             }
         },
