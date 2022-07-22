@@ -82,12 +82,13 @@
                     'вайбер',
                     ['ватсап', 'watsapp'],
                     'viber',
-                    ['@', 'mail', 'email']
+                    ['@', 'mail', 'email'],
+                    ['+38', '8', '7']
                 ],
                 searchQuery: '',
                 stringRepeat: 0,
                 allCounter: {},
-                selectedSort: "comments-all-norway",
+                selectedSort: "comments-all-asia",
                 sortOptions: [
                     {name: "Asia", value: "comments-all-asia"},
                     {name: "AustriaVienna", value: "comments-all-austriavienna"},

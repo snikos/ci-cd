@@ -1,4 +1,7 @@
 <template>
+    <div v-show="loading" class="progressLoading">
+        Loading...
+    </div>
     <ul
             class="list-group"
             v-if="comments.length > 0">
@@ -12,10 +15,12 @@
                 <p>{{ commentText }}</p>
             </div>
         </li>
-        <li v-show="loading" class="loading">Loading...</li>
+        <li v-show="loading">
+            <p class="progressLoading">Loading...</p>
+        </li>
     </ul>
     <div v-else class="commentNotFound">
-        Comments not found
+        No comments found
     </div>
 </template>
 
@@ -35,7 +40,8 @@
 </script>
 
 <style scoped>
-    .commentNotFound {
+    .commentNotFound,
+    .progressLoading{
         padding: 1em 0;
         margin: 0 auto;
         text-align: center;
