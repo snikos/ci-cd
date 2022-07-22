@@ -15,9 +15,6 @@
                 <p>{{ commentText }}</p>
             </div>
         </li>
-        <li v-show="loading">
-            <p class="progressLoading">Loading...</p>
-        </li>
     </ul>
     <div v-else class="commentNotFound">
         No comments found
