@@ -92,7 +92,10 @@
                     {name: "Mongolia", value: "comments-all-mongolia"},
                     {name: "Norway", value: "comments-all-norway"},
                     {name: "Praga", value: "comments-all-praga"},
-                    {name: "NewZeland", value: "comments-all-newzeland"}
+                    {name: "NewZeland", value: "comments-all-newzeland"},
+                    {name: "AustriaVienna", value: "comments-all-austriavienna"},
+                    {name: "China1", value: "comments-all-china1"},
+                    {name: "Cuba", value: "comments-all-cuba"},
                 ]
             }
         },
@@ -108,8 +111,6 @@
                     setTimeout( async () => {
                         await Axios.get(`../json/${countryName}.json`)
                         .then( result => {
-                            //let res = result.data;
-                            //console.log(this.nextCount);
                             this.comments = [];
                             this.cur = [];
                             this.nextCount = 0;
