@@ -89,13 +89,18 @@
                 allCounter: {},
                 selectedSort: "comments-all-norway",
                 sortOptions: [
+                    {name: "Asia", value: "comments-all-asia"},
                     {name: "AustriaVienna", value: "comments-all-austriavienna"},
                     {name: "China1", value: "comments-all-china1"},
                     {name: "Cuba", value: "comments-all-cuba"},
                     {name: "Cyprus1", value: "comments-all-cyprus1"},
+                    {name: "Estonia", value: "comments-all-estonia"},
+                    {name: "Finland", value: "comments-all-finland"},
                     {name: "Germany1", value: "comments-all-germany1"},
                     {name: "Germany2", value: "comments-all-germany2"},
+                    {name: "Greenland", value: "comments-all-greenland"},
                     {name: "Indonesia", value: "comments-all-indonesia"},
+                    {name: "Israel", value: "comments-all-israel"},
                     {name: "Italy", value: "comments-all-italy"},
                     {name: "Italy2", value: "comments-all-italy2"},
                     {name: "Mongolia", value: "comments-all-mongolia"},
@@ -104,7 +109,9 @@
                     {name: "Norway", value: "comments-all-norway"},
                     {name: "Praga", value: "comments-all-praga"},
                     {name: "Spain", value: "comments-all-spain"},
-                    {name: "Turkey", value: "comments-all-turkey"}
+                    {name: "Tourism", value: "comments-all-tourism"},
+                    {name: "Turkey", value: "comments-all-turkey"},
+                    {name: "Volunteer", value: "comments-all-volunteer"}
                 ]
             }
         },
