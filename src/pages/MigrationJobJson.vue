@@ -68,6 +68,7 @@
                 comCount: 10,//100
                 arrayHashStrings: [],
                 searchQuery: '',
+                searchQueryTemp: '',
                 stringRepeat: 0,
                 allCounter: {},
                 selectedCountry: "comments-all-asia",
@@ -171,9 +172,16 @@
             },
             searchHashButton(event) {
                 if (event.target.value) {
-                    this.searchQuery = event.target.value;
-                    //console.log('Target: ', event.target.value);
+                    //this.searchQuery = event.target.value;
+                    this.arrayHashStrings.forEach( (word, index) => {
+                        word = (typeof word === 'object') ? Object.values(word)[0] : word;
+                        console.log('index: ', index, '|', event.target.value === word);
+                        if ( event.target.value === word ) {
+                            this.searchQuery = word;
+                        }
+                    });
                 }
+                //console.log(this.searchQuery)
                 if (this.searchQuery.length <= 1) {
                     console.log('Add text!');
                     return;
@@ -189,8 +197,9 @@
             searchHashLength() {
                 setTimeout( () => {
                     this.arrayHashStrings.forEach( (word, index) => {
-                        this.searchQuery = (typeof word === 'object') ? Object.values(word)[0] : word;
-                        let res = this.searchComments;
+                        //this.searchQuery = (typeof word === 'object') ? Object.values(word)[0] : word;
+                        this.searchQueryTemp = (typeof word === 'object') ? Object.values(word)[0] : word;
+                        let res = this.searchCommentsTemp;
                         this.allCounter[index] = res.length;
                     });
                 }, 1000);
@@ -212,6 +221,16 @@
                 });
                 return result;
             },
+            searchCommentsTemp() {
+                const result = this.loadComments.filter( ({ commentText }) => {
+                    let x = this.searchQueryTemp;
+                    let word = (x.includes(',')) ? x.split(',') : x;
+                    return x.includes(',') ? word.find( (txt) => {
+                        return commentText.toLowerCase().includes(txt.toLowerCase())
+                    }) : commentText.toLowerCase().includes(word.toLowerCase());
+                });
+                return result;
+            },
             currentCountry() {
                 return (this.selectedCountry.split('-')[2]).toUpperCase();
             },
@@ -225,7 +244,7 @@
                 //console.log('allCounter: ', this.allCounter);
             },
             searchQuery() {
-                //console.log('arrayHashStrings: ', this.arrayHashStrings)
+                console.log('this.searchQuery: ', this.searchQuery, this.searchQueryTemp)
             }
         }
     }
