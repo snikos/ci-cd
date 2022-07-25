@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-12 col-sm-4">
                     <MySelect
-                            v-model="selectedSort"
+                            v-model="selectedCountry"
                             :options="sortOptions"
                             @change="countrySelect" />
                 </div>
@@ -21,7 +21,7 @@
         <div class="col-12 col-md-3">
             <HashTagBlock
                     @searchHash="searchHashButton"
-                    :arrHash="arrayHashStrings"
+                    :arrHash="currentHashCollection"
                     :activeValue="searchQuery"
                     :allCounter="allCounter"
             />
@@ -66,29 +66,11 @@
                 showCommentsAreDone: 0,
                 nextCount: 0,
                 comCount: 10,//100
-                arrayHashStrings: [
-                    'хочу',
-                    'украин',
-                    'тел',
-                    'бур',
-                    'стаж',
-                    'врач',
-                    'работ',
-                    'монгол',
-                    'таджик',
-                    'учител',
-                    'англ',
-                    'охран',
-                    'вайбер',
-                    ['ватсап', 'watsapp'],
-                    'viber',
-                    ['@', 'mail', 'email'],
-                    ['+38', '8', '7']
-                ],
+                arrayHashStrings: [],
                 searchQuery: '',
                 stringRepeat: 0,
                 allCounter: {},
-                selectedSort: "comments-all-asia",
+                selectedCountry: "comments-all-asia",
                 sortOptions: [
                     {name: "Asia", value: "comments-all-asia"},
                     {name: "AustriaVienna", value: "comments-all-austriavienna"},
@@ -121,35 +103,53 @@
                     {name: "Tourism", value: "comments-all-tourism"},
                     {name: "Turkey", value: "comments-all-turkey"},
                     {name: "Volunteer", value: "comments-all-volunteer"}
-                ]
+                ],
             }
         },
         mounted() {
-            this.fetchComments(this.selectedSort);
+            this.fetchHashCountries(this.selectedCountry);
+            //this.fetchComments(this.selectedCountry);
         },
         methods: {
             countrySelect() {
-                this.fetchComments(this.selectedSort);
+                this.fetchHashCountries(this.selectedCountry);
+                //this.fetchComments(this.selectedCountry);
             },
-            async fetchComments( countryName ) {
+            async fetchHashCountries( countryName ) {
+                try {
+                    const country = String(countryName.split('-')[2]);
+                    await Axios.get('../json/hashCollection.json')
+                    .then( result => {
+                        let x = result.data[country];
+                        this.arrayHashStrings = x;
+                    });
+                    this.fetchComments(countryName);
+                } catch (e) {
+                    console.log('Error hash collection loading: ' + e);
+                } finally {
+                    //this.fetchComments(countryName);
+                }
+            },
+            fetchComments( countryName ) {
                 try {
                     setTimeout( async () => {
-                        await Axios.get(`../json/${countryName}.json`)
+                        Axios.get(`../json/${countryName}.json`)
                         .then( result => {
                             this.comments = [];
                             this.cur = [];
                             this.nextCount = 0;
                             this.showCommentsAreDone = 0;
                             this.loadComments = [...result.data];
-                        } );
+                        });
                         this.loadNextComments();
+                        this.searchHashLength();
                     }, 500);
                 }
                 catch (e) {
-                    console.log('Error load: ' + e)
+                    console.log('Error comments loading: ' + e)
                 }
                 finally {
-                    this.searchHashLength();
+                    //this.searchHashLength();
                 }
             },
             loadAllComments() {
@@ -165,13 +165,14 @@
                     this.loading = false;
                     if ( this.comments.length >= this.loadComments.length ) {
                         this.showCommentsAreDone = 1;
+                        this.nextCount = 0;
                     }
                 }, 1000);
             },
             searchHashButton(event) {
                 if (event.target.value) {
                     this.searchQuery = event.target.value;
-                    //console.log(event.target.value);
+                    //console.log('Target: ', event.target.value);
                 }
                 if (this.searchQuery.length <= 1) {
                     console.log('Add text!');
@@ -202,22 +203,29 @@
                 });
             },
             searchComments() {
-                return this.loadComments.filter( ({ commentText }) => {
+                const result = this.loadComments.filter( ({ commentText }) => {
                     let x = this.searchQuery;
                     let word = (x.includes(',')) ? x.split(',') : x;
                     return x.includes(',') ? word.find( (txt) => {
                         return commentText.toLowerCase().includes(txt.toLowerCase())
                     }) : commentText.toLowerCase().includes(word.toLowerCase());
                 });
+                return result;
             },
             currentCountry() {
-                return (this.selectedSort.split('-')[2]).toUpperCase();
+                return (this.selectedCountry.split('-')[2]).toUpperCase();
             },
+            currentHashCollection() {
+                return this.arrayHashStrings;
+            }
         },
         watch: {
             stringRepeat() {
-                //console.log( this.stringRepeat, '; ', this.comments.length, '; ', this.loadComments.length );
-                console.log('allCounter: ', this.allCounter);
+                //console.log( 'Watcher: ', this.stringRepeat, '; ', this.comments.length, '; ', this.loadComments.length );
+                //console.log('allCounter: ', this.allCounter);
+            },
+            searchQuery() {
+                //console.log('arrayHashStrings: ', this.arrayHashStrings)
             }
         }
     }
