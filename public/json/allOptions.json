@@ -1011,10 +1011,6 @@
       "value": "rabota-v-vengrii"
   },
   {
-      "name": "ZarplataProgrammistaVShveicarii",
-      "value": "zarplata-programmista-v-shveicarii"
-  },
-  {
       "name": "RabotaTreneromZaGranicey",
       "value": "rabota-trenerom-za-granicey"
   },
@@ -1063,10 +1059,6 @@
       "value": "rabochaya-viza-v-ispaniyu"
   },
   {
-      "name": "RabotaVrachomVBolgarii",
-      "value": "rabota-vrachom-v-bolgarii"
-  },
-  {
       "name": "RabotaVSemyeVGermanii",
       "value": "rabota-v-semye-v-germanii"
   },
@@ -1099,10 +1091,6 @@
       "value": "rabota-v-germanii"
   },
   {
-      "name": "RabotaVLatinskoyAmerike",
-      "value": "rabota-v-latinskoy-amerike"
-  },
-  {
       "name": "BezraboticaVNorvegii",
       "value": "bezrabotica-v-norvegii"
   },
@@ -1131,10 +1119,6 @@
       "value": "programmisty-v-izraile"
   },
   {
-      "name": "BezraboticaVShvecii",
-      "value": "bezrabotica-v-shvecii"
-  },
-  {
       "name": "RabotaVakansiiVKanade",
       "value": "rabota-vakansii-v-kanade"
   },
@@ -1149,10 +1133,6 @@
   {
       "name": "RabotaVJaponii",
       "value": "rabota-v-japonii"
-  },
-  {
-      "name": "RabotaVGamburge",
-      "value": "rabota-v-gamburge"
   },
   {
       "name": "ZarplatiVBolgarii",
@@ -1191,20 +1171,12 @@
       "value": "rabota-v-norvegii"
   },
   {
-      "name": "ZarplataVrachaVIspanii",
-      "value": "zarplata-vracha-v-ispanii"
-  },
-  {
       "name": "RabotaVChernogorii",
       "value": "rabota-v-chernogorii"
   },
   {
       "name": "RabotaVShotlandii",
       "value": "rabota-v-shotlandii"
-  },
-  {
-      "name": "MezhdunarodnayaTrudovayaMigraciya",
-      "value": "mezhdunarodnaya-trudovaya-migraciya"
   },
   {
       "name": "RabotaNaRodose",
@@ -1267,10 +1239,6 @@
       "value": "zarplata-programmista-v-germanii"
   },
   {
-      "name": "RabotaVTurine",
-      "value": "rabota-v-turine"
-  },
-  {
       "name": "RabotaVDohe",
       "value": "rabota-v-dohe"
   },
@@ -1283,20 +1251,12 @@
       "value": "vrachi-v-sirii"
   },
   {
-      "name": "RabochayaVisaVVengriyu",
-      "value": "rabochaya-visa-v-vengriyu"
-  },
-  {
       "name": "RabotaVMalaizii",
       "value": "rabota-v-malaizii"
   },
   {
       "name": "RabotaVNorvegiiNaNeftyanyhPlatformah",
       "value": "rabota-v-norvegii-na-neftyanyh-platformah"
-  },
-  {
-      "name": "VostrebovannyeProfessiiVFinlyandii",
-      "value": "vostrebovannye-professii-v-finlyandii"
   },
   {
       "name": "ZarplatyINalogiVGollandii",
@@ -1331,10 +1291,6 @@
       "value": "biznes-v-avstralii"
   },
   {
-      "name": "VrachiVEstonii",
-      "value": "vrachi-v-estonii"
-  },
-  {
       "name": "RabotaVLondoneDlyaRusskih",
       "value": "rabota-v-londone-dlya-russkih"
   },
@@ -1345,10 +1301,6 @@
   {
       "name": "ZarplataUchiteleyVMire",
       "value": "zarplata-uchiteley-v-mire"
-  },
-  {
-      "name": "ZanyatostNaseleniyaSsha",
-      "value": "zanyatost-naseleniya-ssha"
   },
   {
       "name": "RabochayaVisaVItaliyu",
@@ -1367,16 +1319,8 @@
       "value": "rabota-na-korable-dalnego-plavaniya"
   },
   {
-      "name": "SocialnayaRabotaVGermanii",
-      "value": "socialnaya-rabota-v-germanii"
-  },
-  {
       "name": "GolubayaKartaVGermaniyu",
       "value": "golubaya-karta-v-germaniyu"
-  },
-  {
-      "name": "RabotaVPeru",
-      "value": "rabota-v-peru"
   },
   {
       "name": "ProfessiiVYuzhnoiKoree",
