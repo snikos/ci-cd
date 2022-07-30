@@ -1,7 +1,7 @@
 <template>
     <div class="btn-toolbar pb-2">
         <div :class="`${windowWidth <= 770 ? '' : 'btn-group-vertical'} btn-group-sm`">
-            <button v-for="(hash, key) in arrHash"
+            <button v-for="(hash, key) in rewriteArrHash"
                     @click="$emit('searchHash', $event)"
                     :key="hash + key"
                     type="button"
@@ -42,6 +42,13 @@
         mounted() {
             window.onresize = () => {
                 this.windowWidth = window.innerWidth
+            }
+        },
+        computed: {
+            rewriteArrHash() {
+                return this.arrHash.map( (hash) => {
+                    return (typeof hash === 'object') ? Object.values(hash)['0'] : hash;
+                });
             }
         }
     }

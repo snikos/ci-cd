@@ -47,10 +47,6 @@
       "value": "rabota-v-novoi-zelandii"
   },
   {
-      "name": "ZarplataVGermaniiPoProfessiyam",
-      "value": "zarplata-v-germanii-po-professiyam"
-  },
-  {
       "name": "RabotaIVakansiiVTurcii",
       "value": "rabota-i-vakansii-v-turcii"
   },
@@ -67,16 +63,8 @@
       "value": "rabota-v-italii-bez-znaniya-yazyka"
   },
   {
-      "name": "BezraboticaVIndii",
-      "value": "bezrabotica-v-indii"
-  },
-  {
       "name": "RabotaVrachomNaKipre",
       "value": "rabota-vrachom-na-kipre"
-  },
-  {
-      "name": "ZarplataPoliceyskogoVGermanii",
-      "value": "zarplata-policeyskogo-v-germanii"
   },
   {
       "name": "RabotaNaBaliVIndonesii",
@@ -147,24 +135,8 @@
       "value": "rabota-v-karlovyh-varah"
   },
   {
-      "name": "ZarplataTrenerovPoFutbolu",
-      "value": "zarplata-trenerov-po-futbolu"
-  },
-  {
-      "name": "RabotaVKyolne",
-      "value": "rabota-v-kyolne"
-  },
-  {
       "name": "VostrebovannyeProfessiiVBolgarii",
       "value": "vostrebovannye-professii-v-bolgarii"
-  },
-  {
-      "name": "ProgrammistyVIndii",
-      "value": "programmisty-v-indii"
-  },
-  {
-      "name": "BezraboticaVShveicarii",
-      "value": "bezrabotica-v-shveicarii"
   },
   {
       "name": "RabotaNaSicilii",

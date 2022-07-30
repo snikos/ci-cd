@@ -91,7 +91,7 @@
                 try {
                     await Axios.get('../json/allOptions.json')
                     .then( res => {
-                        console.log(res.data);
+                        //console.log(res.data);
                         this.sortOptions = res.data;
                     })
                 } catch (e) {
@@ -103,8 +103,7 @@
                     const country = String(countryName);
                     await Axios.get('../json/hashCollection.json')
                     .then( result => {
-                        let x = result.data[country];
-                        this.arrayHashStrings = x;
+                        this.arrayHashStrings = result.data[country];
                     });
                     this.fetchComments(countryName);
                 } catch (e) {
@@ -155,9 +154,9 @@
             searchHashButton(event) {
                 if (event.target.value) {
                     //this.searchQuery = event.target.value;
-                    this.arrayHashStrings.forEach( (word, index) => {
+                    this.arrayHashStrings.forEach( (word) => {
+                        //console.log(event.target.value, '|', word, '|', (typeof word === 'object'));
                         word = (typeof word === 'object') ? Object.values(word)[0] : word;
-                        console.log('index: ', index, '|', event.target.value === word);
                         if ( event.target.value === word ) {
                             this.searchQuery = word;
                         }
@@ -194,24 +193,22 @@
                 });
             },
             searchComments() {
-                const result = this.loadComments.filter( ({ commentText }) => {
+                return this.loadComments.filter( ({ commentText }) => {
                     let x = this.searchQuery;
                     let word = (x.includes(',')) ? x.split(',') : x;
                     return x.includes(',') ? word.find( (txt) => {
                         return commentText.toLowerCase().includes(txt.toLowerCase())
                     }) : commentText.toLowerCase().includes(word.toLowerCase());
                 });
-                return result;
             },
             searchCommentsTemp() {
-                const result = this.loadComments.filter( ({ commentText }) => {
+                return this.loadComments.filter( ({ commentText }) => {
                     let x = this.searchQueryTemp;
                     let word = (x.includes(',')) ? x.split(',') : x;
                     return x.includes(',') ? word.find( (txt) => {
                         return commentText.toLowerCase().includes(txt.toLowerCase())
                     }) : commentText.toLowerCase().includes(word.toLowerCase());
                 });
-                return result;
             },
             currentCountry() {
                 //return (this.selectedCountry.split('-')[2]).toUpperCase();
@@ -229,8 +226,8 @@
             searchQuery() {
                 console.log('this.searchQuery: ', this.searchQuery, this.searchQueryTemp)
             },
-            selectedCountry() {
-                console.log('selectedCountry: ', this.selectedCountry);
+            arrayHashStrings() {
+                console.log('arrayHashStrings: ', this.arrayHashStrings);
             }
         }
     }
