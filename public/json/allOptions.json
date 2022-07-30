@@ -30,5 +30,1468 @@
   {"name": "Tourism", "value": "tourism"},
   {"name": "Turkey", "value": "turkey"},
   {"name": "Volunteer", "value": "volunteer"},
-  {"name": "Unemployee Italy", "value": "bezrabotica-v-italii"}
+  {
+      "name": "RabotaDlyaPensionerovZaGranicey",
+      "value": "rabota-dlya-pensionerov-za-granicey"
+  },
+  {
+      "name": "VakansiiVAfrike",
+      "value": "vakansii-v-afrike"
+  },
+  {
+      "name": "RabotaVPrage",
+      "value": "rabota-v-prage"
+  },
+  {
+      "name": "RabotaVNovoiZelandii",
+      "value": "rabota-v-novoi-zelandii"
+  },
+  {
+      "name": "ZarplataVGermaniiPoProfessiyam",
+      "value": "zarplata-v-germanii-po-professiyam"
+  },
+  {
+      "name": "RabotaIVakansiiVTurcii",
+      "value": "rabota-i-vakansii-v-turcii"
+  },
+  {
+      "name": "StroiteliVGermanii",
+      "value": "stroiteli-v-germanii"
+  },
+  {
+      "name": "RabotaVIspaniiBezZnaniyaYazyka",
+      "value": "rabota-v-ispanii-bez-znaniya-yazyka"
+  },
+  {
+      "name": "RabotaVItaliiBezZnaniyaYazyka",
+      "value": "rabota-v-italii-bez-znaniya-yazyka"
+  },
+  {
+      "name": "BezraboticaVIndii",
+      "value": "bezrabotica-v-indii"
+  },
+  {
+      "name": "RabotaVrachomNaKipre",
+      "value": "rabota-vrachom-na-kipre"
+  },
+  {
+      "name": "ZarplataPoliceyskogoVGermanii",
+      "value": "zarplata-policeyskogo-v-germanii"
+  },
+  {
+      "name": "RabotaNaBaliVIndonesii",
+      "value": "rabota-na-bali-v-indonesii"
+  },
+  {
+      "name": "RabotaNaKube",
+      "value": "rabota-na-kube"
+  },
+  {
+      "name": "RegistraciyaFirmyVGermanii",
+      "value": "registraciya-firmy-v-germanii"
+  },
+  {
+      "name": "RabotaVVene",
+      "value": "rabota-v-vene"
+  },
+  {
+      "name": "RabotaVrachomVKitae",
+      "value": "rabota-vrachom-v-kitae"
+  },
+  {
+      "name": "RabotaSidelkoiVItalii",
+      "value": "rabota-sidelkoi-v-italii"
+  },
+  {
+      "name": "RabotaVNicce",
+      "value": "rabota-v-nicce"
+  },
+  {
+      "name": "ZarplataNaKipre",
+      "value": "zarplata-na-kipre"
+  },
+  {
+      "name": "RabotaVMiunhene",
+      "value": "rabota-v-miunhene"
+  },
+  {
+      "name": "RabotaNaKrite",
+      "value": "rabota-na-krite"
+  },
+  {
+      "name": "RabotaVLimassole",
+      "value": "rabota-v-limassole"
+  },
+  {
+      "name": "VostrebovannyeProfessiiVPolshe",
+      "value": "vostrebovannye-professii-v-polshe"
+  },
+  {
+      "name": "ZarplataVIndii",
+      "value": "zarplata-v-indii"
+  },
+  {
+      "name": "RabotaVBolgarii",
+      "value": "rabota-v-bolgarii"
+  },
+  {
+      "name": "RabotaVDiusseldorfe",
+      "value": "rabota-v-diusseldorfe"
+  },
+  {
+      "name": "RabotaIZarplataVZheneve",
+      "value": "rabota-i-zarplata-v-zheneve"
+  },
+  {
+      "name": "RabotaVKarlovyhVarah",
+      "value": "rabota-v-karlovyh-varah"
+  },
+  {
+      "name": "ZarplataTrenerovPoFutbolu",
+      "value": "zarplata-trenerov-po-futbolu"
+  },
+  {
+      "name": "RabotaVKyolne",
+      "value": "rabota-v-kyolne"
+  },
+  {
+      "name": "VostrebovannyeProfessiiVBolgarii",
+      "value": "vostrebovannye-professii-v-bolgarii"
+  },
+  {
+      "name": "ProgrammistyVIndii",
+      "value": "programmisty-v-indii"
+  },
+  {
+      "name": "BezraboticaVShveicarii",
+      "value": "bezrabotica-v-shveicarii"
+  },
+  {
+      "name": "RabotaNaSicilii",
+      "value": "rabota-na-sicilii"
+  },
+  {
+      "name": "RabotaVMilane",
+      "value": "rabota-v-milane"
+  },
+  {
+      "name": "BezraboticaVItalii",
+      "value": "bezrabotica-v-italii"
+  },
+  {
+      "name": "ZarplataVTailande",
+      "value": "zarplata-v-tailande"
+  },
+  {
+      "name": "ZarplatyVItaliiPoProfessiyam",
+      "value": "zarplaty-v-italii-po-professiyam"
+  },
+  {
+      "name": "RabochayaVisaVAvstriyu",
+      "value": "rabochaya-visa-v-avstriyu"
+  },
+  {
+      "name": "InzheneryVKitae",
+      "value": "inzhenery-v-kitae"
+  },
+  {
+      "name": "RabotaVoVroclave2",
+      "value": "rabota-vo-vroclave-2"
+  },
+  {
+      "name": "ZarplataVLuxemburge",
+      "value": "zarplata-v-luxemburge"
+  },
+  {
+      "name": "RabotaVBangkokeDlyaRusskih",
+      "value": "rabota-v-bangkoke-dlya-russkih"
+  },
+  {
+      "name": "RabochijDenVSsha",
+      "value": "rabochij-den-v-ssha"
+  },
+  {
+      "name": "VostrebovannyeProfessiiVShveicariya",
+      "value": "vostrebovannye-professii-v-shveicariya"
+  },
+  {
+      "name": "RabotaIVakansiiVEgipte",
+      "value": "rabota-i-vakansii-v-egipte"
+  },
+  {
+      "name": "RabotaVUelse",
+      "value": "rabota-v-uelse"
+  },
+  {
+      "name": "BezraboticaVFinlyandii",
+      "value": "bezrabotica-v-finlyandii"
+  },
+  {
+      "name": "RabotaVKndr",
+      "value": "rabota-v-kndr"
+  },
+  {
+      "name": "MedsestryVTurcii",
+      "value": "medsestry-v-turcii"
+  },
+  {
+      "name": "RabotaVKolumbii",
+      "value": "rabota-v-kolumbii"
+  },
+  {
+      "name": "RabotaNaMaldivah",
+      "value": "rabota-na-maldivah"
+  },
+  {
+      "name": "ZarplataVDubae",
+      "value": "zarplata-v-dubae"
+  },
+  {
+      "name": "RabotaVBerline",
+      "value": "rabota-v-berline"
+  },
+  {
+      "name": "ZarplataUchitelyaVGermanii",
+      "value": "zarplata-uchitelya-v-germanii"
+  },
+  {
+      "name": "ZarplataVSaudovskoiAravii",
+      "value": "zarplata-v-saudovskoi-aravii"
+  },
+  {
+      "name": "RabotaVoditelemZaGranicey",
+      "value": "rabota-voditelem-za-granicey"
+  },
+  {
+      "name": "ZarplataVParizhe",
+      "value": "zarplata-v-parizhe"
+  },
+  {
+      "name": "VostrebovannyeProfessiiVKanade",
+      "value": "vostrebovannye-professii-v-kanade"
+  },
+  {
+      "name": "ZarplataVShvecii",
+      "value": "zarplata-v-shvecii"
+  },
+  {
+      "name": "ZarplataVoVietname",
+      "value": "zarplata-vo-vietname"
+  },
+  {
+      "name": "RabotaVItaliiBezPosrednikov",
+      "value": "rabota-v-italii-bez-posrednikov"
+  },
+  {
+      "name": "RabotaVRimini",
+      "value": "rabota-v-rimini"
+  },
+  {
+      "name": "RabotaDlyaZhenshinVItalii",
+      "value": "rabota-dlya-zhenshin-v-italii"
+  },
+  {
+      "name": "RabotaProgrammistomVYaponii",
+      "value": "rabota-programmistom-v-yaponii"
+  },
+  {
+      "name": "RabotaDlyaMoldovanSBiometricheskimPasportom",
+      "value": "rabota-dlya-moldovan-s-biometricheskim-pasportom"
+  },
+  {
+      "name": "SvarshikiVGermanii",
+      "value": "svarshiki-v-germanii"
+  },
+  {
+      "name": "VostrebovannyeProfessiiVGermanii",
+      "value": "vostrebovannye-professii-v-germanii"
+  },
+  {
+      "name": "RabotaVTanzanii",
+      "value": "rabota-v-tanzanii"
+  },
+  {
+      "name": "RabotaVAndorre",
+      "value": "rabota-v-andorre"
+  },
+  {
+      "name": "SrednyayaZarplataVKitae",
+      "value": "srednyaya-zarplata-v-kitae"
+  },
+  {
+      "name": "RabotaZaGraniceyDlyaGrazhdanUzbekistana",
+      "value": "rabota-za-granicey-dlya-grazhdan-uzbekistana"
+  },
+  {
+      "name": "RabotaVNorvegiiNaRybnomZavode",
+      "value": "rabota-v-norvegii-na-rybnom-zavode"
+  },
+  {
+      "name": "RabotaVArktike",
+      "value": "rabota-v-arktike"
+  },
+  {
+      "name": "VrachiVoFrancii",
+      "value": "vrachi-vo-francii"
+  },
+  {
+      "name": "RabotaVPortugalii",
+      "value": "rabota-v-portugalii"
+  },
+  {
+      "name": "RabotaIZarplataNaPhilippinah2",
+      "value": "rabota-i-zarplata-na-philippinah-2"
+  },
+  {
+      "name": "ZarplataVSirii",
+      "value": "zarplata-v-sirii"
+  },
+  {
+      "name": "RabotaVAzerbajdzhane",
+      "value": "rabota-v-azerbajdzhane"
+  },
+  {
+      "name": "ZarplatyProgrammistovVMire",
+      "value": "zarplaty-programmistov-v-mire"
+  },
+  {
+      "name": "BiznesVVengrii",
+      "value": "biznes-v-vengrii"
+  },
+  {
+      "name": "RabotaIVakansiiNaKipre",
+      "value": "rabota-i-vakansii-na-kipre"
+  },
+  {
+      "name": "RabotaVMonako",
+      "value": "rabota-v-monako"
+  },
+  {
+      "name": "RabotaDlyaDevushekZaGranicey",
+      "value": "rabota-dlya-devushek-za-granicey"
+  },
+  {
+      "name": "RabotaVTurizmeZaGranicej",
+      "value": "rabota-v-turizme-za-granicej"
+  },
+  {
+      "name": "ZarplataVPortugalii2",
+      "value": "zarplata-v-portugalii-2"
+  },
+  {
+      "name": "RabotaVolonteromZaGranicey",
+      "value": "rabota-volonterom-za-granicey"
+  },
+  {
+      "name": "RabotaVAzii",
+      "value": "rabota-v-azii"
+  },
+  {
+      "name": "RabochayaVisaVBolgariyu",
+      "value": "rabochaya-visa-v-bolgariyu"
+  },
+  {
+      "name": "SborYagodVFinlyandii",
+      "value": "sbor-yagod-v-finlyandii"
+  },
+  {
+      "name": "RabotaVTelAvive",
+      "value": "rabota-v-tel-avive"
+  },
+  {
+      "name": "RabotaVrachomVNorvegii",
+      "value": "rabota-vrachom-v-norvegii"
+  },
+  {
+      "name": "RabotaVEstonii",
+      "value": "rabota-v-estonii"
+  },
+  {
+      "name": "RabotaVGrenlandii",
+      "value": "rabota-v-grenlandii"
+  },
+  {
+      "name": "RabotaVMarsele",
+      "value": "rabota-v-marsele"
+  },
+  {
+      "name": "RabotaVIordanii",
+      "value": "rabota-v-iordanii"
+  },
+  {
+      "name": "RabotaUchitelemZaGranicey",
+      "value": "rabota-uchitelem-za-granicey"
+  },
+  {
+      "name": "ZarplataINalogiVGrecii",
+      "value": "zarplata-i-nalogi-v-grecii"
+  },
+  {
+      "name": "RabotaVMongolii",
+      "value": "rabota-v-mongolii"
+  },
+  {
+      "name": "RabotaPerevodchikomZaGranicei",
+      "value": "rabota-perevodchikom-za-granicei"
+  },
+  {
+      "name": "RabochayaVisaVHorvatiyu",
+      "value": "rabochaya-visa-v-horvatiyu"
+  },
+  {
+      "name": "RabotaIZarplataVBangladesh",
+      "value": "rabota-i-zarplata-v-bangladesh"
+  },
+  {
+      "name": "RabotaPoKontractyZaGranicey",
+      "value": "rabota-po-kontracty-za-granicey"
+  },
+  {
+      "name": "RabotaVLuxemburge",
+      "value": "rabota-v-luxemburge"
+  },
+  {
+      "name": "OtkrytFirmuVPolshe",
+      "value": "otkryt-firmu-v-polshe"
+  },
+  {
+      "name": "ZarplataVYuzhnoiKoree",
+      "value": "zarplata-v-yuzhnoi-koree"
+  },
+  {
+      "name": "RabotaIVakansiiVBelgii",
+      "value": "rabota-i-vakansii-v-belgii"
+  },
+  {
+      "name": "RabotaVManchestere",
+      "value": "rabota-v-manchestere"
+  },
+  {
+      "name": "ZarplataVRyazani",
+      "value": "zarplata-v-ryazani"
+  },
+  {
+      "name": "RabotaVGdanske",
+      "value": "rabota-v-gdanske"
+  },
+  {
+      "name": "ZarplataVSlovakii",
+      "value": "zarplata-v-slovakii"
+  },
+  {
+      "name": "BezraboticaVoFrancii",
+      "value": "bezrabotica-vo-francii"
+  },
+  {
+      "name": "RabotaVrachomVFinlyandii",
+      "value": "rabota-vrachom-v-finlyandii"
+  },
+  {
+      "name": "RabotaNaMaiorke",
+      "value": "rabota-na-maiorke"
+  },
+  {
+      "name": "ZarplataVHorvatii",
+      "value": "zarplata-v-horvatii"
+  },
+  {
+      "name": "RabotaZaGraniceyDlyaGrazhdanKazahstana",
+      "value": "rabota-za-granicey-dlya-grazhdan-kazahstana"
+  },
+  {
+      "name": "RabotaIVakansiiVDanii",
+      "value": "rabota-i-vakansii-v-danii"
+  },
+  {
+      "name": "ZarplataVPolshe",
+      "value": "zarplata-v-polshe"
+  },
+  {
+      "name": "RabotaIVakansiiVShveicarii",
+      "value": "rabota-i-vakansii-v-shveicarii"
+  },
+  {
+      "name": "RabotaVSanMarino",
+      "value": "rabota-v-san-marino"
+  },
+  {
+      "name": "ZarplataVFinlyandii",
+      "value": "zarplata-v-finlyandii"
+  },
+  {
+      "name": "RabotaIVakansiiVFinlyandii",
+      "value": "rabota-i-vakansii-v-finlyandii"
+  },
+  {
+      "name": "RabotaNaMalte",
+      "value": "rabota-na-malte"
+  },
+  {
+      "name": "RabotaVrachomVChehii",
+      "value": "rabota-vrachom-v-chehii"
+  },
+  {
+      "name": "ZanyatostNaseleniyaGermanii",
+      "value": "zanyatost-naseleniya-germanii"
+  },
+  {
+      "name": "RabotaVGuanchzhou",
+      "value": "rabota-v-guanchzhou"
+  },
+  {
+      "name": "ZarplataInzheneraVChehii",
+      "value": "zarplata-inzhenera-v-chehii"
+  },
+  {
+      "name": "RabotaVAfinah",
+      "value": "rabota-v-afinah"
+  },
+  {
+      "name": "RabotaVKrakove",
+      "value": "rabota-v-krakove"
+  },
+  {
+      "name": "RabotaVSshaDlyaBelorusov",
+      "value": "rabota-v-ssha-dlya-belorusov"
+  },
+  {
+      "name": "RabotaVKenii",
+      "value": "rabota-v-kenii"
+  },
+  {
+      "name": "RabochayaVisaVEstoniyu",
+      "value": "rabochaya-visa-v-estoniyu"
+  },
+  {
+      "name": "RabotaVStranahEvropi",
+      "value": "rabota-v-stranah-evropi"
+  },
+  {
+      "name": "RabotaVShanhae",
+      "value": "rabota-v-shanhae"
+  },
+  {
+      "name": "RabotaVrachomVTurcii",
+      "value": "rabota-vrachom-v-turcii"
+  },
+  {
+      "name": "ZarplataVLatvii",
+      "value": "zarplata-v-latvii"
+  },
+  {
+      "name": "RabotaVoditelemVEvrope",
+      "value": "rabota-voditelem-v-evrope"
+  },
+  {
+      "name": "RabotaVYuzhnoiKoree",
+      "value": "rabota-v-yuzhnoi-koree"
+  },
+  {
+      "name": "KakNaitiRabotuVEvrope",
+      "value": "kak-naiti-rabotu-v-evrope"
+  },
+  {
+      "name": "BezraboticaVIspanii",
+      "value": "bezrabotica-v-ispanii"
+  },
+  {
+      "name": "RabotaVAlzhire",
+      "value": "rabota-v-alzhire"
+  },
+  {
+      "name": "ZarplataINalogiVVengrii",
+      "value": "zarplata-i-nalogi-v-vengrii"
+  },
+  {
+      "name": "VolonteryVGermanii",
+      "value": "volontery-v-germanii"
+  },
+  {
+      "name": "RabotaVMadride",
+      "value": "rabota-v-madride"
+  },
+  {
+      "name": "UdalennayaRabotaZaGraniceyVInternete",
+      "value": "udalennaya-rabota-za-granicey-v-internete"
+  },
+  {
+      "name": "RabotaIVakansiiVIzraileBezPosrednikov",
+      "value": "rabota-i-vakansii-v-izraile-bez-posrednikov"
+  },
+  {
+      "name": "ZarplataVBrazilii",
+      "value": "zarplata-v-brazilii"
+  },
+  {
+      "name": "RabotaVGermaniiBezZnaniyaYazyka",
+      "value": "rabota-v-germanii-bez-znaniya-yazyka"
+  },
+  {
+      "name": "DokumentyDlyaRabocheiVisyVPolshu",
+      "value": "dokumenty-dlya-rabochei-visy-v-polshu"
+  },
+  {
+      "name": "InzheneryVIzraile",
+      "value": "inzhenery-v-izraile"
+  },
+  {
+      "name": "InzheneryVGermanii",
+      "value": "inzhenery-v-germanii"
+  },
+  {
+      "name": "ZarplataVoennosluzhashih",
+      "value": "zarplata-voennosluzhashih"
+  },
+  {
+      "name": "RabotaMedsestroiVPolshe",
+      "value": "rabota-medsestroi-v-polshe"
+  },
+  {
+      "name": "RabotaVAlikante",
+      "value": "rabota-v-alikante"
+  },
+  {
+      "name": "KakPoehatZagranicuBesplatno",
+      "value": "kak-poehat-zagranicu-besplatno"
+  },
+  {
+      "name": "ZarplataVDanii",
+      "value": "zarplata-v-danii"
+  },
+  {
+      "name": "KakNaitiRabotuVIspanii",
+      "value": "kak-naiti-rabotu-v-ispanii"
+  },
+  {
+      "name": "RabotaVOslo",
+      "value": "rabota-v-oslo"
+  },
+  {
+      "name": "RabotaVDubae",
+      "value": "rabota-v-dubae"
+  },
+  {
+      "name": "RabotaVIspanii",
+      "value": "rabota-v-ispanii"
+  },
+  {
+      "name": "ZarplataVChernogorii",
+      "value": "zarplata-v-chernogorii"
+  },
+  {
+      "name": "RabotaNaShriLanke",
+      "value": "rabota-na-shri-lanke"
+  },
+  {
+      "name": "SborYagodVShvecii",
+      "value": "sbor-yagod-v-shvecii"
+  },
+  {
+      "name": "RabotaVChehiiBezPosrednikov",
+      "value": "rabota-v-chehii-bez-posrednikov"
+  },
+  {
+      "name": "RabotaVRige",
+      "value": "rabota-v-rige"
+  },
+  {
+      "name": "RabotaVOae",
+      "value": "rabota-v-oae"
+  },
+  {
+      "name": "RabotaVOmane",
+      "value": "rabota-v-omane"
+  },
+  {
+      "name": "RabotaVEkvadore",
+      "value": "rabota-v-ekvadore"
+  },
+  {
+      "name": "RabotaVHelsinki",
+      "value": "rabota-v-helsinki"
+  },
+  {
+      "name": "BezraboticaVChekhii",
+      "value": "bezrabotica-v-chekhii"
+  },
+  {
+      "name": "RabotaVAngole",
+      "value": "rabota-v-angole"
+  },
+  {
+      "name": "SrednyayaZarplataVAnglii",
+      "value": "srednyaya-zarplata-v-anglii"
+  },
+  {
+      "name": "RabotaInzheneromZaGranicei",
+      "value": "rabota-inzhenerom-za-granicei"
+  },
+  {
+      "name": "RabotaVPekine",
+      "value": "rabota-v-pekine"
+  },
+  {
+      "name": "InzheneryVAvstralii",
+      "value": "inzhenery-v-avstralii"
+  },
+  {
+      "name": "RabotaIVakansiiVSlovenii",
+      "value": "rabota-i-vakansii-v-slovenii"
+  },
+  {
+      "name": "RabotaIVakansiiVKitae",
+      "value": "rabota-i-vakansii-v-kitae"
+  },
+  {
+      "name": "RabotaVAmsterdame",
+      "value": "rabota-v-amsterdame"
+  },
+  {
+      "name": "RabotaVrachomVPolshe",
+      "value": "rabota-vrachom-v-polshe"
+  },
+  {
+      "name": "RabotaVValensii",
+      "value": "rabota-v-valensii"
+  },
+  {
+      "name": "RabotaIVakansiiVAvstrii",
+      "value": "rabota-i-vakansii-v-avstrii"
+  },
+  {
+      "name": "RabotaVVarshaveBezPosrednikov",
+      "value": "rabota-v-varshave-bez-posrednikov"
+  },
+  {
+      "name": "RabotaVParige",
+      "value": "rabota-v-parige"
+  },
+  {
+      "name": "RabotaVNiurnberge",
+      "value": "rabota-v-niurnberge"
+  },
+  {
+      "name": "ProgrammistyVAnglii",
+      "value": "programmisty-v-anglii"
+  },
+  {
+      "name": "VostrebovannyeProfessiiVIspanii",
+      "value": "vostrebovannye-professii-v-ispanii"
+  },
+  {
+      "name": "RabotaVoFrankfurteNaMajne",
+      "value": "rabota-vo-frankfurte-na-majne"
+  },
+  {
+      "name": "RabotaIVakansiiVLatvii",
+      "value": "rabota-i-vakansii-v-latvii"
+  },
+  {
+      "name": "RabotaVPattaye",
+      "value": "rabota-v-pattaye"
+  },
+  {
+      "name": "RabotaIVakansiiVThailande",
+      "value": "rabota-i-vakansii-v-thailande"
+  },
+  {
+      "name": "ZarplataVEstonii",
+      "value": "zarplata-v-estonii"
+  },
+  {
+      "name": "RabotaIVakansiiVTunise",
+      "value": "rabota-i-vakansii-v-tunise"
+  },
+  {
+      "name": "ZarplatyVoFranciiPoProfessiyam",
+      "value": "zarplaty-vo-francii-po-professiyam"
+  },
+  {
+      "name": "ZarplatyVBelgii",
+      "value": "zarplaty-v-belgii"
+  },
+  {
+      "name": "RabotaIVakansiiVVenesuele",
+      "value": "rabota-i-vakansii-v-venesuele"
+  },
+  {
+      "name": "RabotaIVakansiiVIndii",
+      "value": "rabota-i-vakansii-v-indii"
+  },
+  {
+      "name": "KakStatDiplomatom",
+      "value": "kak-stat-diplomatom"
+  },
+  {
+      "name": "RabotaVrachomVSaudovskojAravii",
+      "value": "rabota-vrachom-v-saudovskoj-aravii"
+  },
+  {
+      "name": "RabotaProgrammistomVChehii",
+      "value": "rabota-programmistom-v-chehii"
+  },
+  {
+      "name": "BezraboticaVTurcii",
+      "value": "bezrabotica-v-turcii"
+  },
+  {
+      "name": "RabotaStroitelemVPolshe",
+      "value": "rabota-stroitelem-v-polshe"
+  },
+  {
+      "name": "ProgrammistyVFinlyandii",
+      "value": "programmisty-v-finlyandii"
+  },
+  {
+      "name": "TrudoustroistvoVPolshe",
+      "value": "trudoustroistvo-v-polshe"
+  },
+  {
+      "name": "RabotaVQatare",
+      "value": "rabota-v-qatare"
+  },
+  {
+      "name": "ZarplataVTurcii",
+      "value": "zarplata-v-turcii"
+  },
+  {
+      "name": "RabotaIVakansiiVIslandii",
+      "value": "rabota-i-vakansii-v-islandii"
+  },
+  {
+      "name": "RabotaVBarcelone",
+      "value": "rabota-v-barcelone"
+  },
+  {
+      "name": "RabotaVrachomZaGranicey",
+      "value": "rabota-vrachom-za-granicey"
+  },
+  {
+      "name": "RabotaVLihtenshtejne",
+      "value": "rabota-v-lihtenshtejne"
+  },
+  {
+      "name": "RabotaIVakansiiVAnglii",
+      "value": "rabota-i-vakansii-v-anglii"
+  },
+  {
+      "name": "RabotaVSidnee",
+      "value": "rabota-v-sidnee"
+  },
+  {
+      "name": "RabotaZaGraniceyDlyaStudentov",
+      "value": "rabota-za-granicey-dlya-studentov"
+  },
+  {
+      "name": "ZarplataVLitve",
+      "value": "zarplata-v-litve"
+  },
+  {
+      "name": "RabotaVBudve",
+      "value": "rabota-v-budve"
+  },
+  {
+      "name": "RabotaVrachomVShveicarii",
+      "value": "rabota-vrachom-v-shveicarii"
+  },
+  {
+      "name": "RabotaVrachomVAfrike",
+      "value": "rabota-vrachom-v-afrike"
+  },
+  {
+      "name": "RabotaVMakedonii",
+      "value": "rabota-v-makedonii"
+  },
+  {
+      "name": "RabotaDlyaStudentovVGermanii",
+      "value": "rabota-dlya-studentov-v-germanii"
+  },
+  {
+      "name": "BiznesVIspanii",
+      "value": "biznes-v-ispanii"
+  },
+  {
+      "name": "RabotaVKuveite",
+      "value": "rabota-v-kuveite"
+  },
+  {
+      "name": "VrachiVChernogorii",
+      "value": "vrachi-v-chernogorii"
+  },
+  {
+      "name": "RabotaVSaudovskoiAravii",
+      "value": "rabota-v-saudovskoi-aravii"
+  },
+  {
+      "name": "RabotaVOffshore",
+      "value": "rabota-v-offshore"
+  },
+  {
+      "name": "GolubayaKartaEs",
+      "value": "golubaya-karta-es"
+  },
+  {
+      "name": "RabotaVStokgolme",
+      "value": "rabota-v-stokgolme"
+  },
+  {
+      "name": "SborApelsinovVIspanii",
+      "value": "sbor-apelsinov-v-ispanii"
+  },
+  {
+      "name": "RabochayaVisaVGreciyu",
+      "value": "rabochaya-visa-v-greciyu"
+  },
+  {
+      "name": "RabotaVChili",
+      "value": "rabota-v-chili"
+  },
+  {
+      "name": "RabotaVLitveBezPosrednikov",
+      "value": "rabota-v-litve-bez-posrednikov"
+  },
+  {
+      "name": "RabotaVSirii",
+      "value": "rabota-v-sirii"
+  },
+  {
+      "name": "RabochayaVisaVNorvegiyu",
+      "value": "rabochaya-visa-v-norvegiyu"
+  },
+  {
+      "name": "RabotaVYuar",
+      "value": "rabota-v-yuar"
+  },
+  {
+      "name": "RabotaVrachomVYaponii",
+      "value": "rabota-vrachom-v-yaponii"
+  },
+  {
+      "name": "RabotaVDubline",
+      "value": "rabota-v-dubline"
+  },
+  {
+      "name": "RabotaIZarplataVRime",
+      "value": "rabota-i-zarplata-v-rime"
+  },
+  {
+      "name": "RabotaVCyurihe",
+      "value": "rabota-v-cyurihe"
+  },
+  {
+      "name": "RabotaVAlbanii",
+      "value": "rabota-v-albanii"
+  },
+  {
+      "name": "RabotaVrachomVGermanii",
+      "value": "rabota-vrachom-v-germanii"
+  },
+  {
+      "name": "RabotaVTehase",
+      "value": "rabota-v-tehase"
+  },
+  {
+      "name": "RabotaVPoznani",
+      "value": "rabota-v-poznani"
+  },
+  {
+      "name": "RabotaNaYamajke",
+      "value": "rabota-na-yamajke"
+  },
+  {
+      "name": "RabotaNaGoa",
+      "value": "rabota-na-goa"
+  },
+  {
+      "name": "RabotaVVilnuse",
+      "value": "rabota-v-vilnuse"
+  },
+  {
+      "name": "RabotaNaMavrikie",
+      "value": "rabota-na-mavrikie"
+  },
+  {
+      "name": "RabotaVDominikane",
+      "value": "rabota-v-dominikane"
+  },
+  {
+      "name": "RabotaIZarplataVBrazilii",
+      "value": "rabota-i-zarplata-v-brazilii"
+  },
+  {
+      "name": "RabotaVHurgade",
+      "value": "rabota-v-hurgade"
+  },
+  {
+      "name": "VostrebovannyeProfessiiVKitae",
+      "value": "vostrebovannye-professii-v-kitae"
+  },
+  {
+      "name": "ZarplataVChite",
+      "value": "zarplata-v-chite"
+  },
+  {
+      "name": "RabotaVKaire",
+      "value": "rabota-v-kaire"
+  },
+  {
+      "name": "RabotaVVengrii",
+      "value": "rabota-v-vengrii"
+  },
+  {
+      "name": "ZarplataProgrammistaVShveicarii",
+      "value": "zarplata-programmista-v-shveicarii"
+  },
+  {
+      "name": "RabotaTreneromZaGranicey",
+      "value": "rabota-trenerom-za-granicey"
+  },
+  {
+      "name": "RabotaVKanadeBezZnaniyaYazyka",
+      "value": "rabota-v-kanade-bez-znaniya-yazyka"
+  },
+  {
+      "name": "RabotaVEkvatorialnoiGvinei",
+      "value": "rabota-v-ekvatorialnoi-gvinei"
+  },
+  {
+      "name": "VostrebovannyeProfessiiVYaponii",
+      "value": "vostrebovannye-professii-v-yaponii"
+  },
+  {
+      "name": "RabotaStroitelemZaGranicey",
+      "value": "rabota-stroitelem-za-granicey"
+  },
+  {
+      "name": "RabotaIVakansiiVArgentine",
+      "value": "rabota-i-vakansii-v-argentine"
+  },
+  {
+      "name": "RabotaGidomZaGranicey",
+      "value": "rabota-gidom-za-granicey"
+  },
+  {
+      "name": "KakNaytiRabotuZaGranicey2",
+      "value": "kak-nayti-rabotu-za-granicey-2"
+  },
+  {
+      "name": "RabotaVHorvatii",
+      "value": "rabota-v-horvatii"
+  },
+  {
+      "name": "PriglashenieNaRabotuVPolshe",
+      "value": "priglashenie-na-rabotu-v-polshe"
+  },
+  {
+      "name": "SborMandarinovVAbhazii",
+      "value": "sbor-mandarinov-v-abhazii"
+  },
+  {
+      "name": "RabochayaVizaVIspaniyu",
+      "value": "rabochaya-viza-v-ispaniyu"
+  },
+  {
+      "name": "RabotaVrachomVBolgarii",
+      "value": "rabota-vrachom-v-bolgarii"
+  },
+  {
+      "name": "RabotaVSemyeVGermanii",
+      "value": "rabota-v-semye-v-germanii"
+  },
+  {
+      "name": "VakansiiVShvecii",
+      "value": "vakansii-v-shvecii"
+  },
+  {
+      "name": "RabotaVMarokko",
+      "value": "rabota-v-marokko"
+  },
+  {
+      "name": "RabotaIVakansiiVGrecii",
+      "value": "rabota-i-vakansii-v-grecii"
+  },
+  {
+      "name": "RabotaIVakansiiVSerbii",
+      "value": "rabota-i-vakansii-v-serbii"
+  },
+  {
+      "name": "VolonteryNaOlimpiadu",
+      "value": "volontery-na-olimpiadu"
+  },
+  {
+      "name": "RabotaVKambodzhe",
+      "value": "rabota-v-kambodzhe"
+  },
+  {
+      "name": "RabotaVGermanii",
+      "value": "rabota-v-germanii"
+  },
+  {
+      "name": "RabotaVLatinskoyAmerike",
+      "value": "rabota-v-latinskoy-amerike"
+  },
+  {
+      "name": "BezraboticaVNorvegii",
+      "value": "bezrabotica-v-norvegii"
+  },
+  {
+      "name": "RabochayaVizaVIrlandiyu",
+      "value": "rabochaya-viza-v-irlandiyu"
+  },
+  {
+      "name": "RabotaVSeule",
+      "value": "rabota-v-seule"
+  },
+  {
+      "name": "SrednyaZarplataVShveicarii",
+      "value": "srednya-zarplata-v-shveicarii"
+  },
+  {
+      "name": "VrachiVIzraile",
+      "value": "vrachi-v-izraile"
+  },
+  {
+      "name": "VisyIRabotaNaShpicbergene",
+      "value": "visy-i-rabota-na-shpicbergene"
+  },
+  {
+      "name": "ProgrammistyVIzraile",
+      "value": "programmisty-v-izraile"
+  },
+  {
+      "name": "BezraboticaVShvecii",
+      "value": "bezrabotica-v-shvecii"
+  },
+  {
+      "name": "RabotaVakansiiVKanade",
+      "value": "rabota-vakansii-v-kanade"
+  },
+  {
+      "name": "SocialnayaRabotaZaRubezhom",
+      "value": "socialnaya-rabota-za-rubezhom"
+  },
+  {
+      "name": "KakNaytiRabotuZaGranicey",
+      "value": "kak-nayti-rabotu-za-granicey"
+  },
+  {
+      "name": "RabotaVJaponii",
+      "value": "rabota-v-japonii"
+  },
+  {
+      "name": "RabotaVGamburge",
+      "value": "rabota-v-gamburge"
+  },
+  {
+      "name": "ZarplatiVBolgarii",
+      "value": "zarplati-v-bolgarii"
+  },
+  {
+      "name": "SrednyaZarplataVChehii",
+      "value": "srednya-zarplata-v-chehii"
+  },
+  {
+      "name": "RabotaVAfrike",
+      "value": "rabota-v-afrike"
+  },
+  {
+      "name": "RabotaMedsestroiVGermanii",
+      "value": "rabota-medsestroi-v-germanii"
+  },
+  {
+      "name": "ZarplataVAmurskoiOblasti",
+      "value": "zarplata-v-amurskoi-oblasti"
+  },
+  {
+      "name": "RabotaAnimatoromZaGranicey",
+      "value": "rabota-animatorom-za-granicey"
+  },
+  {
+      "name": "RabotaIVakansiiVSlovakii",
+      "value": "rabota-i-vakansii-v-slovakii"
+  },
+  {
+      "name": "RabotaNaSeyshelah",
+      "value": "rabota-na-seyshelah"
+  },
+  {
+      "name": "RabotaVNorvegii",
+      "value": "rabota-v-norvegii"
+  },
+  {
+      "name": "ZarplataVrachaVIspanii",
+      "value": "zarplata-vracha-v-ispanii"
+  },
+  {
+      "name": "RabotaVChernogorii",
+      "value": "rabota-v-chernogorii"
+  },
+  {
+      "name": "RabotaVShotlandii",
+      "value": "rabota-v-shotlandii"
+  },
+  {
+      "name": "MezhdunarodnayaTrudovayaMigraciya",
+      "value": "mezhdunarodnaya-trudovaya-migraciya"
+  },
+  {
+      "name": "RabotaNaRodose",
+      "value": "rabota-na-rodose"
+  },
+  {
+      "name": "BiznesVGermanii",
+      "value": "biznes-v-germanii"
+  },
+  {
+      "name": "RabotaVRumynii",
+      "value": "rabota-v-rumynii"
+  },
+  {
+      "name": "ZarplataVNorvegii",
+      "value": "zarplata-v-norvegii"
+  },
+  {
+      "name": "VakansiiZaGraniceyBezPosrednikov",
+      "value": "vakansii-za-granicey-bez-posrednikov"
+  },
+  {
+      "name": "BiznesVPolshe",
+      "value": "biznes-v-polshe"
+  },
+  {
+      "name": "RabotaVGonkonge",
+      "value": "rabota-v-gonkonge"
+  },
+  {
+      "name": "RabotaVStambule",
+      "value": "rabota-v-stambule"
+  },
+  {
+      "name": "BiznesVAvstrii",
+      "value": "biznes-v-avstrii"
+  },
+  {
+      "name": "RabotaVGermaniiNaFerme",
+      "value": "rabota-v-germanii-na-ferme"
+  },
+  {
+      "name": "RabotaVAfganistane",
+      "value": "rabota-v-afganistane"
+  },
+  {
+      "name": "RabotaIVakansiiVoFrancii",
+      "value": "rabota-i-vakansii-vo-francii"
+  },
+  {
+      "name": "PoliciyaVGermanii",
+      "value": "policiya-v-germanii"
+  },
+  {
+      "name": "RabotaVLivii",
+      "value": "rabota-v-livii"
+  },
+  {
+      "name": "ZarplataProgrammistaVGermanii",
+      "value": "zarplata-programmista-v-germanii"
+  },
+  {
+      "name": "RabotaVTurine",
+      "value": "rabota-v-turine"
+  },
+  {
+      "name": "RabotaVDohe",
+      "value": "rabota-v-dohe"
+  },
+  {
+      "name": "RabotaNaTenerife",
+      "value": "rabota-na-tenerife"
+  },
+  {
+      "name": "VrachiVSirii",
+      "value": "vrachi-v-sirii"
+  },
+  {
+      "name": "RabochayaVisaVVengriyu",
+      "value": "rabochaya-visa-v-vengriyu"
+  },
+  {
+      "name": "RabotaVMalaizii",
+      "value": "rabota-v-malaizii"
+  },
+  {
+      "name": "RabotaVNorvegiiNaNeftyanyhPlatformah",
+      "value": "rabota-v-norvegii-na-neftyanyh-platformah"
+  },
+  {
+      "name": "VostrebovannyeProfessiiVFinlyandii",
+      "value": "vostrebovannye-professii-v-finlyandii"
+  },
+  {
+      "name": "ZarplatyINalogiVGollandii",
+      "value": "zarplaty-i-nalogi-v-gollandii"
+  },
+  {
+      "name": "RabotaIVakansiiNaAlyaske",
+      "value": "rabota-i-vakansii-na-alyaske"
+  },
+  {
+      "name": "RabotaVGermaniiDlyaSemeynoiPary",
+      "value": "rabota-v-germanii-dlya-semeynoi-pary"
+  },
+  {
+      "name": "RabotaVIrake",
+      "value": "rabota-v-irake"
+  },
+  {
+      "name": "RabotaVTalline",
+      "value": "rabota-v-talline"
+  },
+  {
+      "name": "RabotaNaOstroveFrancaIosifa",
+      "value": "rabota-na-ostrove-franca-iosifa"
+  },
+  {
+      "name": "RabotaVoFrancii",
+      "value": "rabota-vo-francii"
+  },
+  {
+      "name": "BiznesVAvstralii",
+      "value": "biznes-v-avstralii"
+  },
+  {
+      "name": "VrachiVEstonii",
+      "value": "vrachi-v-estonii"
+  },
+  {
+      "name": "RabotaVLondoneDlyaRusskih",
+      "value": "rabota-v-londone-dlya-russkih"
+  },
+  {
+      "name": "StazhirovkaVIzraile",
+      "value": "stazhirovka-v-izraile"
+  },
+  {
+      "name": "ZarplataUchiteleyVMire",
+      "value": "zarplata-uchiteley-v-mire"
+  },
+  {
+      "name": "ZanyatostNaseleniyaSsha",
+      "value": "zanyatost-naseleniya-ssha"
+  },
+  {
+      "name": "RabochayaVisaVItaliyu",
+      "value": "rabochaya-visa-v-italiyu"
+  },
+  {
+      "name": "ZarplatyVSaratove",
+      "value": "zarplaty-v-saratove"
+  },
+  {
+      "name": "RabotaVakansiiVIrane",
+      "value": "rabota-vakansii-v-irane"
+  },
+  {
+      "name": "RabotaNaKorableDalnegoPlavaniya",
+      "value": "rabota-na-korable-dalnego-plavaniya"
+  },
+  {
+      "name": "SocialnayaRabotaVGermanii",
+      "value": "socialnaya-rabota-v-germanii"
+  },
+  {
+      "name": "GolubayaKartaVGermaniyu",
+      "value": "golubaya-karta-v-germaniyu"
+  },
+  {
+      "name": "RabotaVPeru",
+      "value": "rabota-v-peru"
+  },
+  {
+      "name": "ProfessiiVYuzhnoiKoree",
+      "value": "professii-v-yuzhnoi-koree"
+  },
+  {
+      "name": "RabotaVBahreine",
+      "value": "rabota-v-bahreine"
+  },
+  {
+      "name": "RabotaVMianme",
+      "value": "rabota-v-mianme"
+  },
+  {
+      "name": "RabotaVAvstralii",
+      "value": "rabota-v-avstralii"
+  },
+  {
+      "name": "RabotaVKostaRike",
+      "value": "rabota-v-kosta-rike"
+  },
+  {
+      "name": "RabotaZaGraniceyBezZnaniyaYazyka",
+      "value": "rabota-za-granicey-bez-znaniya-yazyka"
+  },
+  {
+      "name": "RabotaVAbuDabi",
+      "value": "rabota-v-abu-dabi"
+  },
+  {
+      "name": "BezraboticaVVelikobritanii",
+      "value": "bezrabotica-v-velikobritanii"
+  },
+  {
+      "name": "RabotaVIrlandii",
+      "value": "rabota-v-irlandii"
+  },
+  {
+      "name": "RabotaVMeksike",
+      "value": "rabota-v-meksike"
+  },
+  {
+      "name": "RabotaVPolsheBezPosrednikov",
+      "value": "rabota-v-polshe-bez-posrednikov"
+  },
+  {
+      "name": "RabotaNaGavajskixOstrovax",
+      "value": "rabota-na-gavajskix-ostrovax"
+  },
+  {
+      "name": "ZarplataFsb",
+      "value": "zarplata-fsb"
+  },
+  {
+      "name": "RabotaIVakansiiVoVietname",
+      "value": "rabota-i-vakansii-vo-vietname"
+  },
+  {
+      "name": "RabotaVAntarktide",
+      "value": "rabota-v-antarktide"
+  },
+  {
+      "name": "ZarplataVAvstrii",
+      "value": "zarplata-v-avstrii"
+  },
+  {
+      "name": "VolonteryNaChempionatMira2022",
+      "value": "volontery-na-chempionat-mira-2022"
+  },
+  {
+      "name": "RabotaVoditelemVGermanii",
+      "value": "rabota-voditelem-v-germanii"
+  },
+  {
+      "name": "ZarplataVYaponii",
+      "value": "zarplata-v-yaponii"
+  },
+  {
+      "name": "BezraboticaVJaponii",
+      "value": "bezrabotica-v-japonii"
+  },
+  {
+      "name": "RabotaVrachomVIspanii",
+      "value": "rabota-vrachom-v-ispanii"
+  },
+  {
+      "name": "SezonnayaRabotaZaGranicey",
+      "value": "sezonnaya-rabota-za-granicey"
+  }
 ]
