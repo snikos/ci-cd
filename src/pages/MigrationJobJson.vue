@@ -84,6 +84,7 @@
         },
         methods: {
             countrySelect() {
+                this.searchQuery = '';
                 this.fetchHashCountries(this.selectedCountry);
                 //this.fetchComments(this.selectedCountry);
             },
@@ -163,7 +164,7 @@
                     });
                 }
                 //console.log(this.searchQuery)
-                if (this.searchQuery.length <= 1) {
+                if (this.searchQuery.length < 1) {
                     console.log('Add text!');
                     return;
                 }
@@ -193,13 +194,15 @@
                 });
             },
             searchComments() {
-                return this.loadComments.filter( ({ commentText }) => {
+                let y = this.loadComments.filter( ({ commentText }) => {
                     let x = this.searchQuery;
                     let word = (x.includes(',')) ? x.split(',') : x;
                     return x.includes(',') ? word.find( (txt) => {
                         return commentText.toLowerCase().includes(txt.toLowerCase())
                     }) : commentText.toLowerCase().includes(word.toLowerCase());
                 });
+                console.log('y: ', y, '|', this.searchQuery);
+                return y;
             },
             searchCommentsTemp() {
                 return this.loadComments.filter( ({ commentText }) => {
