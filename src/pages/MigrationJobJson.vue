@@ -71,54 +71,36 @@
                 searchQueryTemp: '',
                 stringRepeat: 0,
                 allCounter: {},
-                selectedCountry: "comments-all-asia",
-                sortOptions: [
-                    {name: "Asia", value: "comments-all-asia"},
-                    {name: "AustriaVienna", value: "comments-all-austriavienna"},
-                    {name: "Bangladesh", value: "comments-all-bangladesh"},
-                    {name: "China1", value: "comments-all-china1"},
-                    {name: "Contract", value: "comments-all-contract"},
-                    {name: "Cuba", value: "comments-all-cuba"},
-                    {name: "Cyprus1", value: "comments-all-cyprus1"},
-                    {name: "Estonia", value: "comments-all-estonia"},
-                    {name: "Finland", value: "comments-all-finland"},
-                    {name: "Germany1", value: "comments-all-germany1"},
-                    {name: "Germany2", value: "comments-all-germany2"},
-                    {name: "Greenland", value: "comments-all-greenland"},
-                    {name: "Indonesia", value: "comments-all-indonesia"},
-                    {name: "Interpreter", value: "comments-all-interpreter"},
-                    {name: "Israel", value: "comments-all-israel"},
-                    {name: "Italy", value: "comments-all-italy"},
-                    {name: "Italy2", value: "comments-all-italy2"},
-                    {name: "Jordan", value: "comments-all-jordan"},
-                    {name: "Luxemburg", value: "comments-all-luxemburg"},
-                    {name: "Marseille", value: "comments-all-marseille"},
-                    {name: "Mongolia", value: "comments-all-mongolia"},
-                    {name: "NewZeland", value: "comments-all-newzeland"},
-                    {name: "Nice", value: "comments-all-nice"},
-                    {name: "Norway", value: "comments-all-norway"},
-                    {name: "Prague", value: "comments-all-prague"},
-                    {name: "Schweiz", value: "comments-all-schweiz"},
-                    {name: "Spain", value: "comments-all-spain"},
-                    {name: "Teacher", value: "comments-all-teacher"},
-                    {name: "Tourism", value: "comments-all-tourism"},
-                    {name: "Turkey", value: "comments-all-turkey"},
-                    {name: "Volunteer", value: "comments-all-volunteer"}
-                ],
+                selectedCountry: "asia",
+                sortOptions: [],
             }
         },
         mounted() {
-            this.fetchHashCountries(this.selectedCountry);
-            //this.fetchComments(this.selectedCountry);
+            this.fetchSortOptions();
+            setTimeout( () => {
+                this.fetchHashCountries(this.selectedCountry);
+                //this.fetchComments(this.selectedCountry);
+            }, 1000)
         },
         methods: {
             countrySelect() {
                 this.fetchHashCountries(this.selectedCountry);
                 //this.fetchComments(this.selectedCountry);
             },
+            async fetchSortOptions() {
+                try {
+                    await Axios.get('../json/allOptions.json')
+                    .then( res => {
+                        console.log(res.data);
+                        this.sortOptions = res.data;
+                    })
+                } catch (e) {
+                    console.log('Error hash collection loading: ' + e);
+                }
+            },
             async fetchHashCountries( countryName ) {
                 try {
-                    const country = String(countryName.split('-')[2]);
+                    const country = String(countryName);
                     await Axios.get('../json/hashCollection.json')
                     .then( result => {
                         let x = result.data[country];
@@ -232,7 +214,8 @@
                 return result;
             },
             currentCountry() {
-                return (this.selectedCountry.split('-')[2]).toUpperCase();
+                //return (this.selectedCountry.split('-')[2]).toUpperCase();
+                return (this.selectedCountry).toUpperCase();
             },
             currentHashCollection() {
                 return this.arrayHashStrings;
@@ -245,6 +228,9 @@
             },
             searchQuery() {
                 console.log('this.searchQuery: ', this.searchQuery, this.searchQueryTemp)
+            },
+            selectedCountry() {
+                console.log('selectedCountry: ', this.selectedCountry);
             }
         }
     }
