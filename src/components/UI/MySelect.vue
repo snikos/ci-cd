@@ -6,12 +6,12 @@
                     class="form-control"
             >
                 <option disaled value="">Select one</option>
-                <option v-for="option in options"
+                <option v-for="(option, idx) in options"
                         :key="option.value"
                         :value="option.value"
                         :selected="modelValue === option.value"
                 >
-                    {{ option.name }}
+                    {{ idx }}:{{ option.name }}
                 </option>
             </select>
         </div>

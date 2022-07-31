@@ -1,10 +1,11 @@
-<template>
+<template style="min-height:720px;height:720px;">
     <div v-show="loading" class="progressLoading">
         Loading...
     </div>
     <ul
             class="list-group"
-            v-if="comments.length > 0">
+            v-if="comments.length > 0"
+    >
         <li
                 class="list-group-item"
                 v-for="({commentText, commentName, commentDate, id}) in comments"

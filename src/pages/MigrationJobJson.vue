@@ -234,8 +234,6 @@
             }
         }
     }
-
-    // RabotaVVengrii
 </script>
 
 <style scoped>
