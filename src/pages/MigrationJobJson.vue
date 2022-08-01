@@ -90,7 +90,7 @@
             },
             async fetchSortOptions() {
                 try {
-                    await Axios.get('../json/allOptions.json')
+                    await Axios.get('../options/allOptions.json')
                     .then( res => {
                         //console.log(res.data);
                         this.sortOptions = res.data;
@@ -102,7 +102,7 @@
             async fetchHashCountries( countryName ) {
                 try {
                     const country = String(countryName);
-                    await Axios.get('../json/hashCollection.json')
+                    await Axios.get('../options/hashCollection.json')
                     .then( result => {
                         this.arrayHashStrings = result.data[country];
                     });
