@@ -76,11 +76,6 @@
             }
         },
         mounted() {
-            // console.log('this.selectedCountry: ', this.selectedCountry);
-            // if (!this.selectedCountry) {
-            //     this.selectedCountry = "rabota-v-omane";
-            // }
-
             this.fetchSortOptions();
             setTimeout( () => {
                 this.fetchHashCountries(this.selectedCountry);
@@ -105,16 +100,18 @@
                 }
             },
             async fetchHashCountries( countryName ) {
+                await Axios.get('../options/hashCollection.json')
+                    .then( result => {
+                        if(result.data[countryName] === undefined) {
+                            this.selectedCountry = "rabota-v-omane";
+                            countryName = "rabota-v-omane";
+                        }
+                    });
                 try {
                     const country = String(countryName);
                     await Axios.get('../options/hashCollection.json')
                     .then( result => {
-                        //this.arrayHashStrings = result.data[country];
-                        console.log('result.data[country]: ', (result.data[country] === undefined));
-                        if(result.data[country] === undefined) {
-                            this.selectedCountry = "rabota-v-omane";
-                            this.arrayHashStrings = result.data["rabota-v-omane"]
-                        } else {
+                        if(result.data[country]) {
                             this.arrayHashStrings = result.data[country];
                         }
                     });
