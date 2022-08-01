@@ -165,6 +165,7 @@
             },
             searchHashButton(event) {
                 if (event.target.value) {
+                    this.showCommentsAreDone = 1;
                     //this.searchQuery = event.target.value;
                     this.arrayHashStrings.forEach( (word) => {
                         //console.log(event.target.value, '|', word, '|', (typeof word === 'object'));

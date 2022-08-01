@@ -3,7 +3,7 @@
         <div :class="`${windowWidth <= 770 ? '' : 'btn-group-vertical'} btn-group-sm`">
             <button type="button"
                     @click="$emit('loadAllComments')"
-                    :class="'btn btn__left btn-success' + activeValue"
+                    :class="'btn btn__left btn-warning'"
                     :value="allComm"
             >
                 {{allComm}}
