@@ -47,7 +47,7 @@
         computed: {
             rewriteArrHash() {
                 return this.arrHash.map( (hash) => {
-                    return (typeof hash === 'object') ? Object.values(hash)['0'] : hash;
+                    return (typeof hash === 'object') ? Object.values(hash)[0] : hash;
                 });
             }
         }
