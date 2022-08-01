@@ -1,6 +1,15 @@
 <template>
     <div class="btn-toolbar pb-2">
         <div :class="`${windowWidth <= 770 ? '' : 'btn-group-vertical'} btn-group-sm`">
+            <button type="button"
+                    @click="$emit('loadAllComments')"
+                    :class="'btn btn__left btn-success' + activeValue"
+                    :value="allComm"
+            >
+                {{allComm}}
+                <span class="badge badge-light">{{ allCommLength }}</span>
+                <span class="sr-only">sr</span>
+            </button>
             <button v-for="(hash, key) in rewriteArrHash"
                     @click="$emit('searchHash', $event)"
                     :key="hash + key"
@@ -22,6 +31,7 @@
         name: "HashTagBlock",
         data() {
             return {
+                allComm: 'All comments',
                 windowWidth: window.innerWidth,
             }
         },
@@ -36,6 +46,10 @@
             },
             allCounter: {
                 type: Object,
+                required: true,
+            },
+            allCommLength: {
+                type: [String, Number],
                 required: true,
             }
         },

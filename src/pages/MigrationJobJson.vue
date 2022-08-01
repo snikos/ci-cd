@@ -20,10 +20,12 @@
         </div>
         <div class="col-12 col-md-3">
             <HashTagBlock
+                    @loadAllComments="loadAllComments"
                     @searchHash="searchHashButton"
                     :arrHash="currentHashCollection"
                     :activeValue="searchQuery"
                     :allCounter="allCounter"
+                    :allCommLength="getAllCommentsLength"
             />
         </div>
         <div class="col-12 col-md-9">
@@ -241,6 +243,9 @@
             },
             currentHashCollection() {
                 return this.arrayHashStrings;
+            },
+            getAllCommentsLength() {
+                return this.loadComments.length;
             }
         },
         watch: {
