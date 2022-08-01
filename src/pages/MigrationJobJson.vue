@@ -195,6 +195,13 @@
                     });
                 }, 1000);
             },
+            findComment(comment){
+                let search = this.searchQuery;
+                let word = (search.includes(',')) ? search.split(',') : search;
+                return search.includes(',') ? word.find( (txt) => {
+                    return comment.toLowerCase().includes(txt.toLowerCase())
+                }) : comment.toLowerCase().includes(word.toLowerCase());
+            },
         },
         computed: {
             getFirstLoad() {
@@ -203,15 +210,21 @@
                 });
             },
             searchComments() {
-                let y = this.loadComments.filter( ({ commentText }) => {
-                    let x = this.searchQuery;
-                    let word = (x.includes(',')) ? x.split(',') : x;
-                    return x.includes(',') ? word.find( (txt) => {
-                        return commentText.toLowerCase().includes(txt.toLowerCase())
-                    }) : commentText.toLowerCase().includes(word.toLowerCase());
+                let commArray = this.loadComments.filter( (obj) => {
+                    const { commentText, commentName, commentDate } = obj;
+
+                    if (this.findComment(commentText)) {
+                        return this.findComment(commentText);
+                    }
+                    if (this.findComment(commentName)) {
+                        return this.findComment(commentName);
+                    }
+                    if (this.findComment(commentDate)) {
+                        return this.findComment(commentDate);
+                    }
                 });
-                console.log('y: ', y, '|', this.searchQuery);
-                return y;
+                //console.log('this.loadComments.filter: ', y, '|this.searchQuery: ', this.searchQuery);
+                return commArray;
             },
             searchCommentsTemp() {
                 return this.loadComments.filter( ({ commentText }) => {
@@ -236,11 +249,11 @@
                 //console.log('allCounter: ', this.allCounter);
             },
             searchQuery() {
-                console.log('this.searchQuery: ', this.searchQuery, this.searchQueryTemp)
+                //console.log('this.searchQuery: ', this.searchQuery, this.searchQueryTemp)
             },
             arrayHashStrings() {
-                console.log('arrayHashStrings: ', this.arrayHashStrings);
-            }
+                //console.log('arrayHashStrings: ', this.arrayHashStrings);
+            },
         }
     }
 </script>
