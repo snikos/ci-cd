@@ -196,10 +196,17 @@
                         let res = this.searchCommentsTemp;
                         this.allCounter[index] = res.length;
                     });
-                }, 1000);
+                }, 500);
             },
             findComment(comment){
                 let search = this.searchQuery;
+                let word = (search.includes(',')) ? search.split(',') : search;
+                return search.includes(',') ? word.find( (txt) => {
+                    return comment.toLowerCase().includes(txt.toLowerCase())
+                }) : comment.toLowerCase().includes(word.toLowerCase());
+            },
+            findCommentTemp(comment){
+                let search = this.searchQueryTemp;
                 let word = (search.includes(',')) ? search.split(',') : search;
                 return search.includes(',') ? word.find( (txt) => {
                     return comment.toLowerCase().includes(txt.toLowerCase())
@@ -230,13 +237,19 @@
                 return commArray;
             },
             searchCommentsTemp() {
-                return this.loadComments.filter( ({ commentText }) => {
-                    let x = this.searchQueryTemp;
-                    let word = (x.includes(',')) ? x.split(',') : x;
-                    return x.includes(',') ? word.find( (txt) => {
-                        return commentText.toLowerCase().includes(txt.toLowerCase())
-                    }) : commentText.toLowerCase().includes(word.toLowerCase());
+                let commArray = this.loadComments.filter( (obj) => {
+                    const { commentText, commentName, commentDate } = obj;
+                    if (this.findCommentTemp(commentText)) {
+                        return this.findCommentTemp(commentText);
+                    }
+                    if (this.findCommentTemp(commentName)) {
+                        return this.findCommentTemp(commentName);
+                    }
+                    if (this.findCommentTemp(commentDate)) {
+                        return this.findCommentTemp(commentDate);
+                    }
                 });
+                return commArray;
             },
             currentCountry() {
                 //return (this.selectedCountry.split('-')[2]).toUpperCase();
@@ -252,7 +265,7 @@
         watch: {
             stringRepeat() {
                 //console.log( 'Watcher: ', this.stringRepeat, '; ', this.comments.length, '; ', this.loadComments.length );
-                //console.log('allCounter: ', this.allCounter);
+                console.log('allCounter: ', this.allCounter);
             },
             searchQuery() {
                 //console.log('this.searchQuery: ', this.searchQuery, this.searchQueryTemp)
