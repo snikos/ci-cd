@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      It doesn't matter what tools you use.<br>It doesn't matter what tools you use.
+      It doesn't matter what tools you use.<br>What all we need to do, are reduce and automate.
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
   </div>
