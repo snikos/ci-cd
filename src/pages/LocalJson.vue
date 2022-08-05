@@ -1,9 +1,17 @@
 <template>
     <div>
         <h2>What problems help you solve Nuxt.js</h2>
-        <p>1.static page: On the basis of the routing, nuxt generate html files, which are SEO-frendly. This works, for example, for business card pages (main page + several subpages). You get ready-made html files e.g. index.html, contact.html etc.</p>
-        <p>2.SPA: applications that do not require SEO, but have dynamic paths and interface. Does not use server side rendering. Some methods are unavailable, but still use some of the benefits of nuxt. For example, dynamic routing or many options available in the configuration in nuxt.</p>
-        <p>3.Universal: allows you to enjoy all the benefits of nuxt.js. With the help of dedicated website methods (fetch, asyncData, nuxtServerInit etc.), it allows you to prepare data on the server side to generate them on the browser side so that they are SEO-friendly.</p>
+        <ul class="list_catalog">
+            <li>
+                <p class="align_left"><strong>1.static page:</strong> On the basis of the routing, nuxt generate html files, which are SEO-frendly. This works, for example, for business card pages (main page + several subpages). You get ready-made html files e.g. index.html, contact.html etc.</p>
+            </li>
+            <li>
+                <p class="align_left"><strong>2.SPA:</strong> applications that do not require SEO, but have dynamic paths and interface. Does not use server side rendering. Some methods are unavailable, but still use some of the benefits of nuxt. For example, dynamic routing or many options available in the configuration in nuxt.</p>
+            </li>
+            <li>
+                <p class="align_left"><strong>3.Universal:</strong> allows you to enjoy all the benefits of nuxt.js. With the help of dedicated website methods (fetch, asyncData, nuxtServerInit etc.), it allows you to prepare data on the server side to generate them on the browser side so that they are SEO-friendly.</p>
+            </li>
+        </ul>
         <h3>{{ $options.localJson.name }}</h3>
         <ul class="list_catalog">
             <li
@@ -44,6 +52,9 @@
 </script>
 
 <style scoped>
+    .align_left {
+        text-align: left;
+    }
     .list_catalog {
         list-style-type: none;
         text-align: left;
