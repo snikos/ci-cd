@@ -9,13 +9,15 @@
             />
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-4">
-            <div class="list-group list-group-horizontal">
-                <button v-for="(letter, index) in checkLetters"
-                    :key="index"
-                    @click="getLetterCollection(letter, letter+index)"
-                    type="button"
-                    :class="'list-group-item list-group-item-action ' +  (letter+index === isActive ? 'active' : '')"
-                >{{letter}}</button>
+            <div class="list-group">
+                <ul class="pagination pagination-sm">
+                    <li v-for="(letter, index) in checkLetters"
+                        :key="index"
+                        @click="getLetterCollection(letter, letter+index)"
+                        type="button"
+                        :class="'page-item ' +  (letter+index === isActive ? 'active' : '')"
+                    ><span class="page-link">{{letter}}</span></li>
+                </ul>
             </div>
             <div class="list-group">
                 <button v-for="(button, index) in checkButtons"
@@ -57,7 +59,7 @@
                     {value: 'translate', name: 'translate sort'},
                 ],
                 currentLetter: 'a',
-                checkLetters: ['a','b','c'],
+                checkLetters: ['a','b','c','d','e','f','g','h','k','l','m','o','p','r','s','t','u','w'],
                 checkButtons: [
                     { name: 'All verbs', comp: 'sortedVerbs' },
                     { name: 'do,go,lie', comp: 'sortShorts' },
@@ -93,7 +95,6 @@
                 this.currentClass = idx < 7 ? this.classes[idx] : this.classes[2];
             },
             getLetterCollection(letter, idx) {
-                console.log(idx);
                 this.isActive = idx;
                 this.currentLetter = letter;
                 this.checkVerbs = this.sortedLetters;
@@ -102,7 +103,7 @@
         computed: {
             sortedLetters(){
                 return this.sortedVerbs.filter((el) => {
-                    return String(el['Past-Participle']).startsWith(this.currentLetter);
+                    return String(el['Infinitive']).startsWith(this.currentLetter);
                 })
             },
             sortedVerbs() {
