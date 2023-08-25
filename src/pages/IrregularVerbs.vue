@@ -10,13 +10,13 @@
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-4">
             <div class="list-group">
-                <ul class="pagination pagination-sm">
+                <ul class="pagination pagination-sm justify-content-center flex-wrap">
                     <li v-for="(letter, index) in checkLetters"
                         :key="index"
                         @click="getLetterCollection(letter, letter+index)"
                         type="button"
                         :class="'page-item ' +  (letter+index === isActive ? 'active' : '')"
-                    ><span class="page-link">{{letter}}</span></li>
+                    ><span class="page-link">{{letter.toUpperCase()}}</span></li>
                 </ul>
             </div>
             <div class="list-group">
