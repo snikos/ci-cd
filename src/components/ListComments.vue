@@ -1,5 +1,5 @@
 <template style="min-height:720px;height:720px;">
-    <div v-show="loading" class="progressLoading">
+    <div v-show="loading" class="progressLoading" style="min-height:200px;">
         Loading...
     </div>
     <ul
@@ -17,8 +17,8 @@
             </div>
         </li>
     </ul>
-    <div v-else class="commentNotFound">
-        No comments found
+    <div v-show="!loading" class="commentNotFound">
+        {{showEmpty}}
     </div>
 </template>
 
@@ -32,6 +32,11 @@
             },
             loading: {
                 type: Boolean
+            }
+        },
+        computed: {
+            showEmpty() {
+                return (this.comments.length < 1) ? 'No comments found' : '---';
             }
         }
     }

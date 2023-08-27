@@ -37,6 +37,7 @@
                 this.$emit("update:modelValue", event.target.value);
             },
             changeWord(word) {
+                if ( String(word).match(/[ ]+/g) ) return;
                 let x = String(word).match(/[A-Z][a-z]*/g);
                 return x.join(' ');
             }
