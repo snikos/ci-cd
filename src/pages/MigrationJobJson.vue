@@ -134,9 +134,11 @@
                             this.nextCount = 0;
                             this.showCommentsAreDone = 0;
                             this.loadComments = [...result.data];
+                        })
+                        .then(() => {
+                            this.loadNextComments();
+                            this.searchHashLength();
                         });
-                        this.loadNextComments();
-                        this.searchHashLength();
                     }, 500);
                 }
                 catch (e) {
@@ -189,12 +191,14 @@
                 //console.log('search with button: ', search);
             },
             searchHashLength() {
+                console.log(this.arrayHashStrings);
                 setTimeout( () => {
                     this.arrayHashStrings.forEach( (word, index) => {
                         //this.searchQuery = (typeof word === 'object') ? Object.values(word)[0] : word;
                         this.searchQueryTemp = (typeof word === 'object') ? Object.values(word)[0] : word;
                         let res = this.searchCommentsTemp;
                         this.allCounter[index] = res.length;
+                        //console.log('Timeout500: ', this.allCounter);
                     });
                 }, 500);
             },
