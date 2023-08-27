@@ -82,7 +82,8 @@
             setTimeout( () => {
                 this.fetchHashCountries(this.selectedCountry);
                 //this.fetchComments(this.selectedCountry);
-            }, 1000)
+                //console.log(this.selectedCountry)
+            }, 10)
         },
         methods: {
             countrySelect() {
