@@ -2,23 +2,25 @@
     <div v-show="loading" class="progressLoading">
         Loading...
     </div>
-    <ul
-            class="list-group"
-            v-if="comments.length > 0"
-    >
-        <li
-                class="list-group-item"
-                v-for="({commentText, commentName, commentDate, id}) in comments"
-                :key="commentDate + '_' + id"
+    <div v-show="!loading">
+        <ul
+                class="list-group"
+                v-if="comments.length > 0"
         >
-            <div>
-                <strong>{{ id }}</strong> - {{ commentName }} ({{ commentDate }})
-                <p>{{ commentText }}</p>
-            </div>
-        </li>
-    </ul>
-    <div v-else class="commentNotFound">
-        No comments found
+            <li
+                    class="list-group-item"
+                    v-for="({commentText, commentName, commentDate, id}) in comments"
+                    :key="commentDate + '_' + id"
+            >
+                <div>
+                    <strong>{{ id }}</strong> - {{ commentName }} ({{ commentDate }})
+                    <p>{{ commentText }}</p>
+                </div>
+            </li>
+        </ul>
+        <div v-else class="commentNotFound">
+            No comments found
+        </div>
     </div>
 </template>
 

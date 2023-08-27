@@ -188,10 +188,11 @@
                     this.comments = search;
                     this.loading = false;
                 }, 500);
-                //console.log('search with button: ', search);
+                if (!this.comment) {
+                    this.showCommentsAreDone = 1;
+                }
             },
             searchHashLength() {
-                console.log(this.arrayHashStrings);
                 setTimeout( () => {
                     this.arrayHashStrings.forEach( (word, index) => {
                         //this.searchQuery = (typeof word === 'object') ? Object.values(word)[0] : word;
@@ -200,7 +201,7 @@
                         this.allCounter[index] = res.length;
                         //console.log('Timeout500: ', this.allCounter);
                     });
-                }, 500);
+                }, 0);
             },
             findComment(comment){
                 let search = this.searchQuery;
@@ -269,7 +270,7 @@
         watch: {
             stringRepeat() {
                 //console.log( 'Watcher: ', this.stringRepeat, '; ', this.comments.length, '; ', this.loadComments.length );
-                console.log('allCounter: ', this.allCounter);
+                //console.log('allCounter: ', this.allCounter);
             },
             searchQuery() {
                 //console.log('this.searchQuery: ', this.searchQuery, this.searchQueryTemp)
