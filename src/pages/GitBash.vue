@@ -8,14 +8,14 @@
                 @click.prevent.stop="showModal(item.id)"
             >
                 <div>
-                    <h5>
+                    <h5 class="bash_list_title">
                         <img
                                 class="git-scm"
                                 :src="item.icon"
                                 :alt="item.title"
                                 :title="item.title"
                         >
-                        {{item.title}}
+                        <span>{{item.title}}</span>
                     </h5>
                 </div>
                 <ul :class="['tab_box', {activisto: currentTab === item.id}]">
@@ -95,7 +95,9 @@
         padding: 0;
     }
     .bash_list li {
-        padding: 1em 0 0;
+        padding: 1em 0 10px 0;
+        list-style-type: none;
+        text-align: justify;
     }
     .bash_li {
         cursor: pointer;
@@ -111,12 +113,22 @@
         opacity: 0.5;
     }
     .bash_box .git-scm {
-        max-width: 58px;
-        padding: 0 0.5em 0.5em 0;
+        max-width: 40px;
+    }
+    .bash_list_title {
+        display: flex;
+        padding: 4px;
+        align-items: center;
+        min-height: 78px;
+    }
+    .bash_list_title span{
+        padding-left: 14px;
+        padding-right: 30px;
     }
     .tab_box {
-        max-height: 86px;
+        max-height: 92px;
         overflow: hidden;
+        padding: 0px 32px 0px 32px;
     }
     .tab_box li::marker {
         color: red;
