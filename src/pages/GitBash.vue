@@ -8,7 +8,7 @@
                 @click.prevent.stop="showModal(item.id)"
             >
                 <div>
-                    <h5 class="bash_list_title">
+                    <h5 class="d-flex align-items-center p-2 bash_list_title">
                         <img
                                 class="git-scm"
                                 :src="item.icon"
@@ -32,6 +32,7 @@
         <h5>{{ getMtd('Title') }}</h5>
         <div v-for="(list, index) in getMtd('Description')"
             :key="list.substr(0,6) + index"
+            class="mymodal-text"
         >
             <p>{{ list }}</p>
             <kbd>{{ getMtd('Console')[index] }}</kbd>
@@ -85,6 +86,18 @@
 </script>
 
 <style scoped>
+    .mymodal kbd {
+        display: 'inline-block';
+        width: 100%;
+    }
+    .mymodal-text {
+        padding: 16px;
+    }
+    .mymodal-text p {
+        font-size: 14px;
+        line-height: 18px;
+        text-align: justify;
+    }
     .bash_box {
         text-align: left;
         padding: 1em 2em;
@@ -95,7 +108,7 @@
         padding: 0;
     }
     .bash_list li {
-        padding: 1em 0 10px 0;
+        padding: 0 0 10px 0;
         list-style-type: none;
         text-align: justify;
     }
@@ -116,19 +129,17 @@
         max-width: 40px;
     }
     .bash_list_title {
-        display: flex;
         padding: 4px;
-        align-items: center;
-        min-height: 78px;
+        min-height: 42px;
     }
     .bash_list_title span{
         padding-left: 14px;
         padding-right: 30px;
     }
     .tab_box {
-        max-height: 92px;
+        max-height: 45px;
         overflow: hidden;
-        padding: 0px 32px 0px 32px;
+        padding: 0px 28px 0px 28px;
     }
     .tab_box li::marker {
         color: red;
