@@ -1,0 +1,62 @@
+{
+  "codes": {
+    "1xx": {
+      "title": "Information",
+      "arrCodes": [
+        {
+          "code": "100",
+          "status": "Continue"
+        },
+        {
+          "code": "101",
+          "status": "Switching protocols"
+        }
+      ]
+    },
+    "2xx": {
+      "title": "Success",
+      "arrCodes": [
+        {
+          "code": "200",
+          "status": "OK"
+        }
+      ]
+    },
+    "3xx": {
+      "title": "Redirection",
+      "arrCodes": [
+        {
+          "code": "--",
+          "status": "--"
+        }
+      ]
+    },
+    "4xx": {
+      "title": "Clent (Error)",
+      "arrCodes": [
+        {
+          "code": "--",
+          "status": "--"
+        }
+      ]
+    },
+    "4xx": {
+      "title": "Clent (Continue)",
+      "arrCodes": [
+        {
+          "code": "--",
+          "status": "--"
+        }
+      ]
+    },
+    "5xx": {
+      "title": "Server Error Responses",
+      "arrCodes": [
+        {
+          "code": "--",
+          "status": "--"
+        }
+      ]
+    }
+  }
+}
