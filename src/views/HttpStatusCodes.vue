@@ -1,17 +1,6 @@
 <template>
-  <div class="raw">
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-      <div class="list-group">
-        <ul class="pagination pagination-sm justify-content-center flex-wrap">
-          <li type="button" class="page-item">
-            <span class="page-link">1XX</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-12">
-      <ListHttpCodes :codes="loadCodes" />
-    </div>
+  <div>
+    <ListHttpCodes :codes="loadCodes" :classes="classes" />
   </div>
 </template>
 
@@ -26,6 +15,7 @@
     data(){
       return {
         loadCodes: [],
+        classes: ['primary','secondary','success','danger','warning','info','light','dark','active'],
       }
     },
     mounted(){

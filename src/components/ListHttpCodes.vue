@@ -1,27 +1,24 @@
 <template>
-  <div class="table-responsive">
-    <ul>
-      <li v-for="(item, idx) in keyRun"
-        :key="item[idx]+'_'+idx">
-        <p>{{ item['title'] }}</p>
-        <table class="table table-sm table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>1xx</th>
-              <th>2xx</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(el, i) in item['arrCodes']"
-            :key="el['code']+'_'+i">
-              <td>{{ el['code'] }}</td>
-              <td>{{ el['status'] }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-    </ul>
-  </div>
+  <ul class="row">
+    <li v-for="(item, idx) in keyRun"
+      :key="item[idx]+'_'+idx"
+      class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 list-group-item">
+      <table class="table table-sm table-striped table-bordered">
+        <thead>
+          <tr>
+            <th colspan="2">{{ item['title'] }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(el, i) in item['arrCodes']"
+          :key="el['code']+'_'+i">
+            <td :class="`list-group-item-${classes[idx]}`">{{ el['code'] }}</td>
+            <td>{{ el['status'] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+  </ul>
 </template>
 <script>
   export default {
@@ -30,6 +27,9 @@
       codes: {
         type: Object,
         required: true,
+      },
+      classes: {
+        type: Array,
       }
     },
     methods: {
