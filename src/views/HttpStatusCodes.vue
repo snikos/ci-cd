@@ -1,6 +1,10 @@
 <template>
   <div>
-    <ListHttpCodes :codes="loadCodes" :classes="classes" />
+    <ListHttpCodes
+      :codes="loadCodes"
+      :classes="classes"
+      :signalLibLink="signal"
+    />
   </div>
 </template>
 
@@ -16,6 +20,7 @@
       return {
         loadCodes: [],
         classes: ['primary','secondary','success','danger','warning','info','light','dark','active'],
+        signal: "github.com/signalapp/libsignal"
       }
     },
     mounted(){

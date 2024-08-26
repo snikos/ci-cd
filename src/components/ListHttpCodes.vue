@@ -18,6 +18,9 @@
         </tbody>
       </table>
     </li>
+    <li class="col list-group-item">
+      <a :href="getSignal" target="_blank">signal crypto lib</a>
+    </li>
   </ul>
 </template>
 <script>
@@ -30,7 +33,11 @@
       },
       classes: {
         type: Array,
-      }
+      },
+      signalLibLink: {
+        type: String,
+        required: false,
+      },
     },
     methods: {
 
@@ -38,9 +45,10 @@
     computed: {
       keyRun() {
         let x = Object.entries(this.codes).map(x => x[1]);
-        //console.log( x )
+        //console.log( x ) //["1xx",Array()]
         return x
-      }
+      },
+      getSignal(){ return `https://${this.signalLibLink}` }
     },
   }
 </script>
