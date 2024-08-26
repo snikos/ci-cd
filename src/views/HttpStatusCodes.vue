@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <ListHttpCodes
-      :codes="loadCodes"
-      :classes="classes"
-      :signalLibLink="signal"
-    />
-  </div>
+  <ListHttpCodes
+    :codes="loadCodes"
+    :classes="classes"
+    :signalLibLink="signal"
+  />
 </template>
 
 <script>
