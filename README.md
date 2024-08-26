@@ -32,6 +32,7 @@ Vue 3, SCSS
 https://en.wikipedia.org/wiki/List_of_English_irregular_verbs
 
 ### Netlify deploy
+$ git pull
 $ git push origin main
 
 ### Deploy demo
