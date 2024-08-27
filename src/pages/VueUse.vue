@@ -21,6 +21,7 @@
 <script>
     import { ref } from "vue";
     import { useTestRef } from "@/hooks/testRef";
+    import { useTestMouse } from "@/hooks/testVueUse";
 
     export default {
         name: "VueUse",
@@ -67,7 +68,6 @@
                 let time = 500;
                 let timer = 0;
                 let ref = this.$refs['wave'];
-                // console.log(this.$refs.wave.value); // -> undefined
                 // console.log(this.$refs.wave.baseURI); // -> http://localhost:8080/admin
                 // console.log(this.$refs); // Object
                 [].forEach.call(ref.children, (el, index) => {
@@ -76,11 +76,11 @@
 
                     timer = setTimeout( () => {
                         el.classList[mtd](customClass);
-                    }, time += 100);
+                    }, time += 50);
 
                     if ( index >= ref.children.length ) {
                         clearTimeout(timer);
-                        time = 500;
+                        time = 50;
                     }
                 });
             },
@@ -96,11 +96,14 @@
         setup() {
             const myLocalVal = ref('The most clever part of the Composition API is that it allows Vue to lean on the safeguards built into native JavaScript in order to share code, like passing variables to functions, and the module system.');
             const { testRef, doubleTestRef, incrementTestRef } = useTestRef(myLocalVal);
+            const {x, y} = useTestMouse();
 
             return {
                 testRef,
                 doubleTestRef,
                 incrementTestRef,
+                x,
+                y,
             }
         }
     }

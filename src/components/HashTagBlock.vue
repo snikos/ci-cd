@@ -10,15 +10,15 @@
                 <span class="badge badge-light">{{ allCommLength }}</span>
                 <span class="sr-only">sr</span>
             </button>
-            <button v-for="(hash, key) in rewriteArrHash"
-                    @click="$emit('searchHash', $event)"
-                    :key="hash + key"
-                    type="button"
-                    :class="'btn btn__left ' + (hash === activeValue ? 'btn-active' : 'btn-success')"
-                    :value="hash"
-            >
-                {{ $filters.isObject(hash) ? Object.values(hash)[0] : hash }}
-                <span class="badge badge-light">{{ allCounter[key] }}</span>
+            <button 
+                v-for="(key, count) in showHashWord"
+                @click="$emit('searchHash', $event)"
+                :key="key+'_'+count"
+                type="button"
+                :class="'btn btn__left ' + (key[0] === activeValue ? 'btn-active' : 'btn-success')"
+                :value="key[0]">
+                {{ key[0].length ? (key[0]).split(",")[0] : key[0]  }}
+                <span class="badge badge-light">{{key[1]}}</span>
                 <span class="sr-only">sr</span>
             </button>
         </div>
@@ -44,7 +44,7 @@
                 type: [String, Number],
                 required: true,
             },
-            allCounter: {
+            allCounterWord: {
                 type: Object,
                 required: true,
             },
@@ -59,9 +59,9 @@
             }
         },
         computed: {
-            rewriteArrHash() {
-                return this.arrHash.map( (hash) => {
-                    return (typeof hash === 'object') ? Object.values(hash)[0] : hash;
+            showHashWord() {
+                return Object.entries(this.allCounterWord).filter((el) => {
+                    if ( this.arrHash.find((item) => item === el[0]) && Number(el[1]) > 0) return el
                 });
             }
         }

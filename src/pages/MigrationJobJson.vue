@@ -24,7 +24,7 @@
                     @searchHash="searchHashButton"
                     :arrHash="currentHashCollection"
                     :activeValue="searchQuery"
-                    :allCounter="allCounter"
+                    :allCounterWord="allCounterWord"
                     :allCommLength="getAllCommentsLength"
             />
         </div>
@@ -72,7 +72,7 @@
                 searchQuery: '',
                 searchQueryTemp: '',
                 stringRepeat: 0,
-                allCounter: {},
+                allCounterWord: {},
                 selectedCountry: "rabota-v-mongolii",
                 sortOptions: [],
             }
@@ -117,12 +117,12 @@
                         if(result.data[country]) {
                             this.arrayHashStrings = result.data[country];
                         }
+                    }).then(() => {
+                        this.fetchComments(countryName);
                     });
-                    this.fetchComments(countryName);
+                    //this.fetchComments(countryName);
                 } catch (e) {
                     console.log('Error hash collection loading: ' + e);
-                } finally {
-                    //this.fetchComments(countryName);
                 }
             },
             fetchComments( countryName ) {
@@ -138,15 +138,13 @@
                         })
                         .then(() => {
                             this.loadNextComments();
+                        }).then(() => {
                             this.searchHashLength();
                         });
                     }, 500);
                 }
                 catch (e) {
                     console.log('Error comments loading: ' + e)
-                }
-                finally {
-                    //this.searchHashLength();
                 }
             },
             loadAllComments() {
@@ -195,12 +193,11 @@
             },
             searchHashLength() {
                 setTimeout( () => {
-                    this.arrayHashStrings.forEach( (word, index) => {
+                    this.arrayHashStrings.forEach( (word) => {
                         //this.searchQuery = (typeof word === 'object') ? Object.values(word)[0] : word;
                         this.searchQueryTemp = (typeof word === 'object') ? Object.values(word)[0] : word;
                         let res = this.searchCommentsTemp;
-                        this.allCounter[index] = res.length;
-                        //console.log('Timeout500: ', this.allCounter);
+                        this.allCounterWord[word] = res.length;
                     });
                 }, 0);
             },
@@ -271,13 +268,13 @@
         watch: {
             stringRepeat() {
                 //console.log( 'Watcher: ', this.stringRepeat, '; ', this.comments.length, '; ', this.loadComments.length );
-                //console.log('allCounter: ', this.allCounter);
+                console.log('allCounterWord: ', this.allCounterWord);
             },
             searchQuery() {
                 //console.log('this.searchQuery: ', this.searchQuery, this.searchQueryTemp)
             },
             arrayHashStrings() {
-                //console.log('arrayHashStrings: ', this.arrayHashStrings);
+                console.log('arrayHashStrings: ', this.arrayHashStrings);
             },
         }
     }
