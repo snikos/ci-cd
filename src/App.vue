@@ -4,7 +4,7 @@
       <router-link to="/">Homer</router-link> |
       <router-link to="/http">Http Codes</router-link> |
       <router-link to="/start">CI/CD</router-link> |
-      <router-link to="/admin">Admin</router-link> |
+      <router-link to="/vueuse">Vueuse</router-link> |
       <router-link to="/local-json">Json</router-link> |
       <router-link to="/git-bash">Bash</router-link> |
       <router-link to="/migration-job">Migration Job</router-link> |

@@ -23,7 +23,7 @@
     import { useTestRef } from "@/hooks/testRef";
 
     export default {
-        name: "AdminPage",
+        name: "VueUse",
         data() {
             return {
                 count: 0,

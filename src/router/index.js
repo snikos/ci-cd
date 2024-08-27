@@ -22,9 +22,9 @@ const routes = [
     component: () => import('@/pages/StartPage')
   },
   {
-    path: '/admin',
-    name: 'Admin',
-    component: () => import('@/pages/AdminPage')
+    path: '/vueuse',
+    name: 'VueUse',
+    component: () => import('@/pages/VueUse')
   },
   {
     path: '/local-json',
