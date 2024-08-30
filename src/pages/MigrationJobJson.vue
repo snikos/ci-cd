@@ -268,13 +268,13 @@
         watch: {
             stringRepeat() {
                 //console.log( 'Watcher: ', this.stringRepeat, '; ', this.comments.length, '; ', this.loadComments.length );
-                console.log('allCounterWord: ', this.allCounterWord);
+                //console.log('allCounterWord: ', this.allCounterWord);
             },
             searchQuery() {
                 //console.log('this.searchQuery: ', this.searchQuery, this.searchQueryTemp)
             },
             arrayHashStrings() {
-                console.log('arrayHashStrings: ', this.arrayHashStrings);
+                //console.log('arrayHashStrings: ', this.arrayHashStrings);
             },
         }
     }

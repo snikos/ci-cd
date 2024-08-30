@@ -10,9 +10,9 @@
                         :key="option.value"
                         :value="option.value"
                         :selected="modelValue === option.value"
-                        title="option.name"
+                        :title="option.name"
                 >
-                    {{ idx }}: {{changeWord(option.name)}}
+                    {{ idx }}: {{option.name}}
                 </option>
             </select>
         </div>
@@ -35,11 +35,6 @@
         methods: {
             changeOption(event) {
                 this.$emit("update:modelValue", event.target.value);
-            },
-            changeWord(word) {
-                if ( String(word).match(/[ ]+/g) ) return;
-                let x = String(word).match(/[A-Z][a-z]*/g);
-                return x.join(' ');
             }
         },
         computed: {
@@ -48,7 +43,7 @@
                     return this.modelValue
                 },
                 set(newValue) {
-                    this.$emit('update:modelValue', newValue)
+                    this.$emit('update:modelValue', newValue);
                 },
             }
         }

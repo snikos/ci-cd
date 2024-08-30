@@ -42,7 +42,6 @@
     import MySelect from "@/components/UI/MySelect";
     export default {
         name: "IrregularVerbs",
-        //verbs: verbsJson,
         components: {
             ListIrregularVerbs,
             MySelect,
@@ -113,8 +112,9 @@
             },
             sortShorts() {
                 return this.sortedVerbs.filter( (el) => {
-                    if ( /\b(be|can|do|go|lie|may|must|shall|will)\b/im.test( String(el['Infinitive']) ) ) {
-                        return /\b(be|can|do|go|lie|may|must|shall|will)\b/im.test( String(el['Infinitive']) )
+                    let found = /\b(be|can|do|go|lie|may|must|shall|will)\b/im.test( String(el['Infinitive']) );
+                    if ( found ) {
+                        return found
                     }
                 });
             },
