@@ -1,6 +1,6 @@
 <template>
     <div class="row jobMigration">
-        <h3 class="jobMigration__title">Comment analytics: {{ currentCountry }}</h3>
+        <h3 class="jobMigration__title"><span class="battle">Battle of Comments:</span> {{ currentCountry }}</h3>
         <div class="col-12">
             <div class="row">
                 <div class="col-12 col-sm-8">
@@ -288,6 +288,11 @@
         text-align: center;
         padding: 0 0 1em 0;
         margin: 0 auto;
+    }
+    .jobMigration__title .battle{
+        font-family: unset, monospace;
+        font-size: 1.1rem;
+        color: rgb(40, 167, 69);
     }
     .loading {
         padding: 1em;

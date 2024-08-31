@@ -61,7 +61,7 @@
         computed: {
             showHashWord() {
                 return Object.entries(this.allCounterWord).filter((el) => {
-                    if ( this.arrHash.find((item) => item === el[0]) && Number(el[1]) > 0) return el
+                    if ( this.arrHash.find((item) => item === el[0]) && Number(el[1]) > 0) return el;
                 });
             }
         }
