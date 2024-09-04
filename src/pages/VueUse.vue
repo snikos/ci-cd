@@ -93,6 +93,9 @@
                 }).join('');
             },
         },
+        created(){
+            //console.log( "created: ", this.$data.count, this.count+=1 ); // 0, 1
+        },
         setup() {
             const myLocalVal = ref('The most clever part of the Composition API is that it allows Vue to lean on the safeguards built into native JavaScript in order to share code, like passing variables to functions, and the module system.');
             const { testRef, doubleTestRef, incrementTestRef } = useTestRef(myLocalVal);
