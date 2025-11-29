@@ -6,7 +6,7 @@
       <router-link to="/start">CI/CD</router-link> |
       <router-link to="/vueuse">Vueuse</router-link> |
       <router-link to="/local-json">Json</router-link> |
-      <router-link to="/git-bash">Bash</router-link> |
+      <router-link to="/git-bash">Git</router-link> |
       <router-link to="/migration-job">Migration Job</router-link> |
       <router-link to="/irr-verbs">Irregular verbs</router-link>
     </nav>
