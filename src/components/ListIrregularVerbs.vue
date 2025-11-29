@@ -3,7 +3,7 @@
         <table class="table table-sm table-striped table-bordered">
             <thead>
             <tr>
-                <th scope="col" :class="`table-${classes[7]}`">#</th>
+                <th scope="col" :class="`table-${classes[7]}`">---</th>
                 <th scope="col" :class="`table-${classes[7]}`">Infinitive</th>
                 <th scope="col" :class="`table-${classes[7]}`">Past Indefinite</th>
                 <th scope="col" :class="`table-${classes[7]}`">Past Participle</th>
