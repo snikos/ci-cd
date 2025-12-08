@@ -12,7 +12,7 @@
   import prefixJson from '@/json/prefix.json';
   import ListPrefixes from '@/components/ListPrefixes';
   export default {
-    name: 'Prefixes',
+    name: 'PrefixesEn',
     components: {
       ListPrefixes,
     },
