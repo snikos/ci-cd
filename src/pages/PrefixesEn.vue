@@ -1,9 +1,9 @@
 <template>
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-12">
       <h3 class="pb-4">English prefixes</h3>
     </div>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-8">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
       <ListPrefixes :prefs="checkPrefs" :classes="classes"/>
     </div>
   </div>
