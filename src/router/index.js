@@ -48,8 +48,8 @@ const routes = [
   },
   {
     path: '/prefix',
-    name: 'Prefixes',
-    component: () => import('@/pages/Prefixes')
+    name: 'PrefixesEn',
+    component: () => import('@/pages/PrefixesEn')
   },
   {
     path: '/:pathMatch(.*)*',
