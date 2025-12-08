@@ -11,7 +11,12 @@
         <tr v-for="(item, index) in prefs"
             :key="item['prefix'] + '_' + index">
           <td>{{ item["prefix"] }}</td>
-          <td>---</td>
+          <td class="list-group">
+            <ul v-for="(exam, idx) in item['examples']"
+                :key="exam + '_' + idx">
+              <li class="page-item">{{ exam }}</li>
+            </ul>
+          </td>
         </tr>
       </tbody>
     </table>
