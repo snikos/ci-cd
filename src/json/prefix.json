@@ -1,0 +1,27 @@
+{
+  "prefixes": [
+    {
+      "prefix": "dis-",
+      "examples": [
+        "disapproval (неодобрение)",
+        "disconnection (отделение от)"
+      ],
+      "value": ["отрицательное значение"]
+    },{
+      "prefix": "un-",
+      "examples": [
+        "unpredictable (непредсказуемый)",
+        "unable (неспособный)"
+      ],
+      "value": ["отрицательное значение"]
+    },{
+      "prefix": "",
+      "examples": [""],
+      "value": [""]
+    },{
+      "prefix": "en-,em-",
+      "examples": [],
+      "value": ["образование глаголов"]
+    }
+  ]
+}
