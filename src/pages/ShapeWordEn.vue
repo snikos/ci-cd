@@ -4,37 +4,37 @@
       <h3 class="pb-4">English prefixes</h3>
     </div>
     <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-      <ListPrefixes :prefs="checkPrefs" :classes="classes"/>
+      <ListShapeWordEn :shapeword="checkShapeWord" :classes="classes"/>
     </div>
   </div>
 </template>
 <script>
-  import prefixJson from '@/json/prefix.json';
-  import ListPrefixes from '@/components/ListPrefixes';
+  import shapewordJson from '@/json/shapeword.json';
+  import ListShapeWordEn from '@/components/ListShapeWordEn';
   export default {
-    name: 'PrefixesEn',
+    name: 'ShapeWordEn',
     components: {
-      ListPrefixes,
+      ListShapeWordEn,
     },
     data() {
       return {
-        loadPrefixes: [],
-        checkPrefs: [],
+        loadShapeWord: [],
+        checkShapeWord: [],
         classes: ['primary','secondary','success','danger','warning','info','light','dark','active'],
       }
     },
     mounted() {
-      this.fetchPrefs();
+      this.fetchShapeWord();
     },
     methods: {
-      async fetchPrefs() {
+      async fetchShapeWord() {
         try {
-          const res = await prefixJson;
-          this.loadPrefixes = res["prefixes"];
-          this.checkPrefs = res["prefixes"];
+          const res = await shapewordJson;
+          this.loadShapeWord = res["shapeword"];
+          this.checkShapeWord = res["shapeword"];
         }
         catch (e) {
-          console.log(`Error load json prefies: ${e}`)
+          console.log(`Error load json ShapeWord: ${e}`)
         }
       },
     },

@@ -3,13 +3,13 @@
     <table class="table table-sm table-striped table-bordered">
       <thead>
         <tr>
-          <th scope="col" :class="`table-${classes[7]}`">prefix</th>
+          <th scope="col" :class="`table-${classes[7]}`">pre(su)fix</th>
           <th scope="col" :class="`table-${classes[7]}`">example</th>
           <th scope="col" :class="`table-${classes[7]}`">value</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item, index) in prefs"
+        <tr v-for="(item, index) in shapeword"
             :key="item['prefix'] + '_' + index">
           <td>{{ item["prefix"] }}</td>
           <td>
@@ -31,9 +31,9 @@
 </template>
 <script>
   export default{
-    name: "ListPrefixes",
+    name: "ListShapeWordEn",
     props: {
-      prefs: {
+      shapeword: {
         type: Array,
         require: true
       },

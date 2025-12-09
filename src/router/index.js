@@ -47,9 +47,9 @@ const routes = [
     component: () => import('@/pages/IrregularVerbs')
   },
   {
-    path: '/prefix',
-    name: 'PrefixesEn',
-    component: () => import('@/pages/PrefixesEn')
+    path: '/shape-word',
+    name: 'ShapeWordEn',
+    component: () => import('@/pages/ShapeWordEn')
   },
   {
     path: '/:pathMatch(.*)*',

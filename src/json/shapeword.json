@@ -1,0 +1,490 @@
+{
+  "shapeword": [
+    {
+      "prefix": "dis-",
+      "examples": [
+        "disapproval (неодобрение)",
+        "disconnection (отделение от)"
+      ],
+      "value": ["отрицательное значение"]
+    },{
+      "prefix": "un-",
+      "examples": [
+        "unpredictable (непредсказуемый)",
+        "unable (неспособный)"
+      ],
+      "value": ["отрицательное значение"]
+    },{
+      "prefix": "im-,in-,il-,ir-",
+      "examples": [
+        "inactive (неактивный)",
+        "inconvenient (неудобный, стесняющий)",
+        "impossible (невозможный)",
+        "irregular (нерегулярный)",
+        "illogical (нелогичный)",
+        "impatient (нетерпеливый)",
+        "illegal (незаконный)",
+        "irresponsible (безответственный)"
+      ],
+      "value": [
+        "отрицательное значение",
+        "im- ставится только перед согласными b,p,m",
+        "il- только перед l",
+        "ir- только перед r"
+      ]
+    },{
+      "prefix": "mis-",
+      "examples": [
+        "misfortune (несчастье,беда)",
+        "misinform (дезинформиовать, вводить в заблуждение)",
+        "misunderstand (неправильно понять)"
+      ],
+      "value": ["отрицательное значение"]
+    },{
+      "prefix": "re-",
+      "examples": [
+        "rebuild (отстроить заново, реконстуировать)",
+        "rethink (переосмыслить)",
+        "return (возвращаться)"
+      ],
+      "value": [
+        "re- повторные действия, обратное направление"
+      ]
+    },{
+      "prefix": "co-",
+      "examples": [
+        "cooperate (сотрудничать)",
+        "coauthor (соавтор)"
+      ],
+      "value": [
+        "co- совместная деятельность"
+      ]
+    },{
+      "prefix": "under-",
+      "examples": [
+        "underact (недоигрывать)",
+        "underestimate (недооценивать)",
+        "underwear (нижнее белье)",
+        "undeground (подземка,метро)"
+      ],
+      "value": [
+        "under- антоним к over-",
+        "недостаточная степень действия",
+        "under - под"
+      ]
+    },{
+      "prefix": "pre-",
+      "examples": [
+        "prehistoric (доисторический)",
+        "pre-production (предварительная стадия производства)"
+      ],
+      "value": [
+        "pre- предшествование"
+      ]
+    },{
+      "prefix": "post-",
+      "examples": [
+        "post-modern (постмодернизм)",
+        "postnatal (послеродовой)"
+      ],
+      "value": [
+        "---"
+      ]
+    },{
+      "prefix": "en-,em-",
+      "examples": [
+        "encode (кодировать)",
+        "enclose (окружать)",
+        "empoison (подмешивать яд)",
+        "encourage (ободрять)"
+      ],
+      "value": [
+        "образование глаголов",
+        "em- ставится перед b,p,m"
+      ]
+    },{
+      "prefix": "ex-",
+      "examples": [
+        "ex-champion (бывший чемпион)",
+        "ex-minister (бывший министр)"
+      ],
+      "value": [
+        "обозначение бывшего статуса или должности"
+      ]
+    },{
+      "prefix": "-er,-or",
+      "examples": [
+        "performer (исполнитель)",
+        "doctor (доктор)",
+        "farmer (фермер)",
+        "speaker (оратор)",
+        "visitor (посетитель)",
+        "doer (человек дела)",
+        "dreamer (мечтатель)"
+      ],
+      "value": [
+        "-er,-or описывают род занятий, временные роли, характеристика человека"
+      ]
+    },{
+      "prefix": "-an,-ian",
+      "examples": [
+        "magician (волшебник)",
+        "musician (музыкант)",
+        "Belgian (бельгийский,бельгиец)"
+      ],
+      "value": [
+        "образование профессии, нации"
+      ]
+    },{
+      "prefix": "-ist",
+      "examples": [
+        "pacifist (пацифист)",
+        "alpinist (альпинист)",
+        "realist (реалист)",
+        "communist (коммунист)"
+      ],
+      "value": [
+        "род деятельности"
+      ]
+    },{
+      "prefix": "-ant,-ent",
+      "examples": [
+        "accountant (бухгалтер)",
+        "student (студент)"
+      ],
+      "value": [
+        "--"
+      ]
+    },{
+      "prefix": "-ee",
+      "examples": [
+        "employee (служащий)",
+        "conferee (участник конференции)"
+      ],
+      "value": [
+        "--"
+      ]
+    },{
+      "prefix": "-ess",
+      "examples": [
+        "princess (принцесса)",
+        "waitress (оффициантка)"
+      ],
+      "value": [
+        "для обозначения женского рода"
+      ]
+    },{
+      "prefix": "-ity",
+      "examples": [
+        "activity (деятельность)",
+        "lability (изменчивость)"
+      ],
+      "value": [
+        "--"
+      ]
+    },{
+      "prefix": "-ance,-ence,-ancy,-ency",
+      "examples": [
+        "importance (важность)",
+        "dependence (зависимость)",
+        "brilliance (великолепие)",
+        "efficiency (эффективность)"
+      ],
+      "value": [
+        "--"
+      ]
+    },{
+      "prefix": "-ion,-tion,-sion",
+      "examples": [
+        "revision (пересмотр,исправление)",
+        "exception (исключение)",
+        "admission (допущение)",
+        "information (информация)"
+      ],
+      "value": [
+        "--"
+      ]
+    },{
+      "prefix": "-ism",
+      "examples": [
+        "realism (реализм)",
+        "modernism (моденизм)",
+        "alpinism (альпинизм)"
+      ],
+      "value": [
+        "течение, род занятий"
+      ]
+    },{
+      "prefix": "-hood",
+      "examples": [
+        "childhood (детство)",
+        "brotherhood (братство)"
+      ],
+      "value": [
+        "состояние,группа людей,форма отношений"
+      ]
+    },{
+      "prefix": "-ure",
+      "examples": [
+        "pleasure (удовольствие)",
+        "pressure (давление)"
+      ],
+      "value": [
+        "образование существительных"
+      ]
+    },{
+      "prefix": "-dom",
+      "examples": [
+        "wisdom (мудрость)",
+        "kingdom (королевство)"
+      ],
+      "value": [
+        "образование существительных"
+      ]
+    },{
+      "prefix": "-ment",
+      "examples": [
+        "announcement (объявление)",
+        "improvement (улучшение)"
+      ],
+      "value": [
+        "образование существительных"
+      ]
+    },{
+      "prefix": "-ness",
+      "examples": [
+        "darkness (темнота)",
+        "kindness (доброта)"
+      ],
+      "value": [
+        "образование существительных"
+      ]
+    },{
+      "prefix": "-ship",
+      "examples": [
+        "friendship (дружба)",
+        "lordship (светлость)",
+        "airmanship (летное мастерство)",
+        "partnership (партнерство)"
+      ],
+      "value": [
+        "образование существительных"
+      ]
+    },{
+      "prefix": "-th",
+      "examples": [
+        "truth (правда)",
+        "length (длина)"
+      ],
+      "value": [
+        "образование существительных"
+      ]
+    },{
+      "prefix": "-ful",
+      "examples": [
+        "helpful (полезный)",
+        "joyful (радостный)",
+        "beautiful (красивый)"
+      ],
+      "value": [
+        "обладание определенным качеством"
+      ]
+    },{
+      "prefix": "-less",
+      "examples": [
+        "countless (бессчетный)",
+        "careless (беззаботный)",
+        "hopeless (безнадежный)",
+        "hopeful (надеющийся)"
+      ],
+      "value": [
+        "-less антоним для -ful",
+        "образование прилагательных"
+      ]
+    },{
+      "prefix": "-able",
+      "examples": [
+        "comfortable (комфортный)",
+        "acceptable (приемлемый,допустимый)",
+        "detectable (обнаруживаемый)"
+      ],
+      "value": [
+        "Able - способный",
+        "образование прилагательных"
+      ]
+    },{
+      "prefix": "-ous",
+      "examples": [
+        "famous (знаменитый)",
+        "dangerous (опасный)"
+      ],
+      "value": [
+        "образование прилагательных"
+      ]
+    },{
+      "prefix": "-y",
+      "examples": [
+        "windy (ветреный)",
+        "rusty (ржавый)"
+      ],
+      "value": [
+        "образование прилагательных"
+      ]
+    },{
+      "prefix": "-al",
+      "examples": [
+        "accidental (случайный)",
+        "additional (добавочный)"
+      ],
+      "value": [
+        "образование прилагательных"
+      ]
+    },{
+      "prefix": "-ar",
+      "examples": [
+        "molecular (молекулярный)",
+        "vernacular (народный)"
+      ],
+      "value": [
+        "образование прилагательных"
+      ]
+    },{
+      "prefix": "-ant,-ent",
+      "examples": [
+        "defiant (дерзкий)",
+        "evident (очевидный)"
+      ],
+      "value": [
+        "образование прилагательных"
+      ]
+    },{
+      "prefix": "-ary,-ory",
+      "examples": [
+        "secondary (вторичный)",
+        "obligatory (обязательный)"
+      ],
+      "value": [
+        "образование прилагательных"
+      ]
+    },{
+      "prefix": "-ic",
+      "examples": [
+        "democratic (демократичный)",
+        "historic (исторический)"
+      ],
+      "value": [
+        "образование прилагательных"
+      ]
+    },{
+      "prefix": "-ive",
+      "examples": [
+        "creative (творческий)",
+        "impressive (впечатляющий)"
+      ],
+      "value": [
+        "образование прилагательных"
+      ]
+    },{
+      "prefix": "-ish",
+      "examples": [
+        "childish (детский)",
+        "liquorish (развратный)",
+        "reddish (красноватый)",
+        "Danish (датский)"
+      ],
+      "value": [
+        "образование прилагательных"
+      ]
+    },{
+      "prefix": "-long",
+      "examples": [
+        "livelong (целый,вечный)",
+        "lifelong (пожизненный)",
+        "sidelong (косой,вкось)"
+      ],
+      "value": [
+        "образование прилагательных"
+      ]
+    },{
+      "prefix": "-ate",
+      "examples": [
+        "activate (активизировать)",
+        "decorate (украшать)"
+      ],
+      "value": [
+        "образование глаголов"
+      ]
+    },{
+      "prefix": "-ify,-fy",
+      "examples": [
+        "notify (уведомлять)",
+        "verify (проверять)"
+      ],
+      "value": [
+        "образование глаголов"
+      ]
+    },{
+      "prefix": "-ise,-ize",
+      "examples": [
+        "summarize (суммировать)",
+        "hypnotize (гипнотизировать)"
+      ],
+      "value": [
+        "образование глаголов"
+      ]
+    },{
+      "prefix": "-en",
+      "examples": [
+        "weaken (ослабевать)",
+        "lengthen (удлинять)"
+      ],
+      "value": [
+        "образование глаголов"
+      ]
+    },{
+      "prefix": "-ish",
+      "examples": [
+        "demolish (разрушать)",
+        "embellish (украшать)"
+      ],
+      "value": [
+        "образование глаголов"
+      ]
+    },{
+      "prefix": "-ly",
+      "examples": [
+        "occasionally (случайно)"
+      ],
+      "value": [
+        "образование наречия"
+      ]
+    },{
+      "prefix": "-wise",
+      "examples": [
+        "otherwise (иначе)",
+        "archwise (дугообразно)"
+      ],
+      "value": [
+        "образование наречия"
+      ]
+    },{
+      "prefix": "-ward",
+      "examples": [
+        "skyward (к небу)",
+        "northward (на север)",
+        "shoreward (по направлению к берегу)"
+      ],
+      "value": [
+        "образование наречия"
+      ]
+    },{
+      "prefix": "---",
+      "examples": [
+        "---"
+      ],
+      "value": [
+        "---"
+      ]
+    }
+  ]
+}

@@ -9,7 +9,7 @@
       <router-link to="/git-bash">Git</router-link> |
       <router-link to="/migration-job">Migration Job</router-link> |
       <router-link to="/irr-verbs">Irregular verbs (En)</router-link> |
-      <router-link to="/prefix">Prefix (En)</router-link>
+      <router-link to="/shape-word">Shape words (En)</router-link>
     </nav>
     <router-view/>
   </div>
