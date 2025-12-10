@@ -478,6 +478,128 @@
         "образование наречия"
       ]
     },{
+      "prefix": "mixer",
+      "examples": [
+        "possible (возможный) | possibility (возможность) | impossibility (невозможность)",
+        "occasion (случай) | occasional (случайный) | occasionally (случайно)",
+        "agree (соглашаться) | agreeable (приемлемый,приятный) | agreeably (приятный) | agreement (соглашение,согласие) | disagree (противоречить,не солглашаться) | disagreeable (неприятный) | disagreeably (неприятно) | disagreement (разногласие)"
+      ],
+      "value": [
+        "---"
+      ]
+    },{
+      "prefix": "shaping",
+      "examples": [
+        "toothbrush (зубная паста)",
+        "well-educated (хорошо образованный)",
+        "fireman (пожарный) | spiderman (человек-паук)",
+        "sugar-free (без сахара) | alcohol-free (безалкогольный)",
+        "fireproof (огнестойкий) | soundproof (звукоизолирующий)"
+      ],
+      "value": [
+        "Словосложение - образование нового слова сложением корней"
+      ]
+    },{
+      "prefix": "abbr",
+      "examples": [
+        "science fiction - sci-fi (научная фантастика) | United States of America - USA (США)"
+      ],
+      "value": [
+        "---"
+      ]
+    },{
+      "prefix": "conversion",
+      "examples": [
+        "I hope you will not be angry with me (Надеюсь ты не будешь на меня злиться)",
+        "I always had a hope to return to that city (У меня всегда оставалась надежда вернуться в этот город)",
+        "The sea is so calm today (Море так спокойно сегодня)",
+        "With a calm she realized that her life was probably at its end (Со спокойствием она осознала, что ее жизнь, вероятно, подходила к концу)",
+        "I beg you to calm down (Я умоляю тебя успокоиться)"
+      ],
+      "value": [
+        "---"
+      ]
+    },{
+      "prefix": "---",
+      "examples": [
+        "---"
+      ],
+      "value": [
+        "---"
+      ]
+    },{
+      "prefix": "---",
+      "examples": [
+        "---"
+      ],
+      "value": [
+        "---"
+      ]
+    },{
+      "prefix": "---",
+      "examples": [
+        "---"
+      ],
+      "value": [
+        "---"
+      ]
+    },{
+      "prefix": "---",
+      "examples": [
+        "---"
+      ],
+      "value": [
+        "---"
+      ]
+    },{
+      "prefix": "---",
+      "examples": [
+        "---"
+      ],
+      "value": [
+        "---"
+      ]
+    },{
+      "prefix": "---",
+      "examples": [
+        "---"
+      ],
+      "value": [
+        "---"
+      ]
+    },{
+      "prefix": "---",
+      "examples": [
+        "---"
+      ],
+      "value": [
+        "---"
+      ]
+    },{
+      "prefix": "---",
+      "examples": [
+        "---"
+      ],
+      "value": [
+        "---"
+      ]
+    },{
+      "prefix": "---",
+      "examples": [
+        "---"
+      ],
+      "value": [
+        "---"
+      ]
+    },{
+      "prefix": "---",
+      "examples": [
+        "---"
+      ],
+      "value": [
+        "---"
+      ]
+    },{
       "prefix": "---",
       "examples": [
         "---"

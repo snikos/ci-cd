@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-12 col-md-12">
-      <h3 class="pb-4">English prefixes</h3>
+      <h3 class="pb-4">English Shape words</h3>
     </div>
     <div class="col-12 col-sm-12 col-md-12 col-lg-12">
       <ListShapeWordEn :shapeword="checkShapeWord" :classes="classes"/>
