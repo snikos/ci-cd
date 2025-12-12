@@ -1,4 +1,32 @@
 {
+  "shemaword": [
+    {
+      "noun": {
+        "suffix": {
+          "subject": "-er/-or,-an/-ian,-ist,-ant/-ent,-ee,-ess",
+          "abstact": "-ity,-ance/-ence/-ancy/-ency,-ism,-hood,-ure,-ion/-tion/-sion,-dom,-ment,-ness,-ship,-th"
+        }
+      }
+    },{
+      "adjective": {
+        "suffix": {
+          "only": "-ful,-less,-able,-ous,-y,-al,-ar,-ant/-ent,-ary/-ory,-ic,-ive,-ish,-long"
+        }
+      }
+    },{
+      "verb": {
+        "suffix": {
+          "only": "-ate,-ify/-fy,-ise/-ize,-en,-ish"
+        }
+      }
+    },{
+      "adverb": {
+        "suffix": {
+          "only": "-ly,-wise,-ward(s)"
+        }
+      }
+    }
+  ],
   "shapeword": [
     {
       "prefix": "dis-",
@@ -515,86 +543,6 @@
         "The sea is so calm today (Море так спокойно сегодня)",
         "With a calm she realized that her life was probably at its end (Со спокойствием она осознала, что ее жизнь, вероятно, подходила к концу)",
         "I beg you to calm down (Я умоляю тебя успокоиться)"
-      ],
-      "value": [
-        "---"
-      ]
-    },{
-      "prefix": "---",
-      "examples": [
-        "---"
-      ],
-      "value": [
-        "---"
-      ]
-    },{
-      "prefix": "---",
-      "examples": [
-        "---"
-      ],
-      "value": [
-        "---"
-      ]
-    },{
-      "prefix": "---",
-      "examples": [
-        "---"
-      ],
-      "value": [
-        "---"
-      ]
-    },{
-      "prefix": "---",
-      "examples": [
-        "---"
-      ],
-      "value": [
-        "---"
-      ]
-    },{
-      "prefix": "---",
-      "examples": [
-        "---"
-      ],
-      "value": [
-        "---"
-      ]
-    },{
-      "prefix": "---",
-      "examples": [
-        "---"
-      ],
-      "value": [
-        "---"
-      ]
-    },{
-      "prefix": "---",
-      "examples": [
-        "---"
-      ],
-      "value": [
-        "---"
-      ]
-    },{
-      "prefix": "---",
-      "examples": [
-        "---"
-      ],
-      "value": [
-        "---"
-      ]
-    },{
-      "prefix": "---",
-      "examples": [
-        "---"
-      ],
-      "value": [
-        "---"
-      ]
-    },{
-      "prefix": "---",
-      "examples": [
-        "---"
       ],
       "value": [
         "---"
