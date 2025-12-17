@@ -4,21 +4,26 @@
       <h3 class="pb-4">English Shape words</h3>
     </div>
     <div class="col-12 col-md-12">
+      <ShemaShapeWordEn :shemaword="shemaShapeWord"/>
+    </div>
+    <div class="col-12 col-md-12">
       <ListShapeWordEn :shapeword="checkShapeWord" :classes="classes"/>
     </div>
   </div>
 </template>
 <script>
   import shapewordJson from '@/json/shapeword.json';
+  import ShemaShapeWordEn from '@/components/ShemaShapeWordEn';
   import ListShapeWordEn from '@/components/ListShapeWordEn';
   export default {
     name: 'ShapeWordEn',
     components: {
+      ShemaShapeWordEn,
       ListShapeWordEn,
     },
     data() {
       return {
-        loadShapeWord: [],
+        shemaShapeWord: [],
         checkShapeWord: [],
         classes: ['primary','secondary','success','danger','warning','info','light','dark','active'],
       }
@@ -30,7 +35,7 @@
       async fetchShapeWord() {
         try {
           const res = await shapewordJson;
-          this.loadShapeWord = res["shapeword"];
+          this.shemaShapeWord = res["shemaword"];
           this.checkShapeWord = res["shapeword"];
         }
         catch (e) {
