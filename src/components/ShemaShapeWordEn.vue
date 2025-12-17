@@ -3,9 +3,15 @@
     <table class="table table-bordered">
       <tr v-for="(item, i) in shemaword"
         :key="'keyid_' + i">
-        <td v-if="i===0" rowspan="2">{{ String(Object.keys(item)).split("_")[0] }}</td>
-        <td v-if="i>1" colspan="2">{{ String(Object.keys(item)).split("_")[0] }}</td>
-        <td v-if="i<2">{{ String(Object.keys(item)).split("_")[1] }}</td>
+        <td v-if="i===0" rowspan="2">
+          <h5 class="float-left text-capitalize">{{ getTitle(item, 0) }}</h5>
+        </td>
+        <td v-if="i>1" colspan="2">
+          <h5 class="float-left text-capitalize">{{ getTitle(item, 0) }}</h5>
+        </td>
+        <td v-if="i<2">
+          <h6 class="float-left text-capitalize">{{ getTitle(item, 1) }}</h6>
+        </td>
         <td v-for="(el, k, idx) in item"
           :key="k + '_' + idx">
           <span v-for="(w, i) in el.split(',')"
@@ -14,7 +20,7 @@
               'badge-primary': w.includes('/'),
               'badge-success': w.includes('-e')
             }]"
-            class="float-left">
+            class="float-left font-weight-normal">
             {{ w }}
           </span>
         </td>
@@ -31,7 +37,12 @@
         type: Array,
         required: true,
       }
-    }
+    },
+    methods: {
+      getTitle(item, num) {
+        return String(Object.keys(item)).split("_")[num]
+      }
+    },
   }
 </script>
 

@@ -3,15 +3,19 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th scope="col" :class="`table-${classes[7]}`">pre(su)fix</th>
-          <th scope="col" :class="`table-${classes[7]}`">example</th>
-          <th scope="col" :class="`table-${classes[7]}`">value</th>
+          <th scope="col" :class="`table-${classes[7]}`" class="text-capitalize">pre(su)fix</th>
+          <th scope="col" :class="`table-${classes[7]}`" class="text-capitalize">example</th>
+          <th scope="col" :class="`table-${classes[7]}`" class="text-capitalize">value</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(item, index) in shapeword"
             :key="item['prefix'] + '_' + index">
-          <td>{{ item["prefix"] }}</td>
+          <td>
+            <h5 class="text-left">
+              <span class="badge badge-info">{{ item["prefix"] }}</span>
+            </h5>
+          </td>
           <td>
             <ul style="max-width: 700px" class="list-unstyled">
               <li v-for="(exam, idx) in item['examples']"
@@ -41,8 +45,8 @@
             <ul v-for="(el, i) in item['value']"
                 :key="el + '_' + i"
                 class="list-unstyled">
-              <li class="float-left">
-                <p class="breakText">
+              <li class="">
+                <p class="breakText text-left">
                   <small>{{ el }}</small>
                 </p>
               </li>
