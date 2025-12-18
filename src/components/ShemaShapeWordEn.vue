@@ -14,14 +14,15 @@
         </td>
         <td v-for="(el, k, idx) in item"
           :key="k + '_' + idx">
-          <span v-for="(w, i) in el.split(',')"
-            :key="'key_' + i"
+          <span v-for="(suf, i) in el.split(',')"
+            :key="'key_' + i + Math.random()"
             :class="['badge', {
-              'badge-primary': w.includes('/'),
-              'badge-success': w.includes('-e')
+              'badge-primary': suf.includes('/'),
+              'badge-success': suf.includes('-e'),
+              'badge-warning': suf.includes('-i'),
             }]"
             class="float-left font-weight-normal">
-            {{ w }}
+            {{ suf }}
           </span>
         </td>
       </tr>

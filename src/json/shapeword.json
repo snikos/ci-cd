@@ -101,7 +101,7 @@
         "postnatal (послеродовой)"
       ],
       "value": [
-        "---"
+        ""
       ]
     },{
       "prefix": "en-,em-",
@@ -166,7 +166,7 @@
         "student (студент)"
       ],
       "value": [
-        "--"
+        ""
       ]
     },{
       "prefix": "-ee",
@@ -175,7 +175,7 @@
         "conferee (участник конференции)"
       ],
       "value": [
-        "--"
+        ""
       ]
     },{
       "prefix": "-ess",
@@ -193,7 +193,7 @@
         "lability (изменчивость)"
       ],
       "value": [
-        "--"
+        ""
       ]
     },{
       "prefix": "-ance,-ence,-ancy,-ency",
@@ -204,7 +204,7 @@
         "efficiency (эффективность)"
       ],
       "value": [
-        "--"
+        ""
       ]
     },{
       "prefix": "-ion,-tion,-sion",
@@ -215,7 +215,7 @@
         "information (информация)"
       ],
       "value": [
-        "--"
+        ""
       ]
     },{
       "prefix": "-ism",
@@ -498,7 +498,7 @@
         "agree (соглашаться) | agreeable (приемлемый,приятный) | agreeably (приятный) | agreement (соглашение,согласие) | disagree (противоречить,не солглашаться) | disagreeable (неприятный) | disagreeably (неприятно) | disagreement (разногласие)"
       ],
       "value": [
-        "---"
+        ""
       ]
     },{
       "prefix": "shaping",
@@ -518,7 +518,7 @@
         "science fiction - sci-fi (научная фантастика) | United States of America - USA (США)"
       ],
       "value": [
-        "---"
+        ""
       ]
     },{
       "prefix": "conversion",
@@ -530,7 +530,7 @@
         "I beg you to calm down (Я умоляю тебя успокоиться)"
       ],
       "value": [
-        "---"
+        ""
       ]
     },{
       "prefix": "---",
@@ -538,7 +538,7 @@
         "---"
       ],
       "value": [
-        "---"
+        ""
       ]
     }
   ]
