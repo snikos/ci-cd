@@ -55,12 +55,13 @@
     }
     .mymodal-close{
         cursor: pointer;
-        padding: 6px 12px;
+        padding: 2px 10px;
         background-color: rgb(66, 185, 131);
         color: #fff;
         position: absolute;
         top: 1px;
         right: 1px;
         border-radius: 0 9px 0 9px;
+        z-index: 1;
     }
 </style>

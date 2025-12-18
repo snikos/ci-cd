@@ -9,13 +9,14 @@
       </thead>
       <tbody>
         <tr v-for="(item, index) in shapeword"
-            :key="'key_' + index + '_' + Math.random()">
+            :key="'key_' + index + '_' + Math.random()"
+            :class="[{'table-primary': currentTab === index}]">
           <td>
             <h5 class="text-left">
               <span class="badge badge-info">{{ item["prefix"] }}</span>
               <button type="button"
                 class="btn btn-outline-info btn-sm"
-                @click.prevent.stop="showModal(item.prefix)">
+                @click.prevent.stop="showModal(index)">
                 <span class="badge badge-light">
                   Info {{ !item['value'].includes('') ? item['value'].length : 0 }}
                 </span>
@@ -52,12 +53,13 @@
     </table>
   </div>
   <my-modal v-model:showModal="modalVisible">
-    <h5>{{ getMtd('prefix') }}</h5>
-    <div v-for="(list, index) in getMtd('value')"
-      :key="list.substr(0,6) + index"
-      class="modal-text">
+    <ul class="modal-text list-group">
+      <li v-for="(list, index) in getMtd('value')"
+        :key="Math.random().toFixed(5) + index"
+        class="list-unstyled list-group-item">
         {{ list }}
-      </div>
+      </li>
+    </ul>
   </my-modal>
 </template>
 <script>
@@ -71,7 +73,7 @@
       return {
         currentTab: '',
         modalVisible: false,
-        curPrefix: '',
+        curIndex: '',
       }
     },
     props: {
@@ -86,7 +88,7 @@
     computed: {
       getObj() {
         return this.shapeword
-        .filter( ({prefix}) => prefix === this.curPrefix )
+        .filter( (_, index) => index === this.curIndex )
         .find( (el, idx) => idx === 0)
       },
       getMtd() {
@@ -99,9 +101,16 @@
       showModal(id) {
         this.currentTab = id;
         this.modalVisible = true;
-        this.curPrefix = id;
+        this.curIndex = id;
       },
-    }
+    },
+    watch: {
+        modalVisible() {
+            if (!this.modalVisible) {
+                this.currentTab = !this.currentTab;
+            }
+        }
+    },
   }
 </script>
 
