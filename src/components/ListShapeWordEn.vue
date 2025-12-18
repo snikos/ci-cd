@@ -11,14 +11,19 @@
         <tr v-for="(item, index) in shapeword"
             :key="'key_' + index + '_' + Math.random()"
             :class="[{'table-primary': currentTab === index}]">
-          <td>
+          <td class="position-relative">
             <h5 class="text-left">
-              <span class="badge badge-info">{{ item["prefix"] }}</span>
+              <span v-for="(prefix, i) in splitPrefix(item['prefix'])"
+                :key="'key_' + i + '_' + Math.random()"
+                class="badge badge-primary">
+                  {{ prefix }}
+              </span>
               <button type="button"
-                class="btn btn-outline-info btn-sm"
+                class="btn btn-outline-warning btn-sm position-absolute"
+                style="top:0;right:0;z-index:1"
                 @click.prevent.stop="showModal(index)">
                 <span class="badge badge-light">
-                  Info {{ !item['value'].includes('') ? item['value'].length : 0 }}
+                  {{ !item['value'].includes('') ? item['value'].length : 0 }}
                 </span>
               </button>
             </h5>
@@ -103,6 +108,9 @@
         this.modalVisible = true;
         this.curIndex = id;
       },
+      splitPrefix(suf) {
+        return suf.includes(',') ? suf.split(',') : [suf]
+      }
     },
     watch: {
         modalVisible() {
@@ -114,4 +122,10 @@
   }
 </script>
 
-<style scoped></style>
+<style scoped>
+.breakText {
+  white-space: normal!important;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+</style>

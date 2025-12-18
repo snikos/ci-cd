@@ -43,9 +43,4 @@ nav {
   top: -7px;
 }
 
-.breakText {
-  white-space: normal;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
 </style>
