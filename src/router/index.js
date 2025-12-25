@@ -37,6 +37,11 @@ const routes = [
     component: () => import('@/pages/GitBash')
   },
   {
+    path: '/nvm',
+    name: 'NvmWindows',
+    component: () => import('@/pages/Nvm')
+  },
+  {
     path: '/migration-job',
     name: 'MigrationJobJson',
     component: () => import('@/pages/MigrationJobJson')
