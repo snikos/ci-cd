@@ -7,7 +7,7 @@
       <router-link to="/vueuse">Vueuse</router-link> |
       <router-link to="/local-json">Json</router-link> |
       <router-link to="/git-bash">Git</router-link> |
-      <router-link to="/nvm">nvm</router-link> |
+      <router-link to="/nvm">Nvm</router-link> |
       <router-link to="/migration-job">Migration Job</router-link> |
       <router-link to="/irr-verbs">Irregular verbs (En)</router-link> |
       <router-link to="/shape-word">Shape words (En)</router-link>
