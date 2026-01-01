@@ -3,36 +3,29 @@
     <div class="col-12">
       <h3>Nvm (Node Version Manager)</h3>
     </div>
-    <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-      <div class="list-group">
+    <div class="col-12">
+      <div class="list-group list-group-horizontal">
         <a 
-          class="list-group-item list-group-item-action" 
+          class="list-group-item list-group-item-action list-group-item-primary" 
           href="https://github.com/coreybutler/nvm-windows&client=webapp">
             nvm-windows Download and Install
         </a>
         <a 
-        class="list-group-item list-group-item-action" 
+        class="list-group-item list-group-item-action list-group-item-success" 
         href="https://coderlessons.com/articles/veb-razrabotka-articles/ustanovka-neskolkikh-versii-node-js-s-pomoshchiu-nvm">
           Instruction
         </a>
-      </div>
-    </div>
-    <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-      <div class="list-group">
         <a 
-          class="list-group-item list-group-item-action" 
+          class="list-group-item list-group-item-action list-group-item-dark" 
           href="https://ask-dev.ru/info/56493/how-to-completely-remove-nodejs-from-windows">
             Delete All Nodejs. Clean up System
-          </a>
+        </a>
       </div>
-    </div>
-    <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-      <h3>3 next block</h3>
     </div>
   </div>
   <div class="row">
     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
-      <dit class="list-group">
+      <div class="list-group">
         <div class="list-group-item text-left">
           <span>установка</span> -
           <code>nvm install 8.9.4</code>
@@ -53,10 +46,10 @@
           <span>Установка Ноды 9.0.0 и переустановка npm 8.9</span> -
           <code>nvm install v9.0.0 --reinstall-packages-from=8.9</code>
         </div>
-      </dit>
+      </div>
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
-      <dit class="list-group">
+      <div class="list-group">
         <div class="list-group-item text-left">
           <span>список</span> -
           <code>nvm list</code>
@@ -73,14 +66,14 @@
           <span>node</span> -
           <code>node -v</code>
         </div>
-      </dit>
+      </div>
         <div class="list-group-item text-left">
           <span>npm</span> -
           <code>npm -v</code>
         </div>
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
-      <dit class="list-group">
+      <div class="list-group">
         <div class="list-group-item text-left">
           <span>текущая версия комманды</span> -
           <code>nvm current</code>
@@ -101,13 +94,13 @@
           <span>перейти на последнюю версию Node.js</span> -
           <code>nvm use node</code>
         </div>
-      </dit>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'NvmWindows'
+    name: 'NvmWindows',
   }
 </script>
