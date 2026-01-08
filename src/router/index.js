@@ -28,7 +28,7 @@ const routes = [
     meta: {
       title: 'CiCd',
     },
-    component: () => import('@/pages/StartPage')
+    component: () => import('@/pages/CiCdPage')
   },
   {
     path: '/vueuse',

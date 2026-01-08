@@ -11,7 +11,7 @@
 <script>
     import CiCd from '@/components/CiCd';
     export default {
-        name: "StartPage",
+        name: "CiCdPage",
         components: {
               CiCd,
         },

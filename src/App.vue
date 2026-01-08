@@ -1,22 +1,73 @@
 <template>
   <div class="container">
-    <nav>
-      <router-link to="/">Homer</router-link> |
-      <router-link to="/http">Http Codes</router-link> |
-      <router-link to="/start">CI/CD</router-link> |
-      <router-link to="/vueuse">Vueuse</router-link> |
-      <router-link to="/local-json">Json</router-link> |
-      <router-link to="/git-bash">Git</router-link> |
-      <router-link to="/nvm">Nvm</router-link> |
-      <router-link to="/migration-job">Migration Job</router-link> |
-      <router-link to="/irr-verbs">Irregular verbs (En)</router-link> |
-      <router-link to="/shape-word">Shape words (En)</router-link>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-toggle="collapse" 
+        data-target="#navbarNav" 
+        aria-controls="navbarNav"
+        aria-expanded="false" 
+        aria-label="Toggle navigation"
+        @click.prevent.stop="toggleNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div 
+        class="collapse navbar-collapse" 
+        id="navbarNav"
+        :class="[toggling ? 'show' : '']">
+        <ul class="navbar-nav">
+          <li class="navbar-item">
+            <router-link to="/">Homer</router-link>
+          </li>
+          <li class="navbar-item">
+            <router-link to="/http">Http Codes</router-link>
+          </li>
+          <li class="navbar-item">
+            <router-link to="/start">CI/CD</router-link>
+          </li>
+          <li class="navbar-item">
+            <router-link to="/vueuse">Vueuse</router-link>
+          </li>
+          <li class="navbar-item">
+            <router-link to="/local-json">Json</router-link>
+          </li>
+          <li class="navbar-item">
+            <router-link to="/git-bash">Git</router-link>
+          </li>
+          <li class="navbar-item">
+            <router-link to="/nvm">Nvm</router-link>
+          </li>
+          <li class="navbar-item">
+            <router-link to="/migration-job">Migration Job</router-link>
+          </li>
+          <li class="navbar-item">
+            <router-link to="/irr-verbs">Irregular verbs (En)</router-link>
+          </li>
+          <li class="navbar-item">
+            <router-link to="/shape-word">Shape words (En)</router-link>
+          </li>
+        </ul>
+      </div>
     </nav>
     <router-view/>
   </div>
   <div id="modals"></div>
 </template>
-
+<script>
+  export default {
+    data() {
+      return {
+        toggling: false,
+      }
+    },
+    methods: {
+      toggleNav() {
+        this.toggling = !this.toggling;
+      }
+    }
+  }
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
