@@ -16,36 +16,36 @@
         class="collapse navbar-collapse" 
         id="navbarNav"
         :class="[toggling ? 'show' : '']">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mr-auto">
           <li class="navbar-item">
-            <router-link to="/">Homer</router-link>
+            <router-link class="nav-link" to="/">Homer</router-link>
           </li>
           <li class="navbar-item">
-            <router-link to="/http">Http Codes</router-link>
+            <router-link class="nav-link" to="/http">Http Codes</router-link>
           </li>
           <li class="navbar-item">
-            <router-link to="/start">CI/CD</router-link>
+            <router-link class="nav-link" to="/start">CI/CD</router-link>
           </li>
           <li class="navbar-item">
-            <router-link to="/vueuse">Vueuse</router-link>
+            <router-link class="nav-link" to="/vueuse">Vueuse</router-link>
           </li>
           <li class="navbar-item">
-            <router-link to="/local-json">Json</router-link>
+            <router-link class="nav-link" to="/local-json">Json</router-link>
           </li>
           <li class="navbar-item">
-            <router-link to="/git-bash">Git</router-link>
+            <router-link class="nav-link" to="/git-bash">Git</router-link>
           </li>
           <li class="navbar-item">
-            <router-link to="/nvm">Nvm</router-link>
+            <router-link class="nav-link" to="/nvm">Nvm</router-link>
           </li>
           <li class="navbar-item">
-            <router-link to="/migration-job">Migration Job</router-link>
+            <router-link class="nav-link" to="/migration-job">Migration Job</router-link>
           </li>
           <li class="navbar-item">
-            <router-link to="/irr-verbs">Irregular verbs (En)</router-link>
+            <router-link class="nav-link" to="/irr-verbs">Irregular verbs (En)</router-link>
           </li>
           <li class="navbar-item">
-            <router-link to="/shape-word">Shape words (En)</router-link>
+            <router-link class="nav-link" to="/shape-word">Shape words (En)</router-link>
           </li>
         </ul>
       </div>
@@ -85,6 +85,7 @@ nav {
     color: $color-blue;
 
     &.router-link-exact-active {
+      background-color: lightgreen;
       color: #42b983;
     }
   }
