@@ -1,6 +1,8 @@
 <template style="min-height:720px;height:720px;">
-    <div v-show="loading" class="progressLoading" style="min-height:200px;">
-        Loading...
+    <div class="d-flex justify-content-center mb-3">
+        <div v-show="loading" class="spinner-grow text-success">
+            <span class="sr-only">Loading...</span>
+        </div>
     </div>
     <ul
             class="list-group"
@@ -43,8 +45,7 @@
 </script>
 
 <style scoped>
-    .commentNotFound,
-    .progressLoading{
+    .commentNotFound{
         padding: 1em 0;
         margin: 0 auto;
         text-align: center;

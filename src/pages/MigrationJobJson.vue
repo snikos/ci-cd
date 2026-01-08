@@ -78,6 +78,7 @@
             }
         },
         mounted() {
+            this.loading = true;
             this.fetchSortOptions();
             setTimeout( () => {
                 this.fetchHashCountries(this.selectedCountry);
@@ -186,7 +187,7 @@
                 setTimeout( async () => {
                     this.comments = search;
                     this.loading = false;
-                }, 500);
+                }, 100); //500
                 if (!this.comment) {
                     this.showCommentsAreDone = 1;
                 }
