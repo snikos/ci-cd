@@ -1,0 +1,65 @@
+{
+  "nvm": [
+    {
+      "id": 0,
+      "text": "установка",
+      "comd": "nvm install 8.9.4"
+    },{
+      "id": 1,
+      "text": "последняя Нода",
+      "comd": "nvm install latest"
+    },{
+      "id": 2,
+      "text": "удаление Ноды",
+      "comd": "nvm uninstall 0.11"
+    },{
+      "id": 3,
+      "text": "последний патч",
+      "comd": "nvm install 8.9"
+    },{
+      "id": 4,
+      "text": "Установка Ноды 9.0.0 и переустановка npm 8.9",
+      "comd": "nvm install v9.0.0 --reinstall-packages-from=8.9"
+    },{
+      "id": 5,
+      "text": "список",
+      "comd": "nvm list"
+    },{
+      "id": 6,
+      "text": "список доступных версий",
+      "comd": "nvm list available"
+    },{
+      "id": 7,
+      "text": "список скаченных версий",
+      "comd": "nvm list installed"
+    },{
+      "id": 8,
+      "text": "node",
+      "comd": "node -v"
+    },{
+      "id": 9,
+      "text": "npm",
+      "comd": "npm -v"
+    },{
+      "id": 10,
+      "text": "текущая версия комманды",
+      "comd": "nvm current"
+    },{
+      "id": 11,
+      "text": "Использование NVM и список версий",
+      "comd": "nvm use node nvm ls"
+    },{
+      "id": 12,
+      "text": "список Нод установленных в системе",
+      "comd": "nvm ls"
+    },{
+      "id": 13,
+      "text": "перейти на Node.js версии 8.9.4",
+      "comd": "nvm use 8.9.4"
+    },{
+      "id": 14,
+      "text": "перейти на последнюю версию Node.js",
+      "comd": "nvm use node"
+    }
+  ]
+}
