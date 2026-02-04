@@ -62,7 +62,7 @@
       <li v-for="(list, index) in getMtd('value')"
         :key="Math.random().toFixed(5) + index"
         class="list-unstyled list-group-item">
-        {{ list }}
+        <b class="popup-bold-text">{{ index+1 }}</b> {{list}}
       </li>
     </ul>
   </my-modal>
@@ -127,5 +127,9 @@
   white-space: normal!important;
   overflow-wrap: anywhere;
   word-break: break-word;
+}
+.popup-bold-text {
+  float:left;
+  text-decoration:underline;
 }
 </style>
