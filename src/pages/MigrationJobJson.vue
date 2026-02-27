@@ -1,5 +1,6 @@
 <template>
     <div class="row jobMigration">
+        <h1 @click="double">{{ myOwnCount }}</h1>
         <h3 class="jobMigration__title"><span class="battle">Battle of Comments:</span> {{ currentCountry }}</h3>
         <div class="col-12">
             <div class="row">
@@ -49,6 +50,8 @@
     import HashInputBlock from "@/components/HashInputBlock";
     import ListCommentsButton from "@/components/ListCommentsButton";
     import ListComments from "@/components/ListComments";
+    import { mapState } from "pinia";
+    import { useCountStore } from "@/store/count.js";
     export default {
         name: "MigrationJobJson",
         props: ["jsonLocation"],
@@ -79,49 +82,61 @@
         },
         mounted() {
             this.loading = true;
-            this.fetchSortOptions();
+            //console.log('local: ', JSON.parse(localStorage.getItem('allOptions')));
+            if ( JSON.parse(localStorage.getItem('allOptions')) === null ){
+                this.fetchSortOptions();
+            } else {
+                this.sortOptions = JSON.parse(localStorage.getItem('allOptions'));
+            }
             setTimeout( () => {
-                this.fetchHashCountries(this.selectedCountry);
-                //this.fetchComments(this.selectedCountry);
-                //console.log(this.selectedCountry)
+                if ( JSON.parse(localStorage.getItem('hashCollection')) === null ) {
+                    this.fetchHashCountries(this.selectedCountry);
+                } else {
+                    this.arrayHashStrings = JSON.parse(localStorage.getItem('hashCollection'))[this.selectedCountry];
+                }
+                this.fetchComments(this.selectedCountry);
             }, 10)
         },
         methods: {
             countrySelect() {
                 this.searchQuery = '';
-                this.fetchHashCountries(this.selectedCountry);
-                //this.fetchComments(this.selectedCountry);
+                if ( JSON.parse(localStorage.getItem('hashCollection')) === null ) {
+                    this.fetchHashCountries(this.selectedCountry);
+                } else {
+                    this.arrayHashStrings = JSON.parse(localStorage.getItem('hashCollection'))[this.selectedCountry];
+                }
+                this.fetchComments(this.selectedCountry);
             },
             async fetchSortOptions() {
                 try {
                     await Axios.get('../options/allOptions.json')
                     .then( res => {
-                        //console.log(res.data);
                         this.sortOptions = res.data;
+                        localStorage.setItem('allOptions', JSON.stringify(res.data));
                     })
                 } catch (e) {
                     console.log('Error hash collection loading: ' + e);
                 }
             },
             async fetchHashCountries( countryName ) {
-                await Axios.get('../options/hashCollection.json')
+                /*await Axios.get('../options/hashCollection.json')
                     .then( result => {
                         if(result.data[countryName] === undefined) {
                             this.selectedCountry = "rabota-v-omane";
                             countryName = "rabota-v-omane";
                         }
-                    });
+                    });*/
                 try {
                     const country = String(countryName);
                     await Axios.get('../options/hashCollection.json')
                     .then( result => {
                         if(result.data[country]) {
                             this.arrayHashStrings = result.data[country];
+                            localStorage.setItem('hashCollection', JSON.stringify(result.data));
+                        } else {
+                            console.log("No country")
                         }
-                    }).then(() => {
-                        this.fetchComments(countryName);
                     });
-                    //this.fetchComments(countryName);
                 } catch (e) {
                     console.log('Error hash collection loading: ' + e);
                 }
@@ -136,6 +151,7 @@
                             this.nextCount = 0;
                             this.showCommentsAreDone = 0;
                             this.loadComments = [...result.data];
+                            localStorage.setItem(String(countryName), JSON.stringify(result.data));
                         })
                         .then(() => {
                             this.loadNextComments();
@@ -264,7 +280,11 @@
             },
             getAllCommentsLength() {
                 return this.loadComments.length;
-            }
+            },
+            ...mapState(useCountStore, {
+                myOwnCount: 'count',
+                double: store => store.increment(),
+            })
         },
         watch: {
             stringRepeat() {
