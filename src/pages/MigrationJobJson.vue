@@ -143,21 +143,22 @@
             },
             fetchComments( countryName ) {
                 try {
+                    this.comments = [];
+                    this.cur = [];
+                    this.nextCount = 0;
+                    this.showCommentsAreDone = 0;
                     setTimeout( async () => {
-                        Axios.get(`../json/${countryName}.json`)
-                        .then( result => {
-                            this.comments = [];
-                            this.cur = [];
-                            this.nextCount = 0;
-                            this.showCommentsAreDone = 0;
-                            this.loadComments = [...result.data];
-                            localStorage.setItem(String(countryName), JSON.stringify(result.data));
-                        })
-                        .then(() => {
-                            this.loadNextComments();
-                        }).then(() => {
-                            this.searchHashLength();
-                        });
+                        if ( JSON.parse(localStorage.getItem(countryName)) === null ) {
+                            await Axios.get(`../json/${countryName}.json`)
+                            .then( result => {
+                                this.loadComments = [...result.data];
+                                localStorage.setItem(String(countryName), JSON.stringify(result.data));
+                            });
+                        } else {
+                            this.loadComments = [...JSON.parse(localStorage.getItem(countryName))];
+                        }
+                        await this.loadNextComments();
+                        await this.searchHashLength();
                     }, 500);
                 }
                 catch (e) {
