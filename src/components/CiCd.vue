@@ -4,13 +4,18 @@
         <p><strong>CI</strong> - Continuous Integration (build - test - audit - document - publish)</p>
         <p><strong>CD</strong> - Continuous Delivery</p>
         <div class="plan_box">
-            Plan: <b v-for="plan in showMix(plan)" :key="plan">{{ plan }}</b> ({{ getLengthPlan('plan') }})
+            Plan: <b
+                v-for="plan in showMix(plan)"
+                :key="plan">
+                {{ plan }}
+            </b>
+            ({{ getLengthPlan('plan') }})
         </div>
         <div class="plan_box">
             Test: <b v-for="test in showMix(test)" :key="test">{{ test }}</b> ({{ getLengthPlan('test') }})
         </div>
-        <div>
-NDA (non-disclosure agreement) — это соглашение, по которому сотрудники или подрядчики обязуются хранить в тайне конфиденциальную информацию, полученную от работодателя или партнёра в ходе сотрудничества.
+        <div v-statsText>
+<p v-cloner:left.bold>NDA (non-disclosure agreement) — это соглашение, по которому сотрудники или подрядчики обязуются хранить в тайне конфиденциальную информацию, полученную от работодателя или партнёра в ходе сотрудничества.</p>
 
 В договоре NDA можно зафиксировать:
 
@@ -70,9 +75,9 @@ NDA защищает компанию от утечек секретных да�
 </script>
 
 <style lang="scss" scoped>
-    .plan_h2 {
-        color: $color-red;
-    }
+.plan_h2 {
+    color: $color-red;
+}
 .plan_box {
     color: $color-blue;
 }

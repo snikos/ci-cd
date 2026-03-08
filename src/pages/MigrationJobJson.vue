@@ -6,9 +6,10 @@
             <div class="row">
                 <div class="col-12 col-sm-8">
                     <HashInputBlock
-                            v-model.trim="searchQuery"
+                            v-model.lazy.trim="searchQuery"
                             @searchInputQuery="searchHashButton($event)"
                             :stringRepeat="stringRepeat = comments.length"
+                            :validSearch="validSearch"
                     />
                 </div>
                 <div class="col-12 col-sm-4">
@@ -78,6 +79,7 @@
                 allCounterWord: {},
                 selectedCountry: "rabota-v-mongolii",
                 sortOptions: [],
+                validSearch: true,
             }
         },
         mounted() {
@@ -196,11 +198,13 @@
                 }
                 //console.log(this.searchQuery)
                 if (this.searchQuery.length < 1) {
-                    console.log('Add text!');
+                    //console.log('Add text!');
+                    this.validSearch = true;
                     return;
                 }
                 let search = this.searchComments;
                 this.loading = true;
+                this.validSearch = false;
                 setTimeout( async () => {
                     this.comments = search;
                     this.loading = false;

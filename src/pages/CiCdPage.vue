@@ -1,6 +1,7 @@
 <template>
     <div>
-        <h1 v-highlight="'rgb(174, 249, 191)'">Test from this video (CI/CD) exploring.</h1>
+        <h1 v-highlight="'rgb(174, 249, 191)'">Test v-highlight directive</h1>
+        <h2 v-test="{color: 'dodgerblue', bgColor: 'lightgreen'}">Test v-test directive!</h2>
         <CiCd
                 plan="plan,code,build,test,release,deploy,operate"
                 test="test:unit,test:e2e,lint,type:check,i18n:check"

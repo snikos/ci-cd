@@ -1,20 +1,26 @@
 <template>
-    <div>
-        <h1>
-            {{ alphabetUpperCase[count] }}<span v-html="newStr" @click="setWave('goon')" class="waves" ref="wave"></span>
-        </h1>
-        <p style="color: dodgerblue;">
-            <button @click="counterPrev">-</button>
-            {{ count }}
-            <button @click="counterNext">+</button>
-        </p>
-        <div style="text-align: left;padding: 1em 2em;">
-            <h3>Wrapping up! (Composition API)</h3>
-            <p style="color: tomato;">The mixin pattern looks pretty safe on the surface. However, sharing code by merging objects becomes an anti-pattern due to the fragility it adds to code and the way it obscures the ability to reason about the functionality</p>
-            <p><b>testRef:</b> {{ testRef }}</p>
-            <p><b>doubleTestRef:</b> {{ doubleTestRef }}</p>
-            <button @click.once="incrementTestRef('\n The End')">testRef + end</button>
-        </div>
+    <div class="col-12">
+        <template v-if="!showVueUse">
+            <h1>
+                {{ alphabetUpperCase[count] }}<span v-html="newStr" @click="setWave('goon')" class="waves" ref="wave"></span>
+            </h1>
+            <p style="color: dodgerblue;">
+                <button @click="counterPrev">-</button>
+                {{ count }}
+                <button @click="counterNext">+</button>
+            </p>
+            <div style="text-align: left;padding: 1em 2em;">
+                <p><b>testRef:</b> {{ testRef }}</p>
+                <p><b>doubleTestRef:</b> {{ doubleTestRef }}</p>
+                <button @click.once="incrementTestRef('\n The End')">{{ x }}:{{ y }}</button>
+            </div>
+            <p v-focus-text:badge.bg-warning.text-dark="'Composition API,JS,Module system'" class="text-left">The most clever part of the Composition API is that it allows Vue to lean on the safeguards built into native JS in order to share code, like passing variables to functions, and the module system.</p>
+            <p v-focus-text:badge.bg-success.text-light.round="'SFC,script,template,style,tag,vue'" class="text-left">An SFC typically consists of three sections: script, template, and style. If you don’t need component styling, you can omit the style tag. The order of these sections is up to you. I prefer to put template before script, but the official Vue documentation recommends using script first.</p>
+            <p v-focus-text:badge.bg-primary.text-light.boomer="'Vue,Jsx,REACT'" class="text-left">The template section is where you put your markup; it is the Vue counterpart to JSX files in React’s component architecture. While Vue does support using JSX with render functions, this variant is not commonly used or recommended by the community.</p>
+            <p v-focus-text:badge.bg-dark="'mixin,pattern,code'" style="color: tomato;" class="text-left">The mixin pattern looks pretty safe on the surface. However, sharing code by merging objects becomes an anti-pattern due to the fragility it adds to code and the way it obscures the ability to reason about the functionality</p>
+            <p v-focus-text:badge.bg-success.text-warning="'Vue props,defineProps,Don’t destructure props,toRefs'" class="text-left">Vue props provided by defineProps are reactive objects and you will lose reactivity when you perform object destructuring.<br>The rule of thumb is: Don’t destructure props. Despite this warning, it looks like this could soon be a thing of the past: with the release of Vue 3.3, destructuring reactive props is now an experimental feature.<br>If you cannot live without destructuring but are willing to take an extra step, you can use the Reactivity utility function toRefs.</p>
+        </template>
+        <template v-else>Content is hidden</template>
     </div>
 </template>
 
@@ -27,6 +33,7 @@
         name: "VueUse",
         data() {
             return {
+                showVueUse: false,
                 count: 0,
                 alphabetUpperCase: this.getAlphabet(65),
                 alphabetLowerCase: this.getAlphabet(97),
@@ -91,7 +98,7 @@
                 return word.map( (el) => {
                     return el.replace(el, `<b>${el}</b>`)
                 }).join('');
-            },
+            }
         },
         created(){
             //console.log( "created: ", this.$data.count, this.count+=1 ); // 0, 1
