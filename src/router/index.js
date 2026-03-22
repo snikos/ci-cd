@@ -87,6 +87,22 @@ const routes = [
     component: () => import('@/pages/ShapeWordEn')
   },
   {
+    path: '/api-work',
+    name: 'ApiWork',
+    meta: {
+      title: 'Work with Api Company',
+    },
+    component: () => import('@/pages/ApiWork')
+  },
+  {
+    path: '/api-work/:id',
+    name: 'ShowCompany',
+    meta: {
+      title: 'Company detail',
+    },
+    component: () => import('@/pages/ShowCompany')
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'PageNotFound',
     meta: {

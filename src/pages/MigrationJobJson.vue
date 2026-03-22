@@ -1,6 +1,5 @@
 <template>
     <div class="row jobMigration">
-        <h1 @click="double">{{ myOwnCount }}</h1>
         <h3 class="jobMigration__title"><span class="battle">Battle of Comments:</span> {{ currentCountry }}</h3>
         <div class="col-12">
             <div class="row">
@@ -51,8 +50,6 @@
     import HashInputBlock from "@/components/HashInputBlock";
     import ListCommentsButton from "@/components/ListCommentsButton";
     import ListComments from "@/components/ListComments";
-    import { mapState } from "pinia";
-    import { useCountStore } from "@/store/count.js";
     export default {
         name: "MigrationJobJson",
         props: ["jsonLocation"],
@@ -285,11 +282,7 @@
             },
             getAllCommentsLength() {
                 return this.loadComments.length;
-            },
-            ...mapState(useCountStore, {
-                myOwnCount: 'count',
-                double: store => store.increment(),
-            })
+            }
         },
         watch: {
             stringRepeat() {

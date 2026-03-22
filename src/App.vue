@@ -16,36 +16,9 @@
         class="collapse navbar-collapse" 
         id="navbarNav"
         :class="[toggling ? 'show' : '']">
-        <ul class="navbar-nav mr-auto">
-          <li class="navbar-item">
-            <router-link class="nav-link" to="/">Homer</router-link>
-          </li>
-          <li class="navbar-item">
-            <router-link class="nav-link" to="/http">Http Codes</router-link>
-          </li>
-          <li class="navbar-item">
-            <router-link class="nav-link" to="/start">CI/CD</router-link>
-          </li>
-          <li class="navbar-item">
-            <router-link class="nav-link" to="/vueuse">Vueuse</router-link>
-          </li>
-          <li class="navbar-item">
-            <router-link class="nav-link" to="/local-json">Json</router-link>
-          </li>
-          <li class="navbar-item">
-            <router-link class="nav-link" to="/git-bash">Git</router-link>
-          </li>
-          <li class="navbar-item">
-            <router-link class="nav-link" to="/nvm">Nvm</router-link>
-          </li>
-          <li class="navbar-item">
-            <router-link class="nav-link" to="/migration-job">Migration Job</router-link>
-          </li>
-          <li class="navbar-item">
-            <router-link class="nav-link" to="/irr-verbs">Irregular verbs (En)</router-link>
-          </li>
-          <li class="navbar-item">
-            <router-link class="nav-link" to="/shape-word">Shape words (En)</router-link>
+        <ul class="navbar-nav m-auto">
+          <li class="navbar-item" v-for="({title, to}, i) in routeLevelZero" :key="Math.random() + '_' + i">
+            <router-link class="nav-link" :to="to">{{title}}</router-link>
           </li>
         </ul>
       </div>
@@ -59,6 +32,19 @@
     data() {
       return {
         toggling: false,
+        routeLevelZero: [
+          {title: 'Homer', to: '/'},
+          {title: 'Http Codes', to: '/http'},
+          {title: 'CI/CD', to: '/start'},
+          {title: 'Vueuse', to: '/vueuse'},
+          {title: 'Json', to: '/local-json'},
+          {title: 'Git', to: '/git-bash'},
+          {title: 'Nvm', to: '/nvm'},
+          {title: 'Migration Job', to: '/migration-job'},
+          {title: 'Irregular verbs (En)', to: '/irr-verbs'},
+          {title: 'Shape words (EN)', to: '/shape-word'},
+          {title: 'Api Work', to: '/api-work'},
+        ],
       }
     },
     methods: {

@@ -4,13 +4,17 @@ import { defineStore } from 'pinia';
 //const isObjEmpty = (o) => Object.keys(o).length === 0;
 
 export const useCountStore = defineStore('storeCount', () => {
-  const count = ref(0);
+  const count = ref(null);
   const doubleCount = computed(() => count.value * 2);
-  function increment() {
-    count.value++;
+  function increment(pagiId) {
+    count.value = pagiId;
   }
 
-  return { count, doubleCount, increment }
+  return {
+    count,
+    doubleCount,
+    increment
+  }
   // const countStore = ref({});
   // const countError = ref('');
 
