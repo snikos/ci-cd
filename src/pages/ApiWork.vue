@@ -19,9 +19,9 @@
   </div>
 </template>
 <script>
+  import Axios from "axios";
   import SlotApiCompany from '@/components/SlotApiCompany.vue';
   import SlotApiPagination from '@/components/SlotApiPagination.vue';
-  import { useUserStore } from '@/store/users.js';
 
   //const isObjEmpty = (o) => Object.keys(o).length === 0;
   const customChunk = (arr, size) => {
@@ -40,9 +40,7 @@
     },
     data() {
       return {
-        localStorageUser: JSON.parse(localStorage.getItem('companies')),
         localStorageUserNew: JSON.parse(localStorage.getItem('companiesNew')),
-        store: useUserStore(),
         storeNew: [],
         totalCompanies: 59,
         limitCompany: 7,
@@ -58,8 +56,14 @@
       }
     },
     mounted() {
-      //this.loading = true;
-      this.fetchListCompany( this.totalCompanies );
+      this.loading = true;
+      setTimeout(() => {
+        if ( JSON.parse(localStorage.getItem('companiesNew')).length === 0 ){
+          this.fetchListCompany( this.totalCompanies );
+        } else {
+          this.storeNew = JSON.parse(localStorage.getItem('companiesNew'));
+        }
+      }, 10);
     },
     watch: {
       // 'store.userStore'(n, o){
@@ -70,7 +74,27 @@
     },
     methods: {
       async fetchListCompany(quant) {
-        this.loading = true;
+        try {
+          setTimeout( async () => {
+            if ( JSON.parse(localStorage.getItem('companiesNew')).length === 0 ){
+              await Axios.get(`https://fakerapi.it/api/v2/companies?_quantity=${quant}&_locale=en_EN&_seed=123`)
+              .then( (res) => {
+                console.log(res.data);
+                this.storeNew = res.data.data;
+                localStorage.setItem('companiesNew', JSON.stringify(res.data.data));
+                this.loading = false;
+              });
+            } else {
+              this.storeNew = JSON.parse(localStorage.getItem('companiesNew'));
+              this.loading = false;
+            }
+          }, 500);
+        } catch (e) {
+          console.log('Error: ', e);
+        }
+      },
+      async fetchListCompanyOld(quant) {
+
         const url = 'https://fakerapi.it/api/v2/companies?';
         const params = new URLSearchParams({
           _quantity: quant,
@@ -85,13 +109,11 @@
           .then(j => {
             localStorage.setItem('companiesNew', JSON.stringify(j.data));
             this.storeNew = j.data;
-            this.loading = false;
           })
           .catch((err) => {
             console.log(err);
           })
           .finally(() => {
-            this.loading = false;
           });
       },
       navPagination(id) {
@@ -100,7 +122,7 @@
         this.listCompany = [...this.getUsersNew].filter((el) => { // [...this.getUsers]]
           return curArr.includes(el.id);
         });
-        //console.log('Method this.listCompany: ', this.listCompany);
+        console.log('Method this.listCompany: ', this.listCompany);
       }
     },
     computed: {
