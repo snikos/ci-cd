@@ -1,7 +1,12 @@
 <template v-if="showUsers">
+  <div v-if="loading" class="d-flex justify-content-center m-3">
+    <div class="spinner-grow text-success">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
   <div v-if="listCompany" class="row">
     <div
-      v-for="(user, index) in listCompany"
+      v-for="(item, index) in listCompany"
       :key="Math.random() + index"
       class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-2 alert alert-success mb-md-1"
     >
@@ -10,28 +15,25 @@
           <img
             class="mr-3"
             style="width: 64px;"
-            :src="`https://picsum.photos/240`"
-            :alt="user.id" />
+            src="../assets/company.png"
+            :alt="item.id" />
         </div>
         <div class="text-right">
-          <span v-show="showFavor(user.name)" class="badge badge-pill badge-primary float-right ml-2">In Favorites</span>
-          <template v-for="(item, idx) in objUser" :key="idx + '_' + item">
-            <p class="mb-0 ml-5 small"><slot name="item">{{ user[item] }}</slot></p>
+          <p class="mb-0 ml-5 small" v-if="showFavor(item.name)">
+            <span class="badge badge-pill badge-primary ml-2">In Favorites</span>
+          </p>
+          <template v-for="(el, idx) in objUser" :key="idx + '_' + el">
+            <p class="mb-0 ml-5 small"><slot name="el">{{ item[el] }}</slot></p>
           </template>
         </div>
       </div>
       <div class="w-100"></div>
       <div class="justify-content-right pt-2">
         <router-link
-          :to="`/api-work/${user.vat}`"
+          :to="`/api-work/${item.vat}`"
           class="btn btn-success"
         >Details</router-link>
       </div>
-    </div>
-  </div>
-  <div v-else class="d-flex justify-content-center m-3">
-    <div v-show="loading" class="spinner-grow text-success">
-      <span class="sr-only">Loading...</span>
     </div>
   </div>
 </template>
@@ -40,12 +42,12 @@
     name: 'SlotApiCompany',
     inheritAttrs: false,
     props: {
-      getUsers: {
-        type: Array,
-        required: true,
-        default: () => [],
-        validator: (v) => typeof v === 'object',
-      },
+      // getUsers: {
+      //   type: Array,
+      //   required: true,
+      //   default: () => [],
+      //   validator: (v) => typeof v === 'object',
+      // },
       listCompany: {
         type: Array,
         required: true,
@@ -76,7 +78,6 @@
         }
         const favors = JSON.parse(localStorage.getItem('favorites'));
         const isFavor = favors.includes(String(compName).split(' ').join('_'));
-        // let isCompany = isLocal.some((item) => String(item).split(' ').join('_') === curName);
         return isFavor;
       }
     },
@@ -84,6 +85,6 @@
       showUsers() {
         return this.$slots.name
       }
-    },
+    }
   }
 </script>
