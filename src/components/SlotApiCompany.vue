@@ -1,16 +1,11 @@
 <template v-if="showUsers">
-  <div v-if="loading" class="d-flex justify-content-center m-3">
-    <div class="spinner-grow text-success">
-      <span class="sr-only">Loading...</span>
-    </div>
-  </div>
   <div v-if="listCompany" class="row">
     <div
       v-for="(item, index) in listCompany"
       :key="Math.random() + index"
       class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-2 alert alert-success mb-md-1"
     >
-      <div class="text-left p-2 m-2">
+      <div class="text-left p-2 m-2 clearfix">
         <div class="float-left" style="height: 64px;">
           <img
             class="mr-3"
@@ -42,12 +37,6 @@
     name: 'SlotApiCompany',
     inheritAttrs: false,
     props: {
-      // getUsers: {
-      //   type: Array,
-      //   required: true,
-      //   default: () => [],
-      //   validator: (v) => typeof v === 'object',
-      // },
       listCompany: {
         type: Array,
         required: true,
@@ -59,9 +48,6 @@
         required: true,
         default: () => ['name'],
         validator: (v) => typeof v === 'object' && v.length > 0
-      },
-      loading: {
-        type: Boolean
       }
     },
     methods: {
@@ -69,7 +55,7 @@
         return path.split('.').reduce((o, key) => o[key], obj);
       },
       imageLoadError(event) {
-        // Fatal error: unlimited load pics in @error="imageLoadError"
+        // Loop error: unlimited loading pics in @error="imageLoadError"
         event.target.src = '../assets/img/ui.png';
       },
       showFavor(compName) {

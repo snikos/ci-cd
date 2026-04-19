@@ -4,7 +4,6 @@
       :getUsers="getUsersNew"
       :listCompany="listCompany"
       :objUser="tempUser"
-      :loading="loading"
       >
       <template
         v-for="(item, i) in dinamicSlots"
@@ -16,6 +15,13 @@
       :limitCompany="limitCompany"
       :limitPagi="limitPagi"
       @navPagination="navPagination"></SlotApiPagination>
+  </div>
+  <div v-if="!getUsersNew" class="fixed-top" style="top:45%;">
+    <div class="d-flex justify-content-center m-3">
+      <div class="spinner-grow text-success">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -56,7 +62,6 @@
       }
     },
     mounted() {
-      this.loading = true;
       setTimeout(() => {
         if ( JSON.parse(localStorage.getItem('companiesNew')).length === 0 ){
           this.fetchListCompany( this.totalCompanies );
@@ -82,40 +87,38 @@
                 console.log(res.data);
                 this.storeNew = res.data.data;
                 localStorage.setItem('companiesNew', JSON.stringify(res.data.data));
-                this.loading = false;
               });
             } else {
               this.storeNew = JSON.parse(localStorage.getItem('companiesNew'));
-              this.loading = false;
             }
           }, 500);
         } catch (e) {
           console.log('Error: ', e);
         }
       },
-      async fetchListCompanyOld(quant) {
+      // async fetchListCompanyOld(quant) {
 
-        const url = 'https://fakerapi.it/api/v2/companies?';
-        const params = new URLSearchParams({
-          _quantity: quant,
-          _locale: 'en_EN',
-          _seed: 123,
-        }).toString();
+      //   const url = 'https://fakerapi.it/api/v2/companies?';
+      //   const params = new URLSearchParams({
+      //     _quantity: quant,
+      //     _locale: 'en_EN',
+      //     _seed: 123,
+      //   }).toString();
 
-        await fetch(`${url}${params}`)
-          .then((res) => {
-            return res.json()
-          })
-          .then(j => {
-            localStorage.setItem('companiesNew', JSON.stringify(j.data));
-            this.storeNew = j.data;
-          })
-          .catch((err) => {
-            console.log(err);
-          })
-          .finally(() => {
-          });
-      },
+      //   await fetch(`${url}${params}`)
+      //     .then((res) => {
+      //       return res.json()
+      //     })
+      //     .then(j => {
+      //       localStorage.setItem('companiesNew', JSON.stringify(j.data));
+      //       this.storeNew = j.data;
+      //     })
+      //     .catch((err) => {
+      //       console.log(err);
+      //     })
+      //     .finally(() => {
+      //     });
+      // },
       navPagination(id) {
         let curArr = this.arrayPagiButtons[id-1];
 
