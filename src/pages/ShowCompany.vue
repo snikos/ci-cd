@@ -43,7 +43,7 @@
         v-if="getContact.gender === 'other'"
         class="float-left mr-3"
         style="max-width: 76px; width: 100%;"
-        src="../assets/aother.png"
+        src="../assets/other.jpg"
         :alt="getCompany.gender" />
       <ul class="list-group">
         <li class="list-group-item text-left m-0">
@@ -63,11 +63,11 @@
     <div class="w-100"></div>
   </div>
   <div class="w-100 mt-3"></div>
-  <div class="row justify-content-center">
+  <div class="row justify-content-end">
     <div class="col-12">
       <h5 class="text-center">Addresses</h5>
     </div>
-    <div class="col-4 col-md-3 col-lg-3">
+    <div class="col-3 col-sm-4 col-md-3 col-lg-3 overflow-hidden">
       <div
         class="nav flex-column nav-pills"
         id="v-pills-tab"
@@ -89,7 +89,7 @@
         </a>
       </div>
     </div>
-    <div class="col-8 col-md-7 col-lg-6">
+    <div class="col-9 col-sm-8 col-md-7 col-lg-6">
       <div
         class="tab-content"
         id="v-pills-tabContent">

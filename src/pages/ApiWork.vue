@@ -84,7 +84,6 @@
             if ( JSON.parse(localStorage.getItem('companiesNew')).length === 0 ){
               await Axios.get(`https://fakerapi.it/api/v2/companies?_quantity=${quant}&_locale=en_EN&_seed=123`)
               .then( (res) => {
-                console.log(res.data);
                 this.storeNew = res.data.data;
                 localStorage.setItem('companiesNew', JSON.stringify(res.data.data));
               });
