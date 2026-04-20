@@ -1,9 +1,11 @@
 <template>
     <div class="row jobMigration">
-        <h3 class="jobMigration__title"><span class="battle">Battle of Comments:</span> {{ currentCountry }}</h3>
+        <div class="col-12 mt-3">
+            <h5 class="jobMigration__title">{{ currentCountry }}</h5>
+        </div>
         <div class="col-12">
             <div class="row">
-                <div class="col-12 col-sm-8">
+                <div class="col-12 col-sm-6">
                     <HashInputBlock
                             v-model.lazy.trim="searchQuery"
                             @searchInputQuery="searchHashButton($event)"
@@ -11,7 +13,7 @@
                             :validSearch="validSearch"
                     />
                 </div>
-                <div class="col-12 col-sm-4">
+                <div class="col-12 col-sm-6">
                     <MySelect
                             v-model="selectedCountry"
                             :options="sortOptions"
@@ -19,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-sm-4 col-md-3">
             <HashTagBlock
                     @loadAllComments="loadAllComments"
                     @searchHash="searchHashButton"
@@ -29,7 +31,7 @@
                     :allCommLength="getAllCommentsLength"
             />
         </div>
-        <div class="col-12 col-md-9">
+        <div class="col-12 col-sm-8 col-md-9">
             <ListComments
                     :comments="comments"
                     :loading="loading"/>
@@ -301,15 +303,16 @@
 
 <style scoped>
     .jobMigration {
-        text-align: left;
+        text-align: center;
     }
     .jobMigration__title {
+        font-family: 'unset', 'monospace';
         text-align: center;
-        padding: 0 0 1em 0;
+        padding: 0 0 0.8em 0;
         margin: 0 auto;
     }
-    .jobMigration__title .battle{
-        font-family: unset, monospace;
+    .jobMigration .battle{
+        font-family: 'monospace';
         font-size: 1.1rem;
         color: rgb(40, 167, 69);
     }

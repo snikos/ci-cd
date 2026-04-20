@@ -2,13 +2,13 @@
     <form class="btn-toolbar pb-2 novalidate">
         <div class="input-group input-group-sm">
             <div class="input-group-prepend">
-                <div class="input-group-text" id="btnGroupAddon">#</div>
+                <div class="input-group-text" id="btnGroupAddon">{{stringRepeat}}</div>
             </div>
             <input
                 :value="modelValue"
                 @input="searchHashStr"
                 type="text"
-                placeholder="Enter word..."
+                placeholder="Add Text, Type Go!"
                 aria-label="Input group example"
                 aria-describedby="btnGroupAddon"
                 required />
@@ -19,11 +19,8 @@
                     @click="$emit('searchInputQuery', $event)"
                 >Go!</button>
             </div>
-            <div class="input-group-append">
-                <div class="input-group-text">Overlap: {{stringRepeat}}</div>
-            </div>
         </div>
-        <div v-show="validSearch" class="myinvalid-feedback">Add text and type button Go!</div>
+        <div v-show="validSearch" class="myinvalid-feedback">Add text, Type Go!</div>
     </form>
 </template>
 
@@ -57,12 +54,12 @@
     margin-top: 0.25rem;
     font-size: 80%;
     color: rgb(40 167 69);
-    padding-left: 30px;
+    padding-left: 23px;
 }
 .myinvalid-feedback{
     margin-top: 0.25rem;
     font-size: 80%;
     color: rgb(220 53 69);
-    padding-left: 30px;
+    padding-left: 23px;
 }
 </style>

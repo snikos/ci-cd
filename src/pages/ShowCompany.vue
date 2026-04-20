@@ -13,7 +13,7 @@
     <div class="col-12 col-sm-12 col-md-12 col-lg-6">
       <h5 class="text-center mt-3">Company</h5>
       <img
-        class="float-left mr-3"
+        class="float-left mr-3 boo"
         style="max-width: 76px; width: 100%;"
         src="../assets/company.png"
         :alt="getCompany.name" />
@@ -29,19 +29,19 @@
       <h5 class="text-center mt-3">Contact</h5>
       <img
         v-if="getContact.gender === 'male'"
-        class="float-left mr-3"
+        class="float-left mr-3 boo"
         style="max-width: 76px; width: 100%;"
         src="../assets/male.jpg"
         :alt="getCompany.gender" />
       <img
         v-if="getContact.gender === 'female'"
-        class="float-left mr-3"
+        class="float-left mr-3 boo"
         style="max-width: 76px; width: 100%;"
         src="../assets/female.jpg"
         :alt="getCompany.gender" />
       <img
         v-if="getContact.gender === 'other'"
-        class="float-left mr-3"
+        class="float-left mr-3 boo"
         style="max-width: 76px; width: 100%;"
         src="../assets/other.jpg"
         :alt="getCompany.gender" />
@@ -56,8 +56,6 @@
           <mark>Email:</mark> {{ getContact['email'] }}</li>
         <li class="list-group-item text-left m-0">
           <mark>Phone:</mark> {{ getContact['phone'] }}</li>
-        <li class="list-group-item text-left m-0">
-          <mark>FGen:</mark>{{ getContact['gender'] }}</li>
       </ul>
     </div>
     <div class="w-100"></div>
@@ -65,9 +63,9 @@
   <div class="w-100 mt-3"></div>
   <div class="row justify-content-end">
     <div class="col-12">
-      <h5 class="text-center">Addresses</h5>
+      <h5 class="text-center pb-2">Addresses</h5>
     </div>
-    <div class="col-3 col-sm-4 col-md-3 col-lg-3 overflow-hidden">
+    <div class="col-3 col-sm-4 col-md-3 col-lg-3 overflow-hidden pt-2">
       <div
         class="nav flex-column nav-pills"
         id="v-pills-tab"
@@ -202,4 +200,12 @@
 /*.fl:first-letter {
   font-size: 18px;
 }*/
+@media (max-width: 576px) {
+  .boo {
+    float: none!important;
+    margin: 0 auto!important;
+    max-width: 120px!important;
+    display: block!important;
+  }
+}
 </style>

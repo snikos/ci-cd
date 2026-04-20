@@ -1,17 +1,17 @@
 <template style="min-height:720px;height:720px;">
-    <div class="d-flex justify-content-center mb-3">
+    <div class="d-flex justify-content-center mb-0">
         <div v-show="loading" class="spinner-grow text-success">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
     <ul
-            class="list-group"
-            v-if="comments.length > 0"
+        class="list-group"
+        v-if="comments.length > 0"
     >
         <li
-                class="list-group-item"
-                v-for="({commentText, commentName, commentDate, id}) in comments"
-                :key="commentDate + '_' + id"
+            class="list-group-item"
+            v-for="({commentText, commentName, commentDate, id}) in comments"
+            :key="commentDate + '_' + id"
         >
             <div>
                 <strong>{{ id }}</strong> - {{ commentName }} ({{ commentDate }})
