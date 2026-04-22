@@ -7,13 +7,13 @@ export function useTestRef(x) {
         testRef.value += value;
     }
     function mount() {
-        console.log('composition API - mount');
+        console.log('compo API - mount');
     }
     function update() {
-        console.log('composition API - update');
+        console.log('compo API - update');
     }
     function unmount() {
-        console.log('composition API - unmount');
+        console.log('compo API - unmount');
     }
 
     onMounted(mount);

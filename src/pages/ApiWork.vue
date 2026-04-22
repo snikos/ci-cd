@@ -101,7 +101,6 @@
         this.listCompany = [...this.getUsersNew].filter((el) => { // [...this.getUsers]]
           return curArr.includes(el.id);
         });
-        console.log('Method this.listCompany: ', this.listCompany);
       }
     },
     computed: {
