@@ -12,10 +12,10 @@ export default {
       let xel = el.replace(/[^\w]*/g, '').trim();
       return acc + xel.length;
     }, 0);
-    // console.log('Article:', ph);
-    // console.log('Phrases:', phrases.length);
-    // console.log('Words:', words);
-    // console.log('Letters:', letters);
+    console.log('Article:', ph);
+    console.log('Phrases:', phrases.length);
+    console.log('Words:', words);
+    console.log('Letters:', letters);
   },
   name: 'statsText'
 }
