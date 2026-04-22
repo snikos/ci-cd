@@ -95,29 +95,6 @@
           console.log('Error: ', e);
         }
       },
-      // async fetchListCompanyOld(quant) {
-
-      //   const url = 'https://fakerapi.it/api/v2/companies?';
-      //   const params = new URLSearchParams({
-      //     _quantity: quant,
-      //     _locale: 'en_EN',
-      //     _seed: 123,
-      //   }).toString();
-
-      //   await fetch(`${url}${params}`)
-      //     .then((res) => {
-      //       return res.json()
-      //     })
-      //     .then(j => {
-      //       localStorage.setItem('companiesNew', JSON.stringify(j.data));
-      //       this.storeNew = j.data;
-      //     })
-      //     .catch((err) => {
-      //       console.log(err);
-      //     })
-      //     .finally(() => {
-      //     });
-      // },
       navPagination(id) {
         let curArr = this.arrayPagiButtons[id-1];
 
@@ -131,12 +108,6 @@
       getUsersNew() {
         return this.storeNew.length > 0 ? this.storeNew : this.localStorageUserNew;
       },
-      // getUsers() {
-      //   if (isObjEmpty(this.store.userStore)) {
-      //     this.store.getData(this.totalCompanies);
-      //   }
-      //   return isObjEmpty(this.store.userStore) ? this.localStorageUser : this.store.userStore;
-      // },
       tempUser() {
         return ['name', 'country']
       },
