@@ -1,11 +1,5 @@
 <template style="min-height:720px;height:720px;">
-    <div class="d-flex justify-content-center mb-0">
-        <div v-show="loading" class="spinner-grow text-success">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <ul
-        class="list-group"
+    <ul class="list-group"
         v-if="comments.length > 0"
     >
         <li
@@ -19,8 +13,16 @@
             </div>
         </li>
     </ul>
-    <div v-show="!loading" class="commentNotFound">
+    <div v-else class="commentNotFound">
         {{showEmpty}}
+    </div>
+    <div v-if="comments.length < 1 && loading" class="d-flex justify-content-center mb-0">
+        <div class="spinner-grow text-success">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <div v-else class="swipe-box">
+        <button type="button" class="swipe-btn"></button>
     </div>
 </template>
 
@@ -38,16 +40,40 @@
         },
         computed: {
             showEmpty() {
-                return (this.comments.length < 1) ? 'No comments found' : '---';
+                return 'No comments';
             }
         }
     }
 </script>
 
 <style scoped>
-    .commentNotFound{
-        padding: 1em 0;
-        margin: 0 auto;
-        text-align: center;
-    }
+.commentNotFound{
+    padding: 1em 0;
+    margin: 0 auto;
+    text-align: center;
+}
+.swipe-box {
+    margin: 1em auto;
+}
+.swipe-btn {
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url('../assets/swipe.png');
+    background-size: contain;
+    background-position: 1px 0;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0em auto;
+    width: 24px;
+    height: 14px;
+    border-color: transparent;
+    /*box-sizing: content-box;*/
+}
+.swipe-btn:hover {
+    background-image: url('../assets/swipe-white.png');
+    border-color: transparent;
+}
+.swipe-btn:focus {
+    border-color: transparent;
+}
 </style>

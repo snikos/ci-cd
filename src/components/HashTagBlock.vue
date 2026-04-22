@@ -1,5 +1,5 @@
 <template>
-    <div class="btn-toolbar pb-2">
+    <div class="btn-toolbar pb-3">
         <div :class="`${windowWidth <= 770 ? '' : 'btn-group-vertical'} btn-group-sm`">
             <button type="button"
                     @click="$emit('loadAllComments')"
