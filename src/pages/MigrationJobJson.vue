@@ -169,6 +169,7 @@
             loadAllComments() {
                 this.comments = this.loadComments;
                 this.showCommentsAreDone = 1;
+                this.searchQuery = '';
             },
             loadNextComments() {
                 this.loading = true;

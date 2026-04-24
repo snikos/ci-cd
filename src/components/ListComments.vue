@@ -13,10 +13,8 @@
             </div>
         </li>
     </ul>
-    <div v-else class="commentNotFound">
-        {{showEmpty}}
-    </div>
-    <div v-if="comments.length < 1 && loading" class="d-flex justify-content-center mb-0">
+    <div v-if="showEmpty" class="commentNotFound">No comments</div>
+    <div v-if="loading" class="d-flex justify-content-center mb-0">
         <div class="spinner-grow text-success">
             <span class="sr-only">Loading...</span>
         </div>
@@ -40,7 +38,7 @@
         },
         computed: {
             showEmpty() {
-                return 'No comments';
+                return ( this.comments.length < 1 && !this.loading )
             }
         }
     }
