@@ -1,8 +1,8 @@
 {
   "name": "front",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
-  "description": "Vue 3",
+  "description": "Vue 3 & some useful hints",
   "author": "",
   "scripts": {
     "serve": "vue-cli-service serve",
