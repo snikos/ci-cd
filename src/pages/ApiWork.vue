@@ -1,5 +1,5 @@
 <template>
-  <div v-if="getUsersNew">
+  <div v-if="getUsersNew && badGetaway">
     <SlotApiCompany
       :getUsers="getUsersNew"
       :listCompany="listCompany"
@@ -16,7 +16,7 @@
       :limitPagi="limitPagi"
       @navPagination="navPagination"></SlotApiPagination>
   </div>
-  <div v-if="!getUsersNew" class="fixed-top" style="top:45%;">
+  <div v-else class="fixed-top" style="top:45%;">
     <div class="d-flex justify-content-center m-3">
       <div class="spinner-grow text-success">
         <span class="sr-only">Loading...</span>
@@ -44,9 +44,20 @@
       SlotApiCompany,
       SlotApiPagination,
     },
+    beforeMount() {
+      //console.log('Before: ', localStorage.getItem('companiesNew') === 'undefined');
+      if (localStorage.getItem('companiesNew') === 'undefined') {
+        localStorage.setItem('companiesNew', JSON.stringify([]));
+      }
+      if (JSON.parse(localStorage.getItem('companiesNew')) === null) {
+        localStorage.setItem('companiesNew', JSON.stringify([]));
+      }
+    },
     data() {
       return {
-        localStorageUserNew: JSON.parse(localStorage.getItem('companiesNew')),
+        localStorageUserNew: localStorage.getItem('companiesNew') === 'undefined' ?
+        localStorage.setItem('companiesNew', JSON.stringify([])) :
+        JSON.parse(localStorage.getItem('companiesNew')),
         storeNew: [],
         totalCompanies: 59,
         limitCompany: 7,
@@ -54,11 +65,7 @@
         listCompany: [],
         dinamicSlots: ['id', 'name', 'country'],
         loading: false,
-      }
-    },
-    beforeMount() {
-      if (JSON.parse(localStorage.getItem('companiesNew')) === null) {
-        localStorage.setItem('companiesNew', JSON.stringify([]));
+        badGetaway: false,
       }
     },
     mounted() {
@@ -84,8 +91,12 @@
             if ( JSON.parse(localStorage.getItem('companiesNew')).length === 0 ){
               await Axios.get(`https://fakerapi.it/api/v2/companies?_quantity=${quant}&_locale=en_EN&_seed=123`)
               .then( (res) => {
+                this.badGetaway = true;
                 this.storeNew = res.data.data;
                 localStorage.setItem('companiesNew', JSON.stringify(res.data.data));
+              }).catch(err => {
+                this.badGetaway = false;
+                console.error(err)
               });
             } else {
               this.storeNew = JSON.parse(localStorage.getItem('companiesNew'));
