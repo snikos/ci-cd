@@ -47,6 +47,14 @@ const routes = [
     component: () => import('@/pages/LocalJson')
   },
   {
+    path: '/nix',
+    name: 'NixCommands',
+    meta: {
+      title: 'Nix commands for bash'
+    },
+    component: () => import('@/pages/NixCommands')
+  },
+  {
     path: '/git-bash',
     name: 'GitBash',
     meta: {

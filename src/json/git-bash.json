@@ -274,22 +274,6 @@
       "title": "клонировать",
       "description": ["клонировать удалённый репозиторий."],
       "console": ["git clone <url>"]
-    },
-    {
-      "id": "-",
-      "icon": "https://git-scm.com/images/logo@2x.png",
-      "tags": "git",
-      "title": "-",
-      "description": ["-"],
-      "console": ["-"]
-    },
-    {
-      "id": "-",
-      "icon": "https://git-scm.com/images/logo@2x.png",
-      "tags": "git",
-      "title": "-",
-      "description": ["-"],
-      "console": ["-"]
     }
   ]
 }

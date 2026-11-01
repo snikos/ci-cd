@@ -1,0 +1,153 @@
+<template>
+  <div class="bash_box">
+    <h2 class="text-center">{{ $options.myJson.title }}</h2>
+    <ul class="row bash_list">
+      <li v-for="item in $options.myJson.commands"
+        :key="item.id"
+        :class="['col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 bash_li ', {active: currentTab === item.id}]"
+        @click.prevent.stop="showModal(item.id)">
+          <div>
+            <h5 class="d-flex align-items-center p-2 bash_list_title">
+              <img
+                :src="item.icon"
+                class="git-scm"
+                alt=">_sh"
+              >
+              <span>{{item.title}}</span>
+            </h5>
+          </div>
+          <ul :class="['tab_box', {activisto: currentTab === item.id}]">
+            <li v-for="(desc, index) in item.description"
+              :key="item.id + index">
+              <p>{{ desc.substr(0, 240) }}</p>
+            </li>
+          </ul>
+        </li>
+    </ul>
+  </div>
+  <my-modal v-model:showModal="modalVisible">
+    <h5>{{ getMtd('Title') }}</h5>
+    <div v-for="(list, index) in getMtd('Description')"
+      :key="list.substr(0,6) + index"
+      class="mymodal-text"
+    >
+      <p>{{ list }}</p>
+      <kbd>{{ getMtd('Console')[index] }}</kbd>
+    </div>
+  </my-modal>
+</template>
+<script>
+  import nixData from '@/json/nix.json';
+  import MyModal from "@/components/UI/MyModal";
+  export default {
+    name: "NixCommands",
+    myJson: nixData,
+    components: { MyModal },
+    data() {
+      return {
+        currentTab: '',
+        modalVisible: false,
+        curId: '',
+      }
+    },
+    methods: {
+      showModal(id) {
+        this.currentTab = id;
+        this.modalVisible = true;
+        this.curId = id;
+      },
+    },
+    computed: {
+      getObj() {
+        return this.$options.myJson['commands']
+          .filter( ({id}) => id === this.curId )
+          .find( (el, idx) => idx === 0);
+      },
+      getMtd() {
+        return (name) => {
+          return this.getObj[name.toLowerCase()];
+        }
+      }
+    },
+    watch: {
+      modalVisible() {
+        if (!this.modalVisible) {
+          this.currentTab = !this.currentTab;
+        }
+      }
+    },
+  }
+</script>
+<style scoped>
+  .mymodal kbd {
+    display: inline-block;
+    width: 100%;
+  }
+  .mymodal-text {
+    padding: 16px;
+  }
+  .mymodal-text p {
+    font-size: 14px;
+    line-height: 18px;
+    text-align: justify;
+  }
+  .bash_box {
+    text-align: left;
+    padding: 1em 2em;
+  }
+  .bash_list {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .bash_list li {
+    padding: 0 0 10px 0;
+    list-style-type: none;
+    text-align: justify;
+    box-shadow: inset 0px 3px 6px 0px #757d8529;
+  }
+  .bash_li {
+    cursor: pointer;
+    transform: scale(1);
+  }
+  .bash_li.active {
+    box-shadow: 0 0 10px 0 #757d85;
+    transform: scale(1.1);
+    padding: 16px;
+    border-radius: 36px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    opacity: 0.5;
+  }
+  .bash_box .git-scm {
+    max-width: 40px;
+  }
+  .bash_list_title {
+    padding: 4px;
+    min-height: 42px;
+  }
+  .bash_list_title span{
+    padding-left: 14px;
+    padding-right: 30px;
+  }
+  .tab_box {
+    max-height: 45px;
+    overflow: hidden;
+    padding: 0px 28px 0px 28px;
+  }
+  .tab_box li::marker {
+    color: red;
+  }
+  .tab_box:after {
+    content: "";
+    display: block;
+    height: 36px;
+    background-color: rgba(25, 255, 255, 0);
+    box-shadow: inset 0 -20px 12px 0 rgba(255, 255, 255, 0.5);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+  }
+</style>

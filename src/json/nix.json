@@ -1,0 +1,205 @@
+{
+  "title": "Nix commands",
+  "description": "Bash (Bourne Again SHell) - командная оболочка. Принимает команды, запускает программы, связывает их результаты.",
+  "lengthArticle": "30",
+  "urlArticle": "---",
+  "commands": [
+    {
+      "id": "ls",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "ls",
+      "description": ["список файлов (в Windows аналог dir)","подробный список (права,размер,дата)","показать скрытые файлы (начинаются с .)","размеры в еловеко виде (K,M,G)","записать список файлов в files.txt"],
+      "console": ["ls or dir","ls -l","ls -a","ls -lh","ls > files.txt"]
+    },{
+      "id": "cd",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "cd",
+      "description": ["cd <path> — перейти в директорию","в домашнюю папку","подняться на уровень выше","вернуться в предыдущую папку"],
+      "console": ["cd /path/to/dir","cd ~","cd ..","cd -"]
+    },{
+      "id": "pwd",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "pwd",
+      "description": ["pwd - показать текущую директорию (где ты сейчас)"],
+      "console": ["pwd"]
+    },{
+      "id": "mkdir",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "mkdir",
+      "description": ["создать папку.","создать вложенные папочкисъ"],
+      "console": ["mkdir ./papka","mkdir -p parent/child/baby"]
+    },{
+      "id": "rm",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "rm",
+      "description": ["удалить файл","удалить папку с содержимым"],
+      "console": ["rm file.log","rm -r dir"]
+    },{
+      "id": "cp",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "cp",
+      "description": ["скопировать файл","рекурсивно скопировать папку"],
+      "console": ["cp file.txt copy.txt","cp -r dir1 dir2"]
+    },{
+      "id": "mv",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "mv",
+      "description": ["переместить/переименовать файл."],
+      "console": ["mv file.txt new_file.txt"]
+    },{
+      "id": "cat",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "cat",
+      "description": ["вывести содержимое файла"],
+      "console": ["cat ./file.txt"]
+    },{
+      "id": "grep",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "grep",
+      "description": ["найти строки со словом Error","без учета регистра","рекурсивный поиск по папке","посчитать сколько строк содержат -error-"],
+      "console": ["grep \"Error\" file.log","grep -i \"error\" *.log","grep -r \"error\" ./logs/","grep \"error\" log.txt | wc -l"]
+    },{
+      "id": "clear",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "clear",
+      "description": ["очистить терминал"],
+      "console": ["clear"]
+    },{
+      "id": "touch",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "touch",
+      "description": ["создать файл и обновить врем модификации"],
+      "console": ["touch file.txt"]
+    },{
+      "id": "head",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "head",
+      "description": ["первые 10 строк","первые 20 строк"],
+      "console": ["head file.txt","head -n 20 file.txt"]
+    },{
+      "id": "tail",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "tail",
+      "description": ["последние 10 строк","Полезно для логов: следить за файлом в реальном времени"],
+      "console": ["tail file.txt","tail -f logfile.log"]
+    },{
+      "id": "less",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "less",
+      "description": ["постраничный просмотр (просмотр - вниз, q - выход)"],
+      "console": ["less file.txt"]
+    },{
+      "id": "-'-editors-'-",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "editors",
+      "description": ["nano","vim"],
+      "console": ["nano file.txt","vim file.txt"]
+    },{
+      "id": "find",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "find",
+      "description": ["Искать файлы с расширением .log в текущей папке и ниже"],
+      "console": ["find . -name \"*.log\""]
+    },{
+      "id": "locate pattern",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "locate pattern",
+      "description": ["быстрый поиск по базе имен файлов (если база обновлена)"],
+      "console": ["-"]
+    },{
+      "id": "ps aux",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "ps aux",
+      "description": ["список всех процессов"],
+      "console": ["-"]
+    },{
+      "id": "top, htop",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "top, htop - не работает",
+      "description": ["живой мониторинг: CPU, memory, processes"],
+      "console": ["-"]
+    },{
+      "id": "kill PID",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "kill PID",
+      "description": ["завершить процесс по id","принудительно"],
+      "console": ["kill PID","kill -9 PID"]
+    },{
+      "id": "jobs",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "jobs",
+      "description": ["список фоновых задач в текущей сессии","вернуть на передний план или отправить в фон"],
+      "console": ["jobs","fg %1 , bg %1"]
+    },{
+      "id": "uname",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "uname, free, df, du",
+      "description": ["Version OS","Memory","Место на диске","Size directory","найти самые большие файлы"],
+      "console": ["uname -a","free -h","df -h","du -sh /path","du -ah . | sort -rh | head -10"]
+    },{
+      "id": "echo",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "echo",
+      "description": ["дописать текст в конец файла"],
+      "console": ["echo \"--The end--\" >> files.txt"]
+    },{
+      "id": "-",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "-",
+      "description": ["-"],
+      "console": ["-"]
+    },{
+      "id": "-",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "-",
+      "description": ["-"],
+      "console": ["-"]
+    },{
+      "id": "-",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "-",
+      "description": ["-"],
+      "console": ["-"]
+    },{
+      "id": "-",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "-",
+      "description": ["-"],
+      "console": ["-"]
+    },{
+      "id": "-",
+      "icon": "https://s1.iconbird.com/ico/0512/BlawbTinyExtension/ldpi/terminalemulator.png",
+      "tags": "nix",
+      "title": "-",
+      "description": ["-"],
+      "console": ["-"]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 <template>
     <div class="bash_box">
-        <h2>{{ $options.myJson.title }}</h2>
+        <h2 class="text-center">{{ $options.myJson.title }}</h2>
         <ul class="row bash_list">
             <li v-for="item in $options.myJson.commands"
                 :key="item.id"
@@ -10,10 +10,10 @@
                 <div>
                     <h5 class="d-flex align-items-center p-2 bash_list_title">
                         <img
-                                class="git-scm"
-                                :src="item.icon"
-                                :alt="item.title"
-                                :title="item.title"
+                            class="git-scm"
+                            :src="item.icon"
+                            :alt="item.title"
+                            :title="item.title"
                         >
                         <span>{{item.title}}</span>
                     </h5>
@@ -87,7 +87,7 @@
 
 <style scoped>
     .mymodal kbd {
-        display: 'inline-block';
+        display: inline-block;
         width: 100%;
     }
     .mymodal-text {
