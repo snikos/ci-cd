@@ -38,7 +38,7 @@
           {title: 'CI/CD', to: '/start'},
           {title: 'Vueuse', to: '/vueuse'},
           {title: 'Json', to: '/local-json'},
-          {title: 'Unix', to: '/unix'},
+          {title: 'Nix', to: '/nix'},
           {title: 'Git', to: '/git-bash'},
           {title: 'Nvm', to: '/nvm'},
           {title: 'Migration Job', to: '/migration-job'},
