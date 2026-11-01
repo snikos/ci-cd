@@ -1,5 +1,5 @@
 <template>
-  <div v-if="getUsersNew && badGetaway">
+  <div v-if="getUsersNew && !badGateway">
     <SlotApiCompany
       :getUsers="getUsersNew"
       :listCompany="listCompany"
@@ -52,6 +52,7 @@
       if (JSON.parse(localStorage.getItem('companiesNew')) === null) {
         localStorage.setItem('companiesNew', JSON.stringify([]));
       }
+      this.badGateway = false;
     },
     data() {
       return {
@@ -65,7 +66,7 @@
         listCompany: [],
         dinamicSlots: ['id', 'name', 'country'],
         loading: false,
-        badGetaway: false,
+        badGateway: true,
       }
     },
     mounted() {
@@ -73,6 +74,7 @@
         if ( JSON.parse(localStorage.getItem('companiesNew')).length === 0 ){
           this.fetchListCompany( this.totalCompanies );
         } else {
+          this.badGateway = true;
           this.storeNew = JSON.parse(localStorage.getItem('companiesNew'));
         }
       }, 10);
@@ -91,11 +93,10 @@
             if ( JSON.parse(localStorage.getItem('companiesNew')).length === 0 ){
               await Axios.get(`https://fakerapi.it/api/v2/companies?_quantity=${quant}&_locale=en_EN&_seed=123`)
               .then( (res) => {
-                this.badGetaway = true;
                 this.storeNew = res.data.data;
                 localStorage.setItem('companiesNew', JSON.stringify(res.data.data));
               }).catch(err => {
-                this.badGetaway = false;
+                this.badGateway = true;
                 console.error(err)
               });
             } else {
