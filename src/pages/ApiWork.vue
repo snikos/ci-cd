@@ -1,5 +1,5 @@
 <template>
-  <div v-if="getUsersNew && !badGateway">
+  <div v-if="getUsersNew">
     <SlotApiCompany
       :getUsers="getUsersNew"
       :listCompany="listCompany"
