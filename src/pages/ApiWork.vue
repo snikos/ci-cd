@@ -44,16 +44,6 @@
       SlotApiCompany,
       SlotApiPagination,
     },
-    beforeMount() {
-      //console.log('Before: ', localStorage.getItem('companiesNew') === 'undefined');
-      if (localStorage.getItem('companiesNew') === 'undefined') {
-        localStorage.setItem('companiesNew', JSON.stringify([]));
-      }
-      if (JSON.parse(localStorage.getItem('companiesNew')) === null) {
-        localStorage.setItem('companiesNew', JSON.stringify([]));
-      }
-      this.badGateway = false;
-    },
     data() {
       return {
         localStorageUserNew: localStorage.getItem('companiesNew') === 'undefined' ?
@@ -66,7 +56,15 @@
         listCompany: [],
         dinamicSlots: ['id', 'name', 'country'],
         loading: false,
-        badGateway: true,
+      }
+    },
+    beforeMount() {
+      //console.log('Before: ', localStorage.getItem('companiesNew') === 'undefined');
+      if (localStorage.getItem('companiesNew') === 'undefined') {
+        localStorage.setItem('companiesNew', JSON.stringify([]));
+      }
+      if (JSON.parse(localStorage.getItem('companiesNew')) === null) {
+        localStorage.setItem('companiesNew', JSON.stringify([]));
       }
     },
     mounted() {
@@ -74,7 +72,6 @@
         if ( JSON.parse(localStorage.getItem('companiesNew')).length === 0 ){
           this.fetchListCompany( this.totalCompanies );
         } else {
-          this.badGateway = true;
           this.storeNew = JSON.parse(localStorage.getItem('companiesNew'));
         }
       }, 10);
@@ -96,7 +93,6 @@
                 this.storeNew = res.data.data;
                 localStorage.setItem('companiesNew', JSON.stringify(res.data.data));
               }).catch(err => {
-                this.badGateway = true;
                 console.error(err)
               });
             } else {
